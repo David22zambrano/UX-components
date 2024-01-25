@@ -1,0 +1,10 @@
+<div class="column gap-3">
+    <div class="column align-items-center justify-content-start ">
+        <p class="full-width mat-caption color-text-secondary pb-3">mat-checkbox | Checked | Size: Medium | Small
+        </p>
+        <div class="full-width row align-items-center justify-content-between">
+            <mat-checkbox checked *ngFor="let checkbox of checkboxs" [color]="checkbox.color"
+                [class]="checkbox.size"></mat-checkbox>
+        </div>
+    </div>
+</div>

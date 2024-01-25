@@ -1,0 +1,6 @@
+.autocomplete-container {
+  width: 100%;
+  & .autocomplete {
+    width: inherit;
+  }
+}

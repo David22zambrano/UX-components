@@ -1,0 +1,23 @@
+.menu-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+// Lista de navegacion
+  &__list-items {
+    height: 20px;
+    width: 195px;
+
+    &>a {
+      --mdc-list-list-item-label-text-size: 13px;
+
+      &:hover,
+      &:focus {
+        background-color: rgba(32, 99, 160, 0.12);
+        border-right: 2px solid #1e62a1;
+      }
+    }
+  }
+
+}
