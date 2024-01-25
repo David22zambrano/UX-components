@@ -1,0 +1,10 @@
+.container-components {
+    width: 100%;
+    height: 100%;
+    background-color: #FBFBFB;
+    padding: 36px 106px;
+
+    &__header {
+        width: inherit;
+    }
+}

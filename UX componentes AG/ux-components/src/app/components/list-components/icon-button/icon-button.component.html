@@ -1,0 +1,9 @@
+<div class="column align-items-center justify-content-start">
+    <p class="full-width color-text-secondary pb-3">mat-icon-button | Size: Medium | Small</p>
+    <div class="full-width row align-items-center justify-content-between">
+        <button mat-icon-button *ngFor="let button of buttons" [color]="button.color" [class]="button.size"
+            [disabled]="button.disabled">
+            <mat-icon>star</mat-icon>
+        </button>
+    </div>
+</div>
