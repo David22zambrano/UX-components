@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './chip.component.scss'
 })
 export class ChipComponent {
-
+  color = [
+    "primary", "accent", "info", "warning", "infor", "success"
+  ]
 }

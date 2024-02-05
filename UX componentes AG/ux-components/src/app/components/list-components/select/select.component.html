@@ -2,25 +2,41 @@
     <div class="column align-items-center justify-content-start ">
         <p class="full-width mat-caption color-text-secondary pb-3">mat-raised-button | Size: Large | Medium | Small</p>
         <div class="full-width row align-items-center justify-content-between">
-            <mat-form-field  appearance="outline">
-                <select matNativeControl disabled>
-                    <option>Disabled</option>
-                </select>
-            </mat-form-field>
-
             <mat-form-field appearance="outline">
-                <mat-label>mat-form-select</mat-label>
-                <select matNativeControl >
-                    <option>Outline</option>
-                </select>
+                <mat-label>outlined</mat-label>
+                <mat-select >
+                    <mat-option value="1">Disabled</mat-option>
+                    <mat-option value="2">Disabled</mat-option>
+                    <mat-option value="3">Disabled</mat-option>
+                </mat-select>
             </mat-form-field>
 
-            <mat-form-field >
-                <mat-label>mat-form-select</mat-label>
-                <select matNativeControl >
-                    <option>Filled</option>
-                </select>
-            </mat-form-field>
+
+            <div>
+                <mat-form-field  appearance="outline">
+                    <mat-label>mat-form-select</mat-label>
+                    <mat-select size="medium" disableRipple hideSingleSelectionIndicator>
+                        <mat-option value="1">Outline</mat-option>
+                        <mat-option value="2">Outline</mat-option>
+                        <mat-option value="3">Outline </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+            <form class="example-form">
+                <mat-form-field appearance="outline" class="example-full-width">
+                  <mat-label>Number</mat-label>
+                  <input type="text" placeholder="Pick one" aria-label="Number" matInput formControl="myControl"
+                    [matAutocomplete]="auto">
+                  <mat-autocomplete #auto="matAutocomplete">
+                    @for (option of options; track option) {
+                    <mat-option [value]="option">{{option}}</mat-option>
+                    }
+                  </mat-autocomplete>
+                  <mat-icon matSuffix >sentiment_very_satisfied</mat-icon>
+                </mat-form-field>
+              </form>
         </div>
     </div>
 </div>

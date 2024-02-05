@@ -4,9 +4,9 @@
         <p class="full-width mat-caption color-text-secondary pb-3">mat-fab | Extended | Size: Large | Medium | Small
         </p>
         <div class="full-width row align-items-center justify-content-between">
-            <button mat-fab extended *ngFor="let button of buttons" [color]="button.color" [class]="button.size"
-                [disabled]="button.disabled">
-                <mat-icon [class]="button.size">add</mat-icon>
+            <button mat-fab extended *ngFor="let fab of fabButtons" [color]="fab.color" [class]="fab.size"
+                [disabled]="fab.disabled">
+                <mat-icon [class]="fab.size">add</mat-icon>
                 Fab
             </button>
         </div>
@@ -16,9 +16,9 @@
         <p class="full-width mat-caption color-text-secondary pb-3">mat-fab | Round | Size: Large | Medium | Small
         </p>
         <div class="full-width row align-items-center justify-content-between">
-            <button mat-fab *ngFor="let button of buttons" [color]="button.color" [class]="button.size"
-                [disabled]="button.disabled">
-                <mat-icon [class]="button.size">add</mat-icon>
+            <button mat-fab *ngFor="let fab of fabButtons" [color]="fab.color" [class]="fab.size"
+                [disabled]="fab.disabled">
+                <mat-icon [class]="fab.size">add</mat-icon>
             </button>
         </div>
     </div>
