@@ -1,0 +1,110 @@
+$backgroundOverlay: rgba(240, 240, 240, 0.6);
+
+//MAT-BUTTON-SIZES
+$button-base-sizes: (
+  default: (
+    size: 26px,
+    padding: (
+      4px 16px,
+    ),
+  ),
+  medium: (
+    size: 32px,
+    padding: (
+      6px 16px,
+    ),
+  ),
+  large: (
+    size: 38px,
+    padding: (
+      8px 22px,
+    ),
+  ),
+);
+
+//MAT-FAB-BUTTON-SIZES
+$mat-fab-button-sizes: (
+  default: (
+    fab: (
+      container-size: 36px,
+      icon: 20px,
+    ),
+    extended-fab: (
+      container-size: 32px,
+      icon: 20px,
+    ),
+  ),
+  medium: (
+    fab: (
+      container-size: 48px,
+      icon: 24px,
+    ),
+    extended-fab: (
+      container-size: 38px,
+      icon: 24px,
+    ),
+  ),
+  large: (
+    fab: (
+      container-size: 56px,
+      icon: 24px,
+    ),
+    extended-fab: (
+      container-size: 48px,
+      icon: 24px,
+    ),
+  ),
+);
+
+//MAT-CHECKBOX-SIZES
+$checkbox-sizes: (
+  default: (
+    ripple: 22px,
+    vector: 12px,
+  ),
+  medium: (
+    ripple: 28px,
+    vector: 15px,
+  ),
+  large: (
+    ripple: 42px,
+    vector: 18px,
+  ),
+);
+
+//ICON-BUTTON-SIZES
+$icon-button-erp-sizes: (
+  default: (
+    container-size: 22px,
+    icon-size: 16px,
+  ),
+  medium: (
+    container-size: 36px,
+    icon-size: 20px,
+  ),
+  large: (
+    container-size: 44px,
+    icon-size: 20px,
+  ),
+);
+
+//SLIDE-TOGGLE-SIZES
+$slide-toggle-sizes: (
+  default: (
+    'track-width': 26px,
+    'track-height': 10px,
+    'handle-width': 16px,
+    'handle-height': 16px,
+    'state-layer-size': 22px,
+  ),
+  medium: (
+    'track-width': 34px,
+    'track-height': 14px,
+    'handle-width': 20px,
+    'handle-height': 20px,
+    'state-layer-size': 38px,
+  ),
+);
+
+//MAT-ICONS-SIZES
+$size-mat-icon-erp: 'small' 16px 11px, 'medium' 20px 14px, 'large' 35px 24px;
