@@ -1,10 +1,18 @@
 <div class="column gap-3">
-    <!-- FAB BUTTON EXTENDED  -->
     <div class="column align-items-center justify-content-start ">
-        <p class="full-width mat-caption color-text-secondary pb-3">mat-fab | Extended | Size: Large | Medium | Small
-        </p>
+        <p class="full-width mat-caption color-text-secondary pb-3">mat-chip | Size: Large | Medium | Small</p>
         <div class="full-width row align-items-center justify-content-between">
-            <mat-chip hightlighted color="primary"></mat-chip>
+
+            <!-- <mat-chip hightlighted color="warning">Chip</mat-chip> -->
+            <mat-chip-listbox aria-label="Fish selection">
+                <mat-chip-option hightlighted selected color="primary">primary</mat-chip-option>
+                <mat-chip-option hightlighted selected color="accent">accent</mat-chip-option>
+                <mat-chip-option hightlighted selected color="warn">warn</mat-chip-option>
+                <mat-chip-option hightlighted selected color="warning">warning</mat-chip-option>
+                <mat-chip-option hightlighted selected color="info">info</mat-chip-option>
+                <mat-chip-option hightlighted selected color="success">success</mat-chip-option>
+            </mat-chip-listbox>
+
         </div>
     </div>
 </div>

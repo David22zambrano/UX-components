@@ -16,7 +16,6 @@ import { BadgeComponent } from './badge/badge.component';
 import { TextfieldComponent } from './textfield/textfield.component';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 import { AvatarComponent } from './avatar/avatar.component';
-import { ChipComponent } from './chip/chip.component';
 import { ListComponent } from './list/list.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { AlertComponent } from './alert/alert.component';
@@ -33,6 +32,7 @@ import { TabComponent } from './tab/tab.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { MenuComponent } from './menu/menu.component';
 import { AngularModule } from '@sinco/angular';
+import { ChipExample } from './chip/chip.component';
 
 const components = [
   AutocompleteComponent,
@@ -50,7 +50,7 @@ const components = [
   TextfieldComponent,
   ToggleButtonComponent,
   AvatarComponent,
-  ChipComponent,
+  ChipExample,
   ListComponent,
   TooltipComponent,
   AlertComponent,

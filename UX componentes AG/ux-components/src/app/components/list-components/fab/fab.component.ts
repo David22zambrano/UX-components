@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-
-interface fabProperties {
-  color: string;
-  size: string;
-  disabled: boolean;
-}
+import { ModelComponent } from '../../model/model';
 
 @Component({
   selector: 'app-fab',
@@ -12,12 +7,10 @@ interface fabProperties {
   styleUrl: './fab.component.scss'
 })
 export class FabComponent {
-
-  fabButtons: fabProperties[] = [
+  fabButtons: ModelComponent[] = [
     { color: 'disabled', size: "large", disabled: true },
     { color: 'primary', size: "large", disabled: false },
     { color: 'warn', size: "medium", disabled: false },
     { color: 'disabled', size: 'medium', disabled: true }
   ];
-
 }

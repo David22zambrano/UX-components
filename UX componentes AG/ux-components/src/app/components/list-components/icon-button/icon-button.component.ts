@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModelComponent } from '../../model/model';
 
 @Component({
   selector: 'app-icon-button',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './icon-button.component.scss'
 })
 export class IconButtonComponent {
-  buttons: { label: string, color: string, size: string, disabled: boolean }[] = [
+  iconButtons: ModelComponent[] = [
     { label: 'Primary', color: 'primary', size: "large", disabled: false },
     { label: 'Accent', color: 'accent', size: "large", disabled: false },
     { label: 'Warn', color: 'warn', size: "medium", disabled: false },

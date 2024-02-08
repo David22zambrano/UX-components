@@ -1,1 +1,10 @@
-<p>badge works!</p>
+<div class="column gap-3">
+    <div class="column align-items-center justify-content-start ">
+        <p class="full-width mat-caption color-text-secondary pb-3">mat-raised-button | Size: Large | Medium | Small</p>
+        <div class="col-12 row align-items-center justify-content-between">
+            <ng-container *ngFor="let badge of colores" class="col">
+                <span matBadge="1" size="small" [matBadgeColor]="badge.color"></span>
+            </ng-container>
+        </div>
+    </div>
+</div>

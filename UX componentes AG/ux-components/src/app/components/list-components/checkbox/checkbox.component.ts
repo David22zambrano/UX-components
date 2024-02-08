@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModelComponent } from '../../model/model';
 
 @Component({
   selector: 'app-checkbox',
@@ -6,12 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './checkbox.component.scss'
 })
 export class CheckboxComponent {
-  checkboxs = [
-    { color: "primary", size: "large" },
-    { color: "primary",  size: "large" },
-    { color: "accent",    size: "medium" },
-    { color: "accent", size: "medium" },
-    { color: "warn", size: "small" },
-    { color: "warn",    size: "small" },
-  ];
+  checkboxs: ModelComponent[] = []
 }

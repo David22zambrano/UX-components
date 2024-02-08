@@ -88,7 +88,7 @@
     --mdc-slider-active-track-height: 0.4rem;
   }
 
-  .mat-mdc-slider-visual-thumb .mat-ripple {
+  .mat-mdc-slider-visual-thumb > .mat-ripple {
     @include width-height(32px !important);
     border-radius: 50%;
     transform: translate(8px, 8.5px) !important;
@@ -186,7 +186,6 @@
       .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
         transform: #{translateY(-#{$positionY}) scale(var(--mat-mdc-form-field-floating-label-scale, 0.75))
       }
-
       !important;
     }
 
@@ -201,7 +200,7 @@
   }
 
   &:not(.mat-form-field-appearance-outline) {
-    @include mat.form-field-density(-2.5);
+    @include mat.form-field-density(-2);
   }
 
   &.standard:not(.mat-form-field-appearance-outline) {
