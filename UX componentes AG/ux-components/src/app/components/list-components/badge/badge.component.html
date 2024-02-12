@@ -1,10 +1,9 @@
 <div class="column gap-3">
     <div class="column align-items-center justify-content-start ">
         <p class="full-width mat-caption color-text-secondary pb-3">mat-raised-button | Size: Large | Medium | Small</p>
-        <div class="col-12 row align-items-center justify-content-between">
-            <ng-container *ngFor="let badge of colores" class="col">
-                <span matBadge="1" size="small" [matBadgeColor]="badge.color"></span>
-            </ng-container>
+        <div class="full-width row align-items-center justify-content-between">
+                <span matBadge="1" class="col" *ngFor="let badge of colores" size="small" [matBadgeColor]="badge.color"
+                    [colorComponent]="badge.color"></span>
         </div>
     </div>
 </div>

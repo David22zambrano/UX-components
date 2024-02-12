@@ -13,7 +13,6 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { ModelComponentsComponent } from './components/model-component/model-components.component';
 import { ListComponentsModule } from './components/list-components/list-components.module';
 import { RatingExampleComponent } from './components/list-components/rating-example/rating-example.component';
-import { ColorDirective } from './color/color.directive';
 
 const componentesGenerales = [
   MenuPrincipalComponent,
@@ -25,15 +24,11 @@ const componenteSincoAngular = [
   RatingExampleComponent
 ];
 
-const directivas = [
-  ColorDirective
-];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ...componentesGenerales,
-    ...directivas
+    ...componentesGenerales
   ],
   imports: [
     BrowserModule,
@@ -44,7 +39,7 @@ const directivas = [
     ListComponentsModule,
     componenteSincoAngular
   ],
-  exports: [MaterialModule, ListComponentsModule, AngularModule, ...componentesGenerales, ...componenteSincoAngular, ...directivas],
+  exports: [MaterialModule, ListComponentsModule, AngularModule, ...componentesGenerales, ...componenteSincoAngular],
   providers: [],
   bootstrap: [AppComponent]
 })

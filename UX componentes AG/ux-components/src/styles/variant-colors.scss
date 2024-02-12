@@ -201,14 +201,13 @@ $_ripple-opacity: 0.1;
 }
 
 @mixin badge-styles($estadoInicial, $bgColor) {
-  .mat-badge {
+  .mat-badge.mat-badge.#{$bgColor} {
+    background-color: $estadoInicial !important;
     .mat-badge-content{
-      background-color: var(--mat-badge-background-color, $estadoInicial);
+      background-color: $estadoInicial !important;
     }
   }
-}
-
-;
+};
 
 @mixin add-variants-color($only-new-color-palettes) {
   @each $bgColor, $color in map-remove($only-new-color-palettes, 'primary', 'accent', 'warn') {
@@ -255,16 +254,15 @@ $slider-state-color: (
 
 @include progress-bar-styles($estadoInicial, $bgColor);
 @include icon-buton-styles($estadoInicial, $bgColor);
-@include badge-styles($estadoInicial, $bgColor);
 @include slider-styles($slider-state-color, $bgColor);
 @include slide-toggle-styles($slide-toggle-range-colors, $bgColor);
 @include radio-button-styles($radio-button-range-colors, $bgColor);
+@include badge-styles($estadoInicial, $bgColor );
 }
 }
 
 @mixin chip-styles($color-class-name, $color-value) {
   .mat-mdc-standard-chip {
-
     &.mat-mdc-chip-selected,
     &.mat-mdc-chip-highlighted {
       &.mat-#{$color-class-name}:not(.stroked, :disabled) {
@@ -276,6 +274,8 @@ $slider-state-color: (
 }
 
 
+
+
 @mixin create-variants-color($all-color-palettes) {
   @each $bgColor, $color in $all-color-palettes {
     $estadoInicial: map-get($color, 500);
@@ -284,5 +284,6 @@ $slider-state-color: (
 
     @include button-toggle-styles($estadoInicial, $estadoFocusWithin, $bgColor);
     @include chip-styles($bgColor, $chip-background-color);
+
   }
 }
