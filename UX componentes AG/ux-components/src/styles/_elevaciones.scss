@@ -144,8 +144,8 @@ $ambient-Redesing: (
   @include elevation(24);
 }
 
-.mat-accordion .mat-expansion-panel {
-  @include elevation(1);
+.mat-expansion-panel:has([class*='mat-elevation-z0']) {
+  @include elevation(4);
 }
 
 .mat-menu-panel,

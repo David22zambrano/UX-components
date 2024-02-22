@@ -8,6 +8,7 @@ import { ModelComponent } from '../../model/model';
 })
 export class BadgeComponent {
   colores: ModelComponent[] = [
+    { color: "disabled"},
     { color: "primary" },
     { color: "accent" },
     { color: "warn" },

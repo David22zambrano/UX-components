@@ -150,27 +150,45 @@ $_ripple-opacity: 0.1;
   }
 }
 
-@mixin radio-button-styles($radio-button-range-colors, $bgColor) {
-  .mat-mdc-radio-button.mat-#{$bgColor} {
-    .mdc-radio {
-      @each $state, $palette-gamma in $radio-button-range-colors {
-        background-color: #{$palette-gamma};
-      }
-    }
+@mixin radio-button-styles($estadoInicial, $bgColor) {
+  .mat-mdc-radio-button.#{$bgColor} .mdc-form-field .mdc-radio {
+    color: #{$estadoInicial};
+    --mdc-radio-selected-focus-icon-color: #{$estadoInicial};
+    --mdc-radio-selected-hover-icon-color: #{$estadoInicial};
+    --mdc-radio-selected-pressed-icon-color: #{$estadoInicial};
+    --mat-radio-checked-ripple-color: #{$estadoInicial};
+    --mdc-radio-selected-icon-color: #{$estadoInicial};
+  }
+}
+
+@mixin checkbox-styles($estadoInicial, $bgColor) {
+  .mat-mdc-checkbox.mat-#{$bgColor} .mdc-form-field .mdc-checkbox {
+    $grey-600: map-get($grey, 600);
+    --mdc-checkbox-selected-pressed-state-layer-color: #{$estadoInicial};
+    --mdc-checkbox-selected-hover-state-layer-color: #{$estadoInicial};
+    --mdc-checkbox-selected-focus-state-layer-color: #{$estadoInicial};
+    --mdc-checkbox-selected-pressed-icon-color: #{$estadoInicial};
+    --mdc-checkbox-selected-hover-icon-color: #{$estadoInicial};
+    --mdc-checkbox-selected-icon-color: #{$estadoInicial};
+    --mdc-checkbox-unselected-hover-icon-color: #{$grey-600};
+    --mdc-checkbox-unselected-focus-icon-color: #{$grey-600};
+    --mdc-checkbox-unselected-pressed-icon-color: #{$grey-600};
   }
 }
 
 @mixin icon-buton-styles($estadoInicial, $bgColor) {
   .mat-mdc-icon-button.mat-#{$bgColor} {
-    &>.mat-icon {
-      color: var(--mdc-icon-button-icon-color, $estadoInicial);
-    }
+    --mdc-icon-button-icon-color: #{$estadoInicial};
+    --mdc-icon-button-state-layer-color: #{$estadoInicial};
+    // --mdc-icon-button-persistent-ripple-color: #{$estadoInicial};
+    // --mdc-icon-button-state-focus-icon-color: #{$estadoInicial};
+    // --mdc-icon-button-state-pressed-icon-color: #{$estadoInicial};
+    --mat-mdc-icon-button-pressed-state-layer-color: #{$estadoInicial};
   }
 }
 
 @mixin slider-styles($slider-state-color, $bgColor) {
   .mat-mdc-slider.mat-#{$bgColor} {
-
     .mdc-slider__track {
 
       &--active,
@@ -202,12 +220,44 @@ $_ripple-opacity: 0.1;
 
 @mixin badge-styles($estadoInicial, $bgColor) {
   .mat-badge.mat-badge.#{$bgColor} {
-    background-color: $estadoInicial !important;
-    .mat-badge-content{
+    .mat-badge-content {
       background-color: $estadoInicial !important;
     }
   }
-};
+}
+
+@mixin buttons-ripple-color($ripple-color, $hover-color, $bgColor) {
+
+  .mat-mdc-button:not(:disabled).mat-#{$bgColor},
+  .mat-mdc-outlined-button:not(:disabled).mat-#{$bgColor} {
+    &.mdc-button {
+      --mat-mdc-button-persistent-ripple-color: #{$ripple-color};
+      --mat-mdc-button-ripple-color: #{$ripple-color};
+
+      &.mdc-button::before,
+      &.mdc-button:hover {
+        --mat-mdc-button-persistent-ripple-color: #{$ripple-color};
+        --mat-mdc-button-ripple-color: #{$ripple-color};
+        background-color: var(--mat-mdc-button-persistent-ripple-color);
+      }
+
+      &--outlined {
+        --mat-outlined-button-state-layer-color: #{$ripple-color};
+        --mat-mdc-button-persistent-ripple-color: #{$hover-color};
+
+        &.mat-mdc-button:active {
+          background-color: var(--mat-outlined-button-state-layer-color);
+        }
+
+        &.mat-mdc-button-persistent-ripple::before {
+          --mdc-outlined-button-outline-color: #{$hover-color};
+          background-color: var(--mat-outlined-button-state-layer-color);
+
+        }
+      }
+    }
+  }
+}
 
 @mixin add-variants-color($only-new-color-palettes) {
   @each $bgColor, $color in map-remove($only-new-color-palettes, 'primary', 'accent', 'warn') {
@@ -227,42 +277,26 @@ $_ripple-opacity: 0.1;
       'hover-state-layer-color':map-get($color, 600),
       'focus-state-layer-color':map-get($color, 600),
     );
-  $radio-button-range-colors: (
-    'disabled-label-color': map-get($color, 600),
-    'disabled-selected-icon-color': map-get($color, 300),
-    'disabled-unselected-icon-color': map-get($color, 300),
-
-    'unselected-hover-icon-color': map-get($color, 300),
-    'unselected-icon-color': map-get($color, 600),
-    'unselected-pressed-icon-color': map-get($color, 600),
-
-    'selected-focus-icon-color': map-get($color, 900),
-    'selected-hover-icon-color': map-get($color, 900),
-    'selected-icon-color': map-get($color, 900),
-    'selected-pressed-icon-color': map-get($color, 900),
-    'checked-ripple-color': map-get($color, 900),
+  $slider-state-color: (
+    'handle-color': map-get($color, 500),
+    'focus-handle-color': map-get($color, 500),
+    'hover-handle-color': map-get($color, 500),
+    'active-track-color': map-get($color, 500),
+    'inactive-track-color': map-get($color, 500),
+    'ripple-color': map-get($color, 500),
+    'with-tick-marks-inactive-container-color': map-get($color, 500),
   );
-$slider-state-color: (
-  'handle-color': map-get($color, 500),
-  'focus-handle-color': map-get($color, 500),
-  'hover-handle-color': map-get($color, 500),
-  'active-track-color': map-get($color, 500),
-  'inactive-track-color': map-get($color, 500),
-  'ripple-color': map-get($color, 500),
-  'with-tick-marks-inactive-container-color': map-get($color, 500),
-);
 
 @include progress-bar-styles($estadoInicial, $bgColor);
 @include icon-buton-styles($estadoInicial, $bgColor);
 @include slider-styles($slider-state-color, $bgColor);
 @include slide-toggle-styles($slide-toggle-range-colors, $bgColor);
-@include radio-button-styles($radio-button-range-colors, $bgColor);
-@include badge-styles($estadoInicial, $bgColor );
 }
 }
 
 @mixin chip-styles($color-class-name, $color-value) {
   .mat-mdc-standard-chip {
+
     &.mat-mdc-chip-selected,
     &.mat-mdc-chip-highlighted {
       &.mat-#{$color-class-name}:not(.stroked, :disabled) {
@@ -273,17 +307,19 @@ $slider-state-color: (
   }
 }
 
-
-
-
 @mixin create-variants-color($all-color-palettes) {
   @each $bgColor, $color in $all-color-palettes {
+    $hover-color: rgba(map-get($color, 500), 50%);
+    $ripple-color: rgba(map-get($color, 300), 30%);
     $estadoInicial: map-get($color, 500);
     $estadoFocusWithin: rgba(map-get($color, 500), 0.04);
     $chip-background-color: map-get($color, 100);
 
     @include button-toggle-styles($estadoInicial, $estadoFocusWithin, $bgColor);
     @include chip-styles($bgColor, $chip-background-color);
-
+    @include radio-button-styles($estadoInicial, $bgColor);
+    @include checkbox-styles($estadoInicial, $bgColor);
+    @include badge-styles($estadoInicial, $bgColor );
+    @include buttons-ripple-color($ripple-color, $hover-color, $bgColor);
   }
 }

@@ -4,7 +4,7 @@
         <div class="full-width row align-items-center justify-content-between">
 
             <ng-container *ngFor="let switch of switchColor">
-                <mat-slide-toggle [color]="switch.color" checked="true">{{ switch.label }}</mat-slide-toggle>
+                <mat-slide-toggle [color]="switch.color" checked="true" hideIcon="true"/>
             </ng-container>
         </div>
     </div>

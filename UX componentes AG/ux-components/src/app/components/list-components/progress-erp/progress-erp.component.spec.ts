@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EmptyStateExample } from './empty-state.component';
+import { ProgressERP} from './progress-erp.component';
 
-describe('EmptyStateExample', () => {
-  let component: EmptyStateExample;
-  let fixture: ComponentFixture<EmptyStateExample>;
+describe('ProgressERP', () => {
+  let component: ProgressERP;
+  let fixture: ComponentFixture<ProgressERP>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EmptyStateExample]
+      imports: [ProgressERP]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(EmptyStateExample);
+    fixture = TestBed.createComponent(ProgressERP);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

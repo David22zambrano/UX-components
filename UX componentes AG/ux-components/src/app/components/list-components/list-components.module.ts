@@ -24,7 +24,7 @@ import { TableComponent } from './table/table.component';
 import { AccordionComponent } from './accordion/accordion.component';
 import { StepperComponent } from './stepper/stepper.component';
 import { PaginatorComponent } from './paginator/paginator.component';
-import { EmptyStateComponent } from './empty-state/empty-state.component';
+import { EmptyStateExample } from './empty-state/empty-state.component';
 import { ToastNotificationComponent } from './toast-notification/toast-notification.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { CardComponent } from './card/card.component';
@@ -33,6 +33,8 @@ import { DialogComponent } from './dialog/dialog.component';
 import { MenuComponent } from './menu/menu.component';
 import { AngularModule } from '@sinco/angular';
 import { ChipExample } from './chip/chip.component';
+import { SnackbarComponent } from './snackbar/snackbar.component';
+import { ProgressERP } from './progress-erp/progress-erp.component';
 
 const components = [
   AutocompleteComponent,
@@ -59,13 +61,15 @@ const components = [
   AccordionComponent,
   StepperComponent,
   PaginatorComponent,
-  EmptyStateComponent,
+  EmptyStateExample,
   ToastNotificationComponent,
   PageHeaderComponent,
   CardComponent,
   TabComponent,
   DialogComponent,
   MenuComponent,
+  SnackbarComponent,
+  ProgressERP
 ];
 
 @NgModule({

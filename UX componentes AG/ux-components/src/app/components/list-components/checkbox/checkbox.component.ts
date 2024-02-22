@@ -7,5 +7,13 @@ import { ModelComponent } from '../../model/model';
   styleUrl: './checkbox.component.scss'
 })
 export class CheckboxComponent {
-  checkboxs: ModelComponent[] = []
+  checkboxs: ModelComponent[] = [
+    { color: 'primary', checked: true, size: 'medium', disabled: false },
+    { color: 'accent', checked: true, size: 'medium', disabled: false },
+    { color: 'warn', checked: true, size: 'medium', disabled: false },
+    { color: 'warning', checked: true, size: 'medium', disabled: false },
+    { color: 'info', checked: true, size: 'small', disabled: false },
+    { color: 'success', checked: true, size: 'small', disabled: false },
+    { color: 'disabled', checked: false, size: 'small', disabled: true },
+  ];
 }

@@ -1,1 +1,23 @@
-<p>toggle-button works!</p>
+<div class="column gap-3">
+    <div class="column align-items-center justify-content-start ">
+        <p class="full-width mat-caption color-text-secondary pb-3">
+            mat-button-toggle-group | Variant: Group | Size: Large | Medium | Small. </p>
+
+        <div class="col-12 row align-items-center justify-content-between">
+            <mat-button-toggle-group #group="matButtonToggleGroup" size="medium" >
+                <mat-button-toggle value="left">
+                    <mat-icon size="medium" class="color-text-secondary"> format_align_left </mat-icon>
+                </mat-button-toggle>
+
+                <mat-button-toggle value="center">
+                    <mat-icon size="medium" class="color-text-secondary"> format_align_center </mat-icon>
+                </mat-button-toggle>
+
+                <mat-button-toggle value="right">
+                    <mat-icon size="medium" class="color-text-secondary"> format_align_right </mat-icon>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+
+    </div>
+</div>

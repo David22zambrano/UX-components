@@ -1,0 +1,15 @@
+@import 'src/styles/colors.scss';
+
+.progress {
+    width: 226px;
+    background-color: map-get($primary, 50);
+    height: 20px;
+    transform: skew(-20deg);
+    overflow: hidden;
+
+    .progress-bar {
+        height: 100%;
+        background-color: map-get($primary, 500);;
+        transition: width 0.5s ease;
+    }
+}

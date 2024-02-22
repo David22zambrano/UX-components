@@ -13,6 +13,6 @@ export class IconButtonComponent {
     { label: 'Warn', color: 'warn', size: "medium", disabled: false },
     { label: 'Success', color: 'success', size: 'medium', disabled: false },
     { label: 'Warning', color: 'warning', size: 'small', disabled: false },
-    { label: 'Disabled', color: 'info', size: 'small', disabled: true },
+    { label: 'Disabled', color: 'disabled', size: 'small', disabled: true },
   ];
 }

@@ -45,11 +45,8 @@
 
 //BUTTON TOGGLE
 .mat-button-toggle-group {
-  @include mat.button-toggle-density(-4.5);
-
-  &.mat-icon {
-    @include icon-size(2rem !important, 2rem);
-  }
+  // @include mat.button-toggle-density(-4);
+  --mat-standard-button-toggle-height: 40px;
 }
 
 // EXPANSION PANEL
@@ -210,7 +207,8 @@
 
 //BUTTON TOGGLE
 &.mat-button-toggle-group {
-  @include mat.button-toggle-density(-1.5);
+  // @include mat.button-toggle-density(-4);
+  --mat-standard-button-toggle-height: 48px;
 }
 
 // TAB
@@ -255,14 +253,9 @@
 
   // BUTTON TOGGLE
   &.mat-button-toggle-group {
-    .mat-button-toggle {
-      &-label-content {
-        line-height: calc(24px + 26px);
-      }
-
-      .mat-icon {
-        @include icon-size(2.4rem !important, 2.2rem !important);
-      }
+    --mat-standard-button-toggle-height: 56px;
+    & > .mat-icon {
+      @include icon-size(24px, 18px);
     }
   }
 
