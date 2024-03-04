@@ -180,9 +180,6 @@ $_ripple-opacity: 0.1;
   .mat-mdc-icon-button.mat-#{$bgColor} {
     --mdc-icon-button-icon-color: #{$estadoInicial};
     --mdc-icon-button-state-layer-color: #{$estadoInicial};
-    // --mdc-icon-button-persistent-ripple-color: #{$estadoInicial};
-    // --mdc-icon-button-state-focus-icon-color: #{$estadoInicial};
-    // --mdc-icon-button-state-pressed-icon-color: #{$estadoInicial};
     --mat-mdc-icon-button-pressed-state-layer-color: #{$estadoInicial};
   }
 }
@@ -296,12 +293,28 @@ $_ripple-opacity: 0.1;
 
 @mixin chip-styles($color-class-name, $color-value) {
   .mat-mdc-standard-chip {
-
-    &.mat-mdc-chip-selected,
+    &.mat-mdc-chip-selected {
+      &.stroked {
+        --mdc-chip-elevated-disabled-container-color: transparent;
+        --mdc-chip-disabled-label-text-color: var(
+          --mdc-chip-elevated-container-color
+        );
+        border: 1px solid var(--mdc-chip-elevated-container-color);
+        --mdc-chip-with-trailing-icon-disabled-trailing-icon-color: var(
+          --mdc-chip-elevated-container-color
+        );
+      }
+    }
     &.mat-mdc-chip-highlighted {
       &.mat-#{$color-class-name}:not(.stroked, :disabled) {
-        --mdc-chip-elevated-container-color:#{$color-value};
+        --mdc-chip-elevated-container-color: #{$color-value};
         --mdc-chip-label-text-color: #{$text-primary};
+      }
+    }
+    &.mdc-evolution-chip--disabled {
+      &.stroked {
+        --mdc-chip-elevated-disabled-container-color: transparent;
+        border: 1px solid var(--mdc-chip-elevated-container-color);
       }
     }
   }

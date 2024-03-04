@@ -10,39 +10,39 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
     'bg': background-color,
     'color': color,
   );
-  @each $class-property, $css-property in $properties {
-    @each $class-color, $color-value in $variants-color {
-      $colorIsMap: type-of($color-value) == map;
-      @if $colorIsMap {
-        @include loop-on-palette(
-          $color-value,
-          $class-property,
-          $css-property,
-          $class-color
-        );
-      } @else {
-        .#{$class-property}-#{$class-color} {
-          #{$css-property}: $color-value;
-        }
+
+@each $class-property, $css-property in $properties {
+  @each $class-color, $color-value in $variants-color {
+    $colorIsMap: type-of($color-value)==map;
+
+    @if $colorIsMap {
+      @include loop-on-palette($color-value,
+        $class-property,
+        $css-property,
+        $class-color );
+    }
+
+    @else {
+      .#{$class-property}-#{$class-color} {
+        #{$css-property}: $color-value;
       }
     }
   }
 }
+}
 
-@mixin loop-on-palette(
-  $color-value,
+@mixin loop-on-palette($color-value,
   $class-property,
   $css-property,
-  $class-color
-) {
+  $class-color) {
   @each $range, $color in $color-value {
-    $isMainColor: $range == 500;
+    $isMainColor: $range ==500;
     $ColorExcludeContrast: if(type-of($color) !=map, $color, false);
 
-    #{if($isMainColor,'.#{$class-property}-#{$class-color}','.#{$class-property}-#{$class-color}-#{$range}' )} {
-      #{$css-property}: $ColorExcludeContrast;
-    }
+    #{if($isMainColor,'.#{$class-property}-#{$class-color}',' .#{$class-property}-#{$class-color}-#{$range}' )} {
+#{$css-property}: $ColorExcludeContrast;
   }
+}
 }
 
 @mixin border-colors-class($color-variants) {
@@ -56,30 +56,30 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
     border-block
   );
 
-  @each $property in $border-properties {
-    @for $index from 1 through length($color-variants) {
-      $palette: nth($color-variants, $index);
-      $color-name: nth($palette, 1);
-      $range-colors: nth($palette, 2);
+@each $property in $border-properties {
+  @for $index from 1 through length($color-variants) {
+    $palette: nth($color-variants, $index);
+    $color-name: nth($palette, 1);
+    $range-colors: nth($palette, 2);
 
-      @each $range, $color in $range-colors {
-        $notIsContrastRange: $range !=contrast;
-        $isMainColor: $range ==500;
+    @each $range, $color in $range-colors {
+      $notIsContrastRange: $range !=contrast;
+      $isMainColor: $range ==500;
 
-        .#{$property}-#{$color-name} {
-          @if ($notIsContrastRange) {
-            &-#{$range} {
-              #{$property}: 1px solid $color;
-            }
+      .#{$property}-#{$color-name} {
+        @if ($notIsContrastRange) {
+          &-#{$range} {
+            #{$property}: 1px solid $color;
           }
+        }
 
-          @if ($notIsContrastRange and $isMainColor) {
-            #{$property}: 1px solid map-get($color-variants, $color-name, 500);
-          }
+        @if ($notIsContrastRange and $isMainColor) {
+          #{$property}: 1px solid map-get($color-variants, $color-name, 500);
         }
       }
     }
   }
+}
 }
 
 @mixin icon-size($tamaño, $font-size) {
@@ -97,12 +97,14 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
   width: $size-container !important;
   height: $size-container !important;
   padding: calc(($size-container - $size-icon) / 2) !important;
+
   [class*='mat-icon'] {
     width: $size-icon !important;
     height: $size-icon !important;
     font-size: $size-icon !important;
     vertical-align: text-top;
   }
+
   [class*='mat-mdc-button-touch-target'] {
     height: $size-container !important;
   }
@@ -115,12 +117,14 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
 @mixin container-icon-size($size-container, $size-icon) {
   @include width-height($size-container);
   @include padding($size-container, $size-icon);
+
   [class*='mat-icon'],
   svg {
     @include width-height($size-icon);
     font-size: $size-icon;
     vertical-align: text-top;
   }
+
   [class*='mat-mdc-button-touch-target'] {
     @include width-height($size-container);
   }
@@ -190,7 +194,9 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
 }
 
 @mixin chip() {
-  .mat-mdc-standard-chip {
+
+  .mat-mdc-standard-chip,
+  &.mat-mdc-standard-chip.stroked {
     &.mat-mdc-chip-selected {
       .mdc-evolution-chip__graphic {
         width: 0;
@@ -206,13 +212,9 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
 
       &.stroked {
         --mdc-chip-elevated-disabled-container-color: transparent;
-        --mdc-chip-disabled-label-text-color: var(
-          --mdc-chip-elevated-container-color
-        );
+        --mdc-chip-disabled-label-text-color: var(--mdc-chip-elevated-container-color);
         border: 1px solid var(--mdc-chip-elevated-container-color);
-        --mdc-chip-with-trailing-icon-disabled-trailing-icon-color: var(
-          --mdc-chip-elevated-container-color
-        );
+        --mdc-chip-with-trailing-icon-disabled-trailing-icon-color: var(--mdc-chip-elevated-container-color);
       }
     }
 
@@ -232,19 +234,20 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
 @mixin mat-button-base-sizes($button-base-sizes) {
   @each $size-class, $values in $button-base-sizes {
     .mdc-button.mat-mdc-button-base {
-      #{if($size-class != 'default', '&.#{$size-class}', '&')} {
-        $size: map-get($values, size);
-        padding: map-get($values, padding);
-        --mdc-protected-button-container-height: #{$size};
-        --mdc-outlined-button-container-height: #{$size};
-        --mdc-filled-button-container-height: #{$size};
-        --mdc-text-button-container-height: #{$size};
-        .mat-icon[iconPositionEnd] {
-          margin-left: 0px;
-        }
+      #{if($size-class != 'default', '&.#{$size-class}', ' &')} {
+$size: map-get($values, size);
+      padding: map-get($values, padding);
+      --mdc-protected-button-container-height: #{$size};
+      --mdc-outlined-button-container-height: #{$size};
+      --mdc-filled-button-container-height: #{$size};
+      --mdc-text-button-container-height: #{$size};
+
+      .mat-icon[iconPositionEnd] {
+        margin-left: 0px;
       }
     }
   }
+}
 }
 
 @mixin mat-fab-button-sizes($mat-fab-button-sizes) {
@@ -252,42 +255,47 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
     @each $variant, $values in $variants-fab-button {
       $container-size: map-get($values, container-size);
       $icon-size: map-get($values, icon);
+
       .mdc-fab.mat-mdc-fab#{if($size-class !=  'default', '.#{$size-class}', null)} {
-        @if ($variant == 'fab') {
-          &:not(.mat-mdc-extended-fab) {
-            @include container-icon-size($container-size, $icon-size);
-          }
-        } @else {
-          &.mat-mdc-extended-fab {
-            height: $container-size;
-            .mat-icon {
-              @include icon-size($icon-size, $icon-size);
-            }
+@if ($variant =='fab') {
+        &:not(.mat-mdc-extended-fab) {
+          @include container-icon-size($container-size, $icon-size);
+        }
+      }
+
+      @else {
+        &.mat-mdc-extended-fab {
+          height: $container-size;
+
+          .mat-icon {
+            @include icon-size($icon-size, $icon-size);
           }
         }
       }
     }
   }
 }
+}
 
 @mixin mat-checkbox-sizes($checkbox-sizes) {
   .mat-mdc-checkbox {
     @each $size-class, $value in $checkbox-sizes {
       @at-root #{if($size-class != default, "&.#{$size-class}", " &")} {
-        --mdc-checkbox-state-layer-size: #{map-get($value, ripple)};
+ --mdc-checkbox-state-layer-size: #{map-get($value, ripple)};
 
-        .mdc-checkbox .mdc-checkbox__background {
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          @include width-height(map-get($value, vector));
-        }
-        .mat-mdc-checkbox-touch-target {
-          @include width-height(100%);
-        }
+      .mdc-checkbox .mdc-checkbox__background {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include width-height(map-get($value, vector));
+      }
+
+      .mat-mdc-checkbox-touch-target {
+        @include width-height(100%);
       }
     }
   }
+}
 }
 
 @mixin _checkbox-checked-styles-with-size($mark-size) {
@@ -315,6 +323,7 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
   .mat-pseudo-checkbox {
     width: $box-size;
     height: $box-size;
+
     &::after {
       border-left-width: 1px;
       border-bottom-width: 1px;
@@ -328,11 +337,10 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
     &.mat-pseudo-checkbox-checked::after {
       @include _checkbox-checked-styles-with-size($mark-size);
     }
+
     &.mat-pseudo-checkbox-indeterminate::after {
-      @include _checkbox-indeterminate-styles-with-size(
-        $box-size,
-        $border-size
-      );
+      @include _checkbox-indeterminate-styles-with-size($box-size,
+        $border-size );
     }
   }
 
@@ -343,11 +351,10 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
     &.mat-pseudo-checkbox-checked::after {
       @include _checkbox-checked-styles-with-size($mark-size);
     }
+
     &.mat-pseudo-checkbox-indeterminate::after {
-      @include _checkbox-indeterminate-styles-with-size(
-        $box-size,
-        $border-size
-      );
+      @include _checkbox-indeterminate-styles-with-size($box-size,
+        $border-size );
     }
   }
 }
@@ -355,20 +362,18 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
 @mixin pseudo-checkbox-sizes($checkbox-sizes) {
   @each $size-class, $value in $checkbox-sizes {
     .mat-mdc-option.mdc-list-item:has(.mat-pseudo-checkbox) {
-      #{if($size-class != default, "&.#{$size-class}-checkbox", "&")} {
-        $size: map-get($value, vector);
-        @include pseudo-checkbox-container-size($size);
-      }
+      #{if($size-class != default, "&.#{$size-class}-checkbox", " &")} {
+$size: map-get($value, vector);
+      @include pseudo-checkbox-container-size($size);
     }
   }
 }
+}
 
-@mixin size-rating(
-  $default,
+@mixin size-rating($default,
   $personalizate-class,
   $personalizate-value,
-  $large
-) {
+  $large) {
   mat-rating {
     display: inline-flex;
 
@@ -396,12 +401,13 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
   @each $size-class, $values in $sizes-button {
     $container-size: map-get($values, container-size);
     $icon-size: map-get($values, icon-size);
+
     .mdc-icon-button.mat-mdc-icon-button.mat-mdc-button-base {
       &#{if($size-class !=  'default', '.#{$size-class}', null)} {
-        @include container-icon-size($container-size, $icon-size);
-      }
+@include container-icon-size($container-size, $icon-size);
     }
   }
+}
 }
 
 @mixin table-responsive($handleTableCells, $border-color) {
@@ -442,20 +448,18 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
 }
 
 @mixin mat-icon-sizes($size-map) {
-  :not(
-      .mdc-evolution-chip__text-label,
-      .mdc-icon-button,
-      .mdc-fab,
-      .mat-mdc-chip-remove,
-      .mat-button-toggle-label-content,
-      .mat-mdc-form-field-icon-suffix,
-      .mat-expansion-panel-header-description,
-      .mat-step-icon-content,
-      .mat-datepicker-toggle,
-      .rating-container,
-      .stars-outer
-    )
-    > .mat-icon {
+
+  :not(.mdc-evolution-chip__text-label,
+    .mdc-icon-button,
+    .mdc-fab,
+    .mat-mdc-chip-remove,
+    .mat-button-toggle-label-content,
+    .mat-mdc-form-field-icon-suffix,
+    .mat-expansion-panel-header-description,
+    .mat-step-icon-content,
+    .mat-datepicker-toggle,
+    .rating-container,
+    .stars-outer)>.mat-icon {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -472,39 +476,35 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
   .mat-mdc-slide-toggle {
     @each $size-class, $values in $slide-toggle-sizes {
       @at-root #{if($size-class != default, "&.#{$size-class}", " &")} {
-        .mdc-switch {
-          @each $inner-elements, $values-sizes in $values {
-            --mdc-switch-#{$inner-elements}: #{$values-sizes};
-          }
+ .mdc-switch {
+        @each $inner-elements, $values-sizes in $values {
+          --mdc-switch-#{$inner-elements}: #{$values-sizes};
         }
       }
     }
   }
 }
+}
 
-@mixin date-picker-toggle-sizes(
-  $icon-button-sizes,
+@mixin date-picker-toggle-sizes($icon-button-sizes,
   $default-size-data-picker-toggle,
-  $new-class
-) {
+  $new-class) {
   $new-map-sizes: append($icon-button-sizes, $new-class);
+
   @each $size-class, $values in $new-map-sizes {
     .mat-datepicker-toggle {
-      &#{if($size-class !=  'default', '.#{$size-class}', '')} {
-        .mdc-icon-button.mat-mdc-icon-button {
-          $extend-class: if(
-            $size-class == $new-class,
+      &#{if($size-class !=  'default', '.#{$size-class}', ' ')} {
+ .mdc-icon-button.mat-mdc-icon-button {
+        $extend-class: if($size-class ==$new-class,
             '.mdc-icon-button',
-            if(
-              $size-class == 'default',
+            if($size-class =='default',
               '.#{$default-size-data-picker-toggle}',
               '.#{$size-class}'
-            )
-          );
-          display: inline-flex;
-          @extend #{$extend-class} !optional;
-        }
+            ));
+        display: inline-flex;
+        @extend #{$extend-class} !optional;
       }
     }
   }
+}
 }

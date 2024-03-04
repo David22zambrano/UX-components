@@ -1,0 +1,10 @@
+<div class="column align-items-center justify-content-center gap-2">
+    <div class="row">
+        <p class="mat-body2 color-text-secondary">{{loadingText}}</p>
+    </div>
+    <div class="progress" [ngClass]="{'determinate': variant === 'determinate', 'indeterminate': variant === 'indeterminate'}">
+        <div class="determinate-bar" [ngStyle]="{'width.%': value}" *ngIf="variant === 'determinate'"></div>
+        <div class="indeterminate-bar" *ngIf="variant === 'indeterminate'"></div>
+    </div>
+    <p class="mat-subtitle-2 color-text-secondary">{{progressIndicator}}</p>
+</div> 

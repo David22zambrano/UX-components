@@ -1,0 +1,29 @@
+@import 'src/styles/colors.scss';
+
+.progress {
+    width: 226px;
+    height: 10px;
+    overflow: hidden;
+    transform: skew(-20deg);
+    background-color: map-get($primary, 50);
+    .determinate-bar {
+        height: 100%;
+        transition: width 0.5s ease;
+        background-color: map-get($primary, 500);
+    }
+    .indeterminate-bar {
+        height: 100%;
+        background-color: map-get($primary, 500);
+        animation: indeterminate 1.5s infinite linear;
+    }
+    @keyframes indeterminate {
+        0% {
+            transform: translateX(-100%);
+            width: 30%;
+        }
+        100% {
+            transform: translateX(300%);
+            width: 30%;
+        }
+    }
+}

@@ -35,6 +35,8 @@ import { AngularModule } from '@sinco/angular';
 import { ChipExample } from './chip/chip.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { ProgressERP } from './progress-erp/progress-erp.component';
+import { ProgressExampleComponent } from './progress-erp/progress-example/progress-example.component';
+import { AvatarExampleComponent } from './avatar/avatar-example/avatar-example.component';
 
 const components = [
   AutocompleteComponent,
@@ -69,7 +71,9 @@ const components = [
   DialogComponent,
   MenuComponent,
   SnackbarComponent,
-  ProgressERP
+  ProgressERP,
+  ProgressExampleComponent,
+  AvatarExampleComponent
 ];
 
 @NgModule({

@@ -5,6 +5,4 @@ import { Component, Input } from '@angular/core';
   templateUrl: './progress-erp.component.html',
   styleUrl: './progress-erp.component.scss'
 })
-export class ProgressERP {
-  @Input() progress: number = 0;
-}
+export class ProgressERP { }

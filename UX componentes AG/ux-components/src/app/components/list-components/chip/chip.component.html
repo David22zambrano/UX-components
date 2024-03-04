@@ -4,14 +4,24 @@
         <div class="full-width row align-items-center justify-content-between">
 
             <mat-chip-listbox aria-label="Fish selection">
-                <mat-chip-option hightlighted selected class="stroked" color="primary">primary</mat-chip-option>
-                <mat-chip-option hightlighted selected class="stroked" color="accent">accent</mat-chip-option>
-                <mat-chip-option hightlighted selected class="stroked" color="warn">warn</mat-chip-option>
-                <mat-chip-option hightlighted selected class="stroked" color="warning">warning</mat-chip-option>
-                <mat-chip-option hightlighted selected class="stroked" color="info">info</mat-chip-option>
-                <mat-chip-option hightlighted selected class="stroked" color="success">success</mat-chip-option>
+                <mat-chip-option selected hightlihted class="stroked" color="primary">primary</mat-chip-option>
+                <mat-chip-option selected hightlihted class="stroked" color="accent">accent</mat-chip-option>
+                <mat-chip-option selected hightlihted class="stroked" color="warn">warn</mat-chip-option>
+                <mat-chip-option selected hightlihted class="stroked" color="warning">warning</mat-chip-option>
+                <mat-chip-option selected hightlihted class="stroked" color="info">info</mat-chip-option>
+                <mat-chip-option selected hightlihted class="stroked" color="success">success</mat-chip-option>
             </mat-chip-listbox>
+            <app-chip class="stroked" [arrayChips]="[
+              {
+                texto: 'Concepto provisión',
+                color: 'success',
+                selected: true,
+                variante: 'stroked',
+                size: 'small'
+              }
+            ]"></app-chip>
 
+            <mat-chip variant="stroked" color="primary">Basic chip</mat-chip>
         </div>
     </div>
 </div>
