@@ -1,27 +1,14 @@
 <div class="column gap-3">
-    <div class="column align-items-center justify-content-start ">
-        <p class="full-width mat-caption color-text-secondary pb-3">mat-chip | Size: Large | Medium | Small</p>
-        <div class="full-width row align-items-center justify-content-between">
+  <div class="column align-items-center justify-content-start ">
+    <p class="full-width mat-caption color-text-secondary pb-3">mat-chip | Size: Large | Medium | Small</p>
+    <div class="full-width row align-items-center justify-content-between">
+      
+      <mat-chip *ngFor="let chip of Chips" removable highlighted [color]="chip.color"> Chip
+        <button matChipRemove >
+          <mat-icon [color]="chip.color">cancel</mat-icon>
+        </button>
+      </mat-chip>
 
-            <mat-chip-listbox aria-label="Fish selection">
-                <mat-chip-option selected hightlihted class="stroked" color="primary">primary</mat-chip-option>
-                <mat-chip-option selected hightlihted class="stroked" color="accent">accent</mat-chip-option>
-                <mat-chip-option selected hightlihted class="stroked" color="warn">warn</mat-chip-option>
-                <mat-chip-option selected hightlihted class="stroked" color="warning">warning</mat-chip-option>
-                <mat-chip-option selected hightlihted class="stroked" color="info">info</mat-chip-option>
-                <mat-chip-option selected hightlihted class="stroked" color="success">success</mat-chip-option>
-            </mat-chip-listbox>
-            <app-chip class="stroked" [arrayChips]="[
-              {
-                texto: 'Concepto provisión',
-                color: 'success',
-                selected: true,
-                variante: 'stroked',
-                size: 'small'
-              }
-            ]"></app-chip>
-
-            <mat-chip variant="stroked" color="primary">Basic chip</mat-chip>
-        </div>
     </div>
+  </div>
 </div>

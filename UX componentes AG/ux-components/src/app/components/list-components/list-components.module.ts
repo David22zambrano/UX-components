@@ -15,7 +15,6 @@ import { SwitchComponent } from './switch/switch.component';
 import { BadgeComponent } from './badge/badge.component';
 import { TextfieldComponent } from './textfield/textfield.component';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
-import { AvatarComponent } from './avatar/avatar.component';
 import { ListComponent } from './list/list.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { AlertComponent } from './alert/alert.component';
@@ -36,7 +35,9 @@ import { ChipExample } from './chip/chip.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { ProgressERP } from './progress-erp/progress-erp.component';
 import { ProgressExampleComponent } from './progress-erp/progress-example/progress-example.component';
+import { AvatarComponent } from './avatar/avatar.component';
 import { AvatarExampleComponent } from './avatar/avatar-example/avatar-example.component';
+import { IconComponent } from './icon/icon.component';
 
 const components = [
   AutocompleteComponent,
@@ -53,7 +54,6 @@ const components = [
   BadgeComponent,
   TextfieldComponent,
   ToggleButtonComponent,
-  AvatarComponent,
   ChipExample,
   ListComponent,
   TooltipComponent,
@@ -71,9 +71,11 @@ const components = [
   DialogComponent,
   MenuComponent,
   SnackbarComponent,
+  IconComponent,
   ProgressERP,
   ProgressExampleComponent,
-  AvatarExampleComponent
+  AvatarExampleComponent,
+  AvatarComponent
 ];
 
 @NgModule({

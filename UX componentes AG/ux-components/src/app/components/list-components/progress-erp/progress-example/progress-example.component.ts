@@ -5,7 +5,6 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './progress-example.component.html',
   styleUrl: './progress-example.component.scss'
 })
-// implements OnInit
 export class ProgressExampleComponent  {
   @Input() loadingText!: string;
   @Input() progressIndicator!: string;

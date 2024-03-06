@@ -1,29 +1,48 @@
 @import 'src/styles/colors.scss';
 
+$loading-size: 178px;
+
 .progress {
-    width: 226px;
-    height: 10px;
-    overflow: hidden;
-    transform: skew(-20deg);
-    background-color: map-get($primary, 50);
-    .determinate-bar {
-        height: 100%;
-        transition: width 0.5s ease;
-        background-color: map-get($primary, 500);
+    width: 221px;
+    height: auto;
+
+    .container-gif {
+        height: 70px;
+        width: 100%;
+        background-position: center;
+        background-image: url("/assets/Spinner-SincoERP 2.gif");
+        background-size: 150%;
     }
-    .indeterminate-bar {
-        height: 100%;
-        background-color: map-get($primary, 500);
-        animation: indeterminate 1.5s infinite linear;
-    }
-    @keyframes indeterminate {
-        0% {
-            transform: translateX(-100%);
-            width: 30%;
+
+    &-bar {
+        width: 100%;
+        height: 10px;
+        overflow: hidden;
+        transform: skew(-20deg);
+        background-color: map-get($primary, 50);
+
+        .determinate-bar {
+            height: 100%;
+            transition: width 0.5s ease;
+            background-color: map-get($primary, 500);
         }
-        100% {
-            transform: translateX(300%);
-            width: 30%;
+
+        .indeterminate-bar {
+            height: 100%;
+            background-color: map-get($primary, 500);
+            animation: indeterminate 1.5s infinite linear;
+        }
+
+        @keyframes indeterminate {
+            0% {
+                transform: translateX(-100%);
+                width: 30%;
+            }
+
+            100% {
+                transform: translateX(300%);
+                width: 30%;
+            }
         }
     }
 }

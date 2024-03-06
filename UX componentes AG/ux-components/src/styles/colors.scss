@@ -8,7 +8,7 @@ $fakeId: string.unique-id();
 $primary: (
   50: #e4ecf4,
   100: #bcd0e3,
-  200: #8fb1d0,
+  200: #90B1D0,
   300: #6291bd,
   400: #407aaf,
   500: #1e62a1,
@@ -285,11 +285,12 @@ $light: #ffffff;
 $dark: #000000;
 
 $color-class: (
+  'action-active'$action-active,
   'action-hover'$action-hover,
   'action-focus'$action-focus,
   'action-selected'$action-selected,
   'action-disabled'$action-disabled,
-  'action-disabledBackground' $action-disabledBackground,
+  'action-disabledBackground'$action-disabledBackground,
   'light-default'$light-background-default,
   'dark-default'$dark-background-default,
   'white'$light,
@@ -381,7 +382,7 @@ a {
 }
 
 .mat-mdc-icon-button {
-  color: var(--mdc-icon-button-icon-color, $action-active) !important;
+  // color: var(--mdc-icon-button-icon-color, $action-active) !important;
   --mdc-icon-button-disabled-icon-color: $text-disabled;
 }
 
