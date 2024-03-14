@@ -1,20 +1,5 @@
 import { Component } from '@angular/core';
-
-type CustomThemePalette = 'primary' | 'accent' | 'warn';
-
-interface radioProperties {
-  color: CustomThemePalette;
-  checked: boolean;
-  size: string;
-  value: string
-}
-
-interface radioGroupProperties {
-  label: string;
-  checked: boolean;
-  disabled: boolean;
-  value: string
-}
+import { ModelComponent } from '../../model/model';
 
 @Component({
   selector: 'app-radio',
@@ -23,15 +8,16 @@ interface radioGroupProperties {
 })
 
 export class RadioComponent {
-  radios: radioProperties[] = [
-    { color: 'primary', checked: true, size: 'medium' , value: "1"},
-    { color: 'primary', checked: true, size: 'medium' , value: "1"},
-    { color: 'accent', checked: true, size: 'medium' , value: "1"},
-    { color: 'accent', checked: true, size: 'medium' , value: "1"},
-    { color: 'warn', checked: true, size: 'small' , value: "1"},
-    { color: 'warn', checked: true, size: 'small' , value: "1"},
+  radios: ModelComponent[] = [
+    { color: 'primary', checked: true, size: 'medium', value: "1" },
+    { color: 'accent', checked: true, size: 'medium', value: "1" },
+    { color: 'warn', checked: true, size: 'medium', value: "1" },
+    { color: 'warning', checked: true, size: 'medium', value: "1" },
+    { color: 'info', checked: true, size: 'small', value: "1" },
+    { color: 'success', checked: true, size: 'small', value: "1" },
+    { color: 'disabled', checked: true, size: 'small', value: "1", disabled: true },
   ];
-  radioGroup: radioGroupProperties[] = [
+  radioGroup: ModelComponent[] = [
     { label: "Active", checked: true, disabled: false, value: "1" },
     { label: "Primary", checked: false, disabled: false, value: "2" },
     { label: "Disabled", checked: false, disabled: true, value: "3" },

@@ -3,7 +3,7 @@
     <div class="column align-items-center justify-content-start ">
         <p class="full-width mat-caption color-text-secondary pb-3">mat-raised-button | Size: Large | Medium | Small</p>
         <div class="full-width row align-items-center justify-content-between">
-            <button mat-raised-button *ngFor="let button of buttons" [color]="button.color" [class]="button.size"
+            <button mat-raised-button *ngFor="let button of buttonsModel" [color]="button.color" [class]="button.size"
                 [disabled]="button.disabled">
                 {{ button.label }}
             </button>
@@ -13,8 +13,8 @@
     <div class="column align-items-center justify-content-start ">
         <p class="full-width mat-caption color-text-secondary pb-3">mat-raised-button | Icon | Size: Large | Medium | Small</p>
         <div class="full-width row align-items-center justify-content-between">
-            <button mat-raised-button *ngFor="let button of buttons" [color]="button.color" [class]="button.size"
-                [disabled]="button.disabled">
+            <button mat-raised-button *ngFor="let button of buttonsModel" [color]="button.color" [class]="button.size"
+                [disabled]="button.disabled" class="mat-elevation-z0">
                 {{ button.label }}
                 <mat-icon iconPositionEnd [class]="button.size">arrow_forward</mat-icon>
             </button>
@@ -24,7 +24,7 @@
     <div class="column align-items-center justify-content-start ">
         <p class="full-width mat-caption color-text-secondary pb-3">mat-stroked-button | Size: Large | Medium | Small</p>
         <div class="full-width row align-items-center justify-content-between">
-            <button mat-stroked-button *ngFor="let button of buttons" [color]="button.color" [class]="button.size"
+            <button mat-stroked-button *ngFor="let button of buttonsModel" [color]="button.color" [class]="button.size"
                 [disabled]="button.disabled">
                 {{ button.label }}
             </button>
@@ -34,7 +34,7 @@
     <div class="column align-items-center justify-content-start ">
         <p class="full-width mat-caption color-text-secondary pb-3">mat-stroked-button | Icon | Size: Large | Medium | Smal</p>
         <div class="full-width row  align-items-center justify-content-between">
-            <button mat-stroked-button *ngFor="let button of buttons" [color]="button.color" [class]="button.size"
+            <button mat-stroked-button *ngFor="let button of buttonsModel" [color]="button.color" [class]="button.size"
                 [disabled]="button.disabled">
                 {{ button.label }}
                 <mat-icon iconPositionEnd [class]="button.size">arrow_forward</mat-icon>
@@ -45,7 +45,7 @@
     <div class="column align-items-center justify-content-start ">
         <p class="full-width mat-caption color-text-secondary pb-3">mat-stroked-button | Icon | Size: Large | Medium | Smal</p>
         <div class="full-width row  align-items-center justify-content-between">
-            <button mat-button *ngFor="let button of buttons" [color]="button.color" [class]="button.size"
+            <button mat-button *ngFor="let button of buttonsModel" [color]="button.color" [class]="button.size"
                 [disabled]="button.disabled">
                 {{ button.label }}
                 <mat-icon iconPositionEnd [class]="button.size">arrow_forward</mat-icon>
@@ -56,7 +56,7 @@
     <div class="column align-items-center justify-content-start ">
         <p class="full-width mat-caption color-text-secondary pb-3">mat-stroked-button | Icon | Size: Large | Medium | Smal</p>
         <div class="full-width row  align-items-center justify-content-between">
-            <button mat-button *ngFor="let button of buttons" [color]="button.color" [class]="button.size"
+            <button mat-button *ngFor="let button of buttonsModel" [color]="button.color" [class]="button.size"
                 [disabled]="button.disabled">
                 {{ button.label }}
                 <mat-icon iconPositionEnd [class]="button.size">arrow_forward</mat-icon>

@@ -1,0 +1,359 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use '@angular/material' as mat;
+@import './colors.scss';
+
+$_ripple-opacity: 0.1;
+
+// Applies a focus style to an mat-button element for each of the supported palettes.
+@mixin _focus-overlay-color($config-or-theme, $variants) {
+  $config: mat.get-color-config($config-or-theme);
+
+  @each $variant, $variant-palette in $variants {
+    &.mat-#{$variant} .mat-button-focus-overlay .mat-mdc-form-field {
+      background-color: mat.get-color-from-palette($variant-palette);
+    }
+  }
+}
+
+@mixin _ripple-background($palette, $hue, $opacity) {
+  $background-color: mat.get-color-from-palette($palette, $hue, $opacity);
+  background-color: $background-color;
+
+  @if (meta.type-of($background-color) !=color) {
+    opacity: $opacity;
+  }
+}
+
+@mixin _ripple-color($theme, $hue, $opacity, $variants) {
+  @each $variant, $variant-palette in $variants {
+    &.mat-#{$variant} .mat-ripple-element .mat-mdc-form-field {
+      @include _ripple-background($variant-palette, $hue, $opacity);
+    }
+  }
+}
+
+// Applies a property to an mat-button element for each of the supported palettes.
+@mixin _theme-property($theme, $property, $hue, $variants) {
+  $background: map.get($theme, background);
+  $foreground: map.get($theme, foreground);
+
+  @each $variant, $variant-palette in $variants {
+    &.mat-#{$variant}:not(:disabled) {
+      #{$property}: mat.get-color-from-palette($variant-palette, $hue);
+
+      &.stroked {
+        border: 1px solid mat.get-color-from-palette($variant-palette, $hue);
+        background-color: transparent;
+
+        .mat-mdc-chip-action-label {
+          color: mat.get-color-from-palette($variant-palette, $hue);
+        }
+      }
+
+      --mat-mdc-button-persistent-ripple-color:mat.get-color-from-palette($variant-palette, $hue);
+    }
+
+    &.mat-#{$variant} {
+      &.mat-button-disabled {
+        $palette: if($property =='color', $foreground, $background);
+        #{$property}: mat.get-color-from-palette($palette, disabled-button);
+      }
+    }
+  }
+}
+
+@mixin color($config-or-theme, $variants) {
+  $config: mat.get-color-config($config-or-theme);
+  $foreground: map.get($config, foreground);
+  $background: map.get($config, background);
+
+  .mat-mdc-button,
+  .mat-mdc-outlined-button,
+  .mat-mdc-icon-button,
+  .mat-icon {
+    @include _theme-property($config, 'color', text, $variants);
+    @include _focus-overlay-color($config, $variants);
+  }
+
+  .mat-mdc-raised-button,
+  .mat-mdc-unelevated-button.mat-mdc-button-base,
+  .mat-mdc-fab,
+  .mat-mdc-mini-fab,
+  .mat-badge.mat-badge {
+    @include _theme-property($config, 'color', default-contrast, $variants);
+    @include _theme-property($config, 'background-color', default, $variants);
+    @include _ripple-color($config,
+      default-contrast,
+      $_ripple-opacity,
+      $variants );
+  }
+}
+
+@mixin button-toggle-styles($estadoInicial, $estadoFocusWithin, $bgColor) {
+  .mat-button-toggle-group.#{$bgColor} {
+    border: 1px solid $estadoInicial;
+
+    .mat-button-toggle {
+      background-color: transparent;
+      border-color: $estadoInicial !important;
+
+      &.mat-ripple {
+        background-color: $estadoFocusWithin;
+      }
+
+      &-label-content {
+        color: $estadoInicial;
+      }
+
+      &-appearance-standard {
+        border-left-color: $estadoInicial !important;
+      }
+
+      &-checked,
+      &-focus-overlay,
+      &:hover {
+        background-color: $estadoFocusWithin;
+      }
+
+      &>.mat-icon {
+        svg {
+          color: $estadoInicial;
+        }
+      }
+    }
+  }
+}
+
+@mixin progress-bar-styles($estadoInicial, $bgColor) {
+  .mat-mdc-progress-bar.mat-#{$bgColor} {
+    .mdc-linear-progress {
+      &__bar-inner {
+        border-color: $estadoInicial;
+      }
+
+      &__buffer-bar,
+      &__buffer-dots {
+        background-color: rgba($estadoInicial, 0.25);
+      }
+    }
+  }
+}
+
+@mixin slide-toggle-styles($slide-toggle-range-colors, $bgColor) {
+  .mat-mdc-slide-toggle.mat-#{$bgColor} {
+    .mdc-switch {
+      @each $state, $color-gamma in $slide-toggle-range-colors {
+        --mdc-switch-selected-#{$state}:#{$color-gamma};
+      }
+    }
+  }
+}
+
+@mixin radio-button-styles($estadoInicial, $bgColor) {
+  .mat-mdc-radio-button.#{$bgColor} .mdc-form-field .mdc-radio {
+    color: #{$estadoInicial};
+    --mdc-radio-selected-focus-icon-color: #{$estadoInicial};
+    --mdc-radio-selected-hover-icon-color: #{$estadoInicial};
+    --mdc-radio-selected-pressed-icon-color: #{$estadoInicial};
+    --mat-radio-checked-ripple-color: #{$estadoInicial};
+    --mdc-radio-selected-icon-color: #{$estadoInicial};
+  }
+}
+
+@mixin checkbox-styles($estadoInicial, $bgColor) {
+  .mat-mdc-checkbox.mat-#{$bgColor} .mdc-form-field .mdc-checkbox {
+    $grey-600: map-get($grey, 600);
+    --mdc-checkbox-selected-pressed-state-layer-color: #{$estadoInicial};
+    --mdc-checkbox-selected-hover-state-layer-color: #{$estadoInicial};
+    --mdc-checkbox-selected-focus-state-layer-color: #{$estadoInicial};
+    --mdc-checkbox-selected-focus-icon-color: #{$estadoInicial};
+    --mdc-checkbox-selected-pressed-icon-color: #{$estadoInicial};
+    --mdc-checkbox-selected-hover-icon-color: #{$estadoInicial};
+    --mdc-checkbox-selected-icon-color: #{$estadoInicial};
+    --mdc-checkbox-unselected-hover-icon-color: #{$grey-600};
+    --mdc-checkbox-unselected-focus-icon-color: #{$grey-600};
+    --mdc-checkbox-unselected-pressed-icon-color: #{$grey-600};
+  }
+}
+
+@mixin icon-buton-styles($estadoInicial, $hover-color, $bgColor) {
+  .mat-mdc-icon-button.mat-#{$bgColor} {
+    --mdc-icon-button-icon-color: #{$estadoInicial};
+    --mat-icon-button-ripple-color:#{$hover-color};
+    --mdc-icon-button-state-layer-color: #{$estadoInicial};
+    --mat-mdc-icon-button-pressed-state-layer-color: #{$estadoInicial};
+    --mdc-icon-button-hover-state-layer-color: #{$estadoInicial};
+
+    &:hover {
+      .mat-mdc-button-persistent-ripple {
+        background-color: #{$estadoInicial};
+        opacity: 0.12;
+      }
+    }
+  }
+}
+
+@mixin slider-styles($slider-state-color, $bgColor) {
+  .mat-mdc-slider.mat-#{$bgColor} {
+    .mdc-slider__track {
+
+      &--active,
+      &--inactive {
+        @each $state, $slider-color in $slider-state-color {
+          --mdc-slider-#{$state}: #{$slider-color};
+        }
+      }
+    }
+
+    .mat-ripple-element {
+      @each $state, $slider-color in $slider-state-color {
+        background-color: #{$slider-color} !important;
+        opacity: 0.1;
+      }
+    }
+
+    .mat-mdc-slider-visual-thumb {
+
+      .mdc-slider__thumb,
+      .mdc-slider__thumb-knob {
+        @each $state, $slider-color in $slider-state-color {
+          --mdc-slider-#{$state}: #{$slider-color};
+        }
+      }
+    }
+  }
+}
+
+@mixin badge-styles($estadoInicial, $bgColor) {
+  .mat-badge.mat-badge.#{$bgColor} {
+    .mat-badge-content {
+      background-color: $estadoInicial !important;
+    }
+  }
+}
+
+@mixin buttons-ripple-color($ripple-color, $hover-color, $bgColor) {
+
+  .mat-mdc-button:not(:disabled).mat-#{$bgColor},
+  .mat-mdc-outlined-button:not(:disabled).mat-#{$bgColor} {
+    --mat-mdc-button-ripple-color: #{$hover-color};
+    --mat-text-button-state-layer-color: #{$hover-color};
+    --mat-outlined-button-ripple-color: #{$ripple-color};
+    --mat-text-button-pressed-state-layer-color: #{$hover-color};
+    --mat-mdc-button-persistent-ripple-color: #{$hover-color};
+
+    &.mdc-button {
+      --mat-mdc-button-persistent-ripple-color: #{$ripple-color};
+      --mat-mdc-button-ripple-color: #{$ripple-color};
+
+      &.mat-mdc-button {
+        --mat-text-button-ripple-color:#{$hover-color};
+        &:active {
+          background-color: var(--mat-outlined-button-state-layer-color);
+        }
+        &:hover,
+        &:focus {
+          background-color: #{$hover-color};
+        }
+      }
+
+      &--outlined {
+        --mat-outlined-button-ripple-color: #{$hover-color};
+        --mat-outlined-button-state-layer-color: #{$ripple-color};
+        --mat-mdc-button-persistent-ripple-color: #{$ripple-color};
+        &.mat-mdc-button-persistent-ripple::before {
+          --mdc-outlined-button-outline-color: #{$hover-color};
+        }
+        &:hover,
+        &:focus {
+          background-color: rgba(var($hover-color), 0.8);
+        }
+      }
+      
+    }
+  }
+}
+
+@mixin add-variants-color($only-new-color-palettes) {
+  @each $bgColor, $color in map-remove($only-new-color-palettes, 'primary', 'accent', 'warn') {
+    $estadoInicial: map-get($color, 500);
+    $hover-color: rgba(map-get($color, 500), 0.12);
+    $slide-toggle-range-colors: (
+      'track-color':map-get($color, 300),
+      'focus-track-color':map-get($color, 300),
+      'hover-track-color':map-get($color, 300),
+      'pressed-track-color':map-get($color, 300),
+
+      'handle-color':map-get($color, 600),
+      'focus-handle-color':map-get($color, 900),
+      'hover-handle-color':map-get($color, 900),
+      'pressed-handle-color':map-get($color, 900),
+
+      'pressed-state-layer-color':map-get($color, 600),
+      'hover-state-layer-color':map-get($color, 600),
+      'focus-state-layer-color':map-get($color, 600),
+    );
+  $slider-state-color: (
+    'handle-color': map-get($color, 500),
+    'focus-handle-color': map-get($color, 500),
+    'hover-handle-color': map-get($color, 500),
+    'active-track-color': map-get($color, 500),
+    'inactive-track-color': map-get($color, 500),
+    'ripple-color': map-get($color, 500),
+    'with-tick-marks-inactive-container-color': map-get($color, 500),
+  );
+
+@include progress-bar-styles($estadoInicial, $bgColor);
+@include icon-buton-styles($estadoInicial, $hover-color, $bgColor);
+@include slider-styles($slider-state-color, $bgColor);
+@include slide-toggle-styles($slide-toggle-range-colors, $bgColor);
+}
+}
+
+@mixin chip-styles($color-class-name, $color-value) {
+  .mat-mdc-standard-chip {
+    &.mat-mdc-chip-selected {
+      &.stroked {
+        --mdc-chip-elevated-disabled-container-color: transparent;
+        --mdc-chip-disabled-label-text-color: var(--mdc-chip-elevated-container-color);
+        border: 1px solid var(--mdc-chip-elevated-container-color);
+        --mdc-chip-with-trailing-icon-disabled-trailing-icon-color: var(--mdc-chip-elevated-container-color);
+        --mdc-chip-label-text-color: #{$text-primary};
+      }
+    }
+
+    &.mat-mdc-chip-highlighted {
+
+      &.mat-#{$color-class-name}:not(.stroked, :disabled) {
+        --mdc-chip-focus-state-layer-color: #{$color-value};
+        --mdc-chip-elevated-container-color: #{$color-value};
+        --mdc-chip-label-text-color: #{$text-primary};
+      }
+    }
+
+    &.mdc-evolution-chip--disabled {
+      &.stroked {
+        --mdc-chip-elevated-disabled-container-color: transparent;
+        border: 1px solid var(--mdc-chip-elevated-container-color);
+      }
+    }
+  }
+}
+
+@mixin create-variants-color($all-color-palettes) {
+  @each $bgColor, $color in $all-color-palettes {
+    $estadoInicial: map-get($color, 500);
+    $chip-background-color: map-get($color, 100);
+    $ripple-color: rgba(map-get($color, 500), 0.4);
+    $hover-color: rgba(map-get($color, 500), 0.12);
+    $estadoFocusWithin: rgba(map-get($color, 500), 0.12);
+
+    @include button-toggle-styles($estadoInicial, $estadoFocusWithin, $bgColor);
+    @include chip-styles($bgColor, $chip-background-color);
+    @include radio-button-styles($estadoInicial, $bgColor);
+    @include checkbox-styles($estadoInicial, $bgColor);
+    @include badge-styles($estadoInicial, $bgColor );
+    @include buttons-ripple-color($ripple-color, $hover-color, $bgColor);
+  }
+}

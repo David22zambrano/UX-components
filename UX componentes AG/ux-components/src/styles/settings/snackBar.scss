@@ -1,0 +1,39 @@
+@use 'sass:map';
+.mat-mdc-snack-bar-container {
+  @media only screen and (max-width: 400px) {
+    width: 95% !important;
+    max-width: 95% !important;
+    min-width: 0 !important;
+  }
+  @supports (-webkit-touch-callout: none) {
+    margin: env(safe-area-inset-top) env(safe-area-inset-right)
+      env(safe-area-inset-bottom) env(safe-area-inset-left) !important;
+  }
+}
+@mixin alerta($background, $border) {
+  .mdc-snackbar__surface {
+    background-color: $background !important;
+    border: 1px solid $border !important;
+  }
+  .mdc-snackbar__label {
+    color: #000 !important;
+  }
+  mat-icon {
+    color: $border !important;
+  }
+}
+.alerta-success {
+  @include alerta(
+    map-get($bitakora-success, 50),
+    map-get($bitakora-success, 500)
+  );
+}
+.alerta-warning {
+  @include alerta(
+    map-get($bitakora-caution, 50),
+    map-get($bitakora-caution, 500)
+  );
+}
+.alerta-error {
+  @include alerta(map-get($bitakora-warn, 50), map-get($bitakora-warn, 500));
+}

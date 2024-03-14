@@ -20,11 +20,15 @@ const componentesGenerales = [
   MainPageComponent,
   ModelComponentsComponent
 ];
+const componenteSincoAngular = [
+  RatingExampleComponent
+];
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ...componentesGenerales,
+    ...componentesGenerales
   ],
   imports: [
     BrowserModule,
@@ -33,9 +37,9 @@ const componentesGenerales = [
     MaterialModule,
     AngularModule,
     ListComponentsModule,
-    RatingExampleComponent
+    componenteSincoAngular
   ],
-  exports: [MaterialModule, ListComponentsModule, AngularModule, ...componentesGenerales],
+  exports: [MaterialModule, ListComponentsModule, AngularModule, ...componentesGenerales, ...componenteSincoAngular],
   providers: [],
   bootstrap: [AppComponent]
 })

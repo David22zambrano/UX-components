@@ -1,1 +1,14 @@
-<p>chip works!</p>
+<div class="column gap-3">
+  <div class="column align-items-center justify-content-start ">
+    <p class="full-width mat-caption color-text-secondary pb-3">mat-chip | Size: Large | Medium | Small</p>
+    <div class="full-width row align-items-center justify-content-between">
+      
+      <mat-chip *ngFor="let chip of Chips" removable highlighted [color]="chip.color"> Chip
+        <button matChipRemove >
+          <mat-icon [color]="chip.color">cancel</mat-icon>
+        </button>
+      </mat-chip>
+
+    </div>
+  </div>
+</div>

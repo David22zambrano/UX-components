@@ -15,8 +15,6 @@ import { SwitchComponent } from './switch/switch.component';
 import { BadgeComponent } from './badge/badge.component';
 import { TextfieldComponent } from './textfield/textfield.component';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
-import { AvatarComponent } from './avatar/avatar.component';
-import { ChipComponent } from './chip/chip.component';
 import { ListComponent } from './list/list.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { AlertComponent } from './alert/alert.component';
@@ -25,7 +23,7 @@ import { TableComponent } from './table/table.component';
 import { AccordionComponent } from './accordion/accordion.component';
 import { StepperComponent } from './stepper/stepper.component';
 import { PaginatorComponent } from './paginator/paginator.component';
-import { EmptyStateComponent } from './empty-state/empty-state.component';
+import { EmptyStateExample } from './empty-state/empty-state.component';
 import { ToastNotificationComponent } from './toast-notification/toast-notification.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { CardComponent } from './card/card.component';
@@ -33,6 +31,13 @@ import { TabComponent } from './tab/tab.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { MenuComponent } from './menu/menu.component';
 import { AngularModule } from '@sinco/angular';
+import { ChipExample } from './chip/chip.component';
+import { SnackbarComponent } from './snackbar/snackbar.component';
+import { ProgressERP } from './progress-erp/progress-erp.component';
+import { ProgressExampleComponent } from './progress-erp/progress-example/progress-example.component';
+import { AvatarComponent } from './avatar/avatar.component';
+import { AvatarExampleComponent } from './avatar/avatar-example/avatar-example.component';
+import { IconComponent } from './icon/icon.component';
 
 const components = [
   AutocompleteComponent,
@@ -49,8 +54,7 @@ const components = [
   BadgeComponent,
   TextfieldComponent,
   ToggleButtonComponent,
-  AvatarComponent,
-  ChipComponent,
+  ChipExample,
   ListComponent,
   TooltipComponent,
   AlertComponent,
@@ -59,13 +63,19 @@ const components = [
   AccordionComponent,
   StepperComponent,
   PaginatorComponent,
-  EmptyStateComponent,
+  EmptyStateExample,
   ToastNotificationComponent,
   PageHeaderComponent,
   CardComponent,
   TabComponent,
   DialogComponent,
   MenuComponent,
+  SnackbarComponent,
+  IconComponent,
+  ProgressERP,
+  ProgressExampleComponent,
+  AvatarExampleComponent,
+  AvatarComponent
 ];
 
 @NgModule({

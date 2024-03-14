@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModelComponent } from '../../model/model';
 
 @Component({
   selector: 'app-tooltip',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './tooltip.component.scss'
 })
 export class TooltipComponent {
-
+  Tooltips: ModelComponent[] = [
+    { color: "primary" },
+    { color: "success" },
+    { color: "warn" },
+    { color: "warning" },
+  ]
 }

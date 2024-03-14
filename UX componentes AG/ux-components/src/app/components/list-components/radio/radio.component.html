@@ -4,7 +4,7 @@
             Small
         </p>
         <div class="full-width row align-items-center justify-content-between">
-            <mat-radio-button *ngFor="let radio of radios" [value]="radio.value" checked [class]="radio.size" [color]="radio.color">
+            <mat-radio-button *ngFor="let radio of radios" [value]="radio.value" checked [class]="radio.size" [colorComponent]="radio.color" [color]="radio.color" [disabled]="radio.disabled">
             </mat-radio-button>
         </div>
     </div>
@@ -28,7 +28,7 @@
             <div class="column align-items-center justify-content-start">
                 <form class="column justify-content-start">
                     <mat-label class="mat-body1">Group error</mat-label>
-                    <mat-radio-group color="primary" class="column" [value]="defaultRadioChecked">
+                    <mat-radio-group colorComponent="warning" class="column" [value]="defaultRadioChecked">
                     <mat-radio-button class="medium" *ngFor="let radio of radioGroup" [checked]="radio.checked" value="1" [disabled]="radio.disabled" >
                         {{radio.label}}
                     </mat-radio-button>

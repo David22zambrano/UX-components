@@ -2,24 +2,34 @@
     <div class="column align-items-center justify-content-start ">
         <p class="full-width mat-caption color-text-secondary pb-3">mat-raised-button | Size: Large | Medium | Small</p>
         <div class="full-width row align-items-center justify-content-between">
-            <mat-form-field  appearance="outline">
-                <select matNativeControl disabled>
-                    <option>Disabled</option>
-                </select>
+
+            <mat-form-field class="standard" disabled>
+                <mat-label>outlined</mat-label>
+                <mat-select>
+                    <mat-option value="1">Disabled</mat-option>
+                    <mat-option value="2">Disabled 2</mat-option>
+                    <mat-option value="3">Disabled 3</mat-option>
+                </mat-select>
             </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>mat-form-select</mat-label>
-                <select matNativeControl >
-                    <option>Outline</option>
-                </select>
-            </mat-form-field>
+            <div>
+                <mat-form-field appearance="outline" size="medium">
+                    <mat-label>mat-form-select</mat-label>
+                    <mat-select disableRipple hideSingleSelectionIndicator>
+                        <mat-option value="1">Outline</mat-option>
+                        <mat-option value="2">Outline</mat-option>
+                        <mat-option value="3">Outline </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
 
-            <mat-form-field >
+            <mat-form-field appearance="fill" size="medium">
                 <mat-label>mat-form-select</mat-label>
-                <select matNativeControl >
-                    <option>Filled</option>
-                </select>
+                <mat-select disableRipple hideSingleSelectionIndicator>
+                    <mat-option value="1">Outline</mat-option>
+                    <mat-option value="2">Outline</mat-option>
+                    <mat-option value="3">Outline </mat-option>
+                </mat-select>
             </mat-form-field>
         </div>
     </div>

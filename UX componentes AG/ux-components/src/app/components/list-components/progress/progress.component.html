@@ -1,1 +1,36 @@
-<p>progress works!</p>
+<div class="column gap-3">
+    <div class="column align-items-center justify-content-start">
+        <p class="full-width mat-caption  color-text-secondary pb-3">mat-progress-bar</p>
+        <div class="col-12 gap-2 row align-items-center justify-content-center">
+            <div class="col row align-items-center justify-content-center">
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                <p class="color-text-secondary">50%</p>
+            </div>
+            <div class="col row align-items-center justify-content-center">
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                <p class="color-text-secondary">50%</p>
+            </div>
+            <div class="col row align-items-center justify-content-center">
+                <mat-progress-bar mode="determinate" value=""></mat-progress-bar>
+                <p class="color-text-secondary">50%</p>
+            </div>
+        </div>
+    </div>
+    <div class="column align-items-center justify-content-start">
+        <p class="full-width mat-caption  color-text-secondary pb-3">mat-progress-spinner</p>
+        <div class="col-12 gap-2 row align-items-center justify-content-between">
+            <div class="row">
+                <mat-spinner />
+                <!-- <p>50%</p> -->
+            </div>
+            <div class="row">
+                <mat-spinner color="accent" />
+                <!-- <p>50%</p> -->
+            </div>
+            <div class="row">
+                <mat-spinner />
+                <!-- <p>50%</p> -->
+            </div>
+        </div>
+    </div>
+</div>
