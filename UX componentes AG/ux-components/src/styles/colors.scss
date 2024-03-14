@@ -382,7 +382,7 @@ a {
 }
 
 .mat-mdc-icon-button {
-  // color: var(--mdc-icon-button-icon-color, $action-active) !important;
+  color: var(--mdc-icon-button-icon-color, $action-active) !important;
   --mdc-icon-button-disabled-icon-color: $text-disabled;
 }
 

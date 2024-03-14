@@ -1,18 +1,34 @@
 <div class="column gap-3">
     <div class="column align-items-center justify-content-start ">
         <p class="full-width mat-caption color-text-secondary pb-3">
-            mat-icon | Size: Large | Medium | Small | Inherit </p>
+            Accordion | Expanded | Disabled</p>
         <div class="col-12 row align-items-center justify-content-between">
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    This is the expansion title
-                </mat-expansion-panel-header>
-
-                <ng-template matExpansionPanelContent>
-                    Some deferred content
-                </ng-template>
-            </mat-expansion-panel>
-
+            <mat-accordion class="col">
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Title
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Panel description
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>Content</p>
+                </mat-expansion-panel>
+            </mat-accordion>
+            <mat-accordion class="col">
+                <mat-expansion-panel disabled>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Title
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Panel description
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>Content</p>
+                </mat-expansion-panel>
+            </mat-accordion>
         </div>
     </div>
 </div>

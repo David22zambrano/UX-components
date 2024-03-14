@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './menu-principal.component.html',
   styleUrl: './menu-principal.component.scss'
 })
-export class MenuPrincipalComponent {
-
-}
+export class MenuPrincipalComponent { }

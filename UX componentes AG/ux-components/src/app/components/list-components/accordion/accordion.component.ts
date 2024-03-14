@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModelComponent } from '../../model/model';
 
 @Component({
   selector: 'app-accordion',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './accordion.component.scss'
 })
 export class AccordionComponent {
-
+  panelOpenState = false;
+  Disabled: ModelComponent[] = [
+    { disabled: false },
+    { disabled: false },
+  ]
 }

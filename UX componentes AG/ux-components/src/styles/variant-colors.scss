@@ -237,38 +237,40 @@ $_ripple-opacity: 0.1;
 
   .mat-mdc-button:not(:disabled).mat-#{$bgColor},
   .mat-mdc-outlined-button:not(:disabled).mat-#{$bgColor} {
-    --mat-mdc-button-ripple-color: #{$ripple-color};
-    &:hover {
-      .mat-mdc-button-persistent-ripple::before {
-        background-color:#{$ripple-color};
-      }
-    }
+    --mat-mdc-button-ripple-color: #{$hover-color};
+    --mat-text-button-state-layer-color: #{$hover-color};
+    --mat-outlined-button-ripple-color: #{$ripple-color};
+    --mat-text-button-pressed-state-layer-color: #{$hover-color};
+    --mat-mdc-button-persistent-ripple-color: #{$hover-color};
 
     &.mdc-button {
       --mat-mdc-button-persistent-ripple-color: #{$ripple-color};
       --mat-mdc-button-ripple-color: #{$ripple-color};
 
-      &.mdc-button::before,
-      &.mdc-button:hover {
-        --mat-mdc-button-persistent-ripple-color: #{$ripple-color};
-        --mat-mdc-button-ripple-color: #{$ripple-color};
-        background-color: var(--mat-mdc-button-persistent-ripple-color);
+      &.mat-mdc-button {
+        --mat-text-button-ripple-color:#{$hover-color};
+        &:active {
+          background-color: var(--mat-outlined-button-state-layer-color);
+        }
+        &:hover,
+        &:focus {
+          background-color: #{$hover-color};
+        }
       }
 
       &--outlined {
+        --mat-outlined-button-ripple-color: #{$hover-color};
         --mat-outlined-button-state-layer-color: #{$ripple-color};
-        --mat-mdc-button-persistent-ripple-color: #{$hover-color};
-
-        &.mat-mdc-button:active {
-          background-color: var(--mat-outlined-button-state-layer-color);
-        }
-
+        --mat-mdc-button-persistent-ripple-color: #{$ripple-color};
         &.mat-mdc-button-persistent-ripple::before {
           --mdc-outlined-button-outline-color: #{$hover-color};
-          background-color: var(--mat-outlined-button-state-layer-color);
-
+        }
+        &:hover,
+        &:focus {
+          background-color: rgba(var($hover-color), 0.8);
         }
       }
+      
     }
   }
 }
@@ -341,11 +343,11 @@ $_ripple-opacity: 0.1;
 
 @mixin create-variants-color($all-color-palettes) {
   @each $bgColor, $color in $all-color-palettes {
-    $hover-color: rgba(map-get($color, 500), 50%);
-    $ripple-color: rgba(map-get($color, 300), 30%);
     $estadoInicial: map-get($color, 500);
-    $estadoFocusWithin: rgba(map-get($color, 500), 0.12);
     $chip-background-color: map-get($color, 100);
+    $ripple-color: rgba(map-get($color, 500), 0.4);
+    $hover-color: rgba(map-get($color, 500), 0.12);
+    $estadoFocusWithin: rgba(map-get($color, 500), 0.12);
 
     @include button-toggle-styles($estadoInicial, $estadoFocusWithin, $bgColor);
     @include chip-styles($bgColor, $chip-background-color);
