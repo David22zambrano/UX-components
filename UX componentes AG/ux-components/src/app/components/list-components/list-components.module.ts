@@ -28,7 +28,7 @@ import { ToastNotificationComponent } from './toast-notification/toast-notificat
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { CardComponent } from './card/card.component';
 import { TabComponent } from './tab/tab.component';
-import { DialogComponent } from './dialog/dialog.component';
+import { DialogComponent, DialogContent } from './dialog/dialog.component';
 import { MenuComponent } from './menu/menu.component';
 import { AngularModule } from '@sinco/angular';
 import { ChipExample } from './chip/chip.component';
@@ -68,14 +68,15 @@ const components = [
   PageHeaderComponent,
   CardComponent,
   TabComponent,
-  DialogComponent,
   MenuComponent,
   SnackbarComponent,
   IconComponent,
   ProgressERP,
   ProgressExampleComponent,
   AvatarExampleComponent,
-  AvatarComponent
+  AvatarComponent,
+  DialogComponent,
+  DialogContent
 ];
 
 @NgModule({

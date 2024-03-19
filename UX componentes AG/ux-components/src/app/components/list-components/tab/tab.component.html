@@ -1,13 +1,24 @@
 <div class="column gap-3">
     <div class="column align-items-center justify-content-start ">
         <p class="full-width mat-caption color-text-secondary pb-3">mat-raised-button | Size: Large | Medium | Small</p>
-        <div class="full-width row align-items-center justify-content-between">
+        <div class="full-width column align-items-center justify-content-between">
 
-            <mat-tab-group >
-                <mat-tab label="First"> Content 1 </mat-tab>
-                <mat-tab label="Second"> Content 2 </mat-tab>
-                <mat-tab label="Third"> Content 3 </mat-tab>
+            <mat-tab-group [(selectedIndex)]="activeTabIndex" class="full-width">
+                <mat-tab class="row align-items-center justify-content-center" label="Step title">
+                </mat-tab>
+                <mat-tab class="row align-items-center justify-content-center" label="Step title">
+                </mat-tab>
+                <mat-tab class="row align-items-center justify-content-center" label="Step title">
+                </mat-tab>
             </mat-tab-group>
+            <div class="column align-items-center justify-content-center gap-2">
+                <p class="color-text-primary mat-body1">Select campaing settings...</p>
+                <div class="row gap-2">
+                    <button mat-button (click)="goBack()"> Atrás </button>
+                    <button mat-raised-button color="primary" (click)="goForward()">Siguiente</button>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
