@@ -1,0 +1,41 @@
+<h6 mat-dialog-title>
+  <h6 class="mat-body1 color-text-primary">Dialog title</h6>
+</h6>
+<mat-dialog-content class="mat-typography">
+
+  <div class="column align-items-center justify-content-center gap-2">
+
+    <h6 class="mat-body1 color-text-primary">Details</h6>
+    <mat-form-field appearance="outline" size="medium" class="full-width">
+      <mat-icon matPrefix>credit_card</mat-icon>
+      <mat-label>Card number</mat-label>
+      <input matInput placeholder="value">
+      <mat-icon matSuffix>remove_red_eye</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline" size="medium" class="full-width">
+      <mat-label>John Doe</mat-label>
+      <input matInput placeholder="John Doe">
+      <mat-icon matSuffix>remove_red_eye</mat-icon>
+    </mat-form-field>
+
+    <div class="col-12 px-0">
+      <mat-form-field appearance="outline" class="col-6 pl-0">
+        <mat-label>Expiration date</mat-label>
+        <input matInput placeholder="value">
+        <mat-icon matSuffix>remove_red_eye</mat-icon>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="col-6 pr-0">
+        <mat-icon matPrefix>credit_card</mat-icon>
+        <mat-label>CVV / CVC2</mat-label>
+        <input matInput placeholder=" ">
+        <mat-icon matSuffix>remove_red_eye</mat-icon>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close color="primary">Cancel</button>
+  <button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+</mat-dialog-actions>

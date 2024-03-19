@@ -6,8 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrl: './progress-example.component.scss'
 })
 export class ProgressExampleComponent  {
-  @Input() loadingText!: string;
-  @Input() progressIndicator!: string;
+  @Input() loadingText: string | any;
+  @Input() progressIndicator: string | any;
   @Input() value: number = 0;
   @Input() variant: "determinate" | "indeterminate" = "determinate" ;
 

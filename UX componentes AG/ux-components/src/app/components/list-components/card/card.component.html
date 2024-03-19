@@ -11,6 +11,7 @@
                 </mat-card-header>
                 <mat-card-content>
                     <div class="column align-items-center justify-content-center gap-2">
+
                         <h6 class="mat-body1 color-text-primary">Details</h6>
                         <mat-form-field appearance="outline" size="medium" class="full-width">
                             <mat-icon matPrefix>credit_card</mat-icon>
@@ -23,22 +24,24 @@
                             <input matInput placeholder="John Doe">
                             <mat-icon matSuffix>remove_red_eye</mat-icon>
                         </mat-form-field>
-                        <div class="full-width row gap-2">
-                            <mat-form-field appearance="outline" class="px-0 full-width">
+
+                        <div class="col-12 px-0">
+                            <mat-form-field appearance="outline" class="col-6 pl-0">
                                 <mat-label>Expiration date</mat-label>
                                 <input matInput placeholder="value">
                                 <mat-icon matSuffix>remove_red_eye</mat-icon>
                             </mat-form-field>
-                            <mat-form-field appearance="outline" class="px-0 full-width">
+                            <mat-form-field appearance="outline" class="col-6 pr-0">
                                 <mat-icon matPrefix>credit_card</mat-icon>
-                                <mat-label>Card number</mat-label>
-                                <input matInput placeholder="value">
+                                <mat-label>CVV / CVC2</mat-label>
+                                <input matInput placeholder=" ">
                                 <mat-icon matSuffix>remove_red_eye</mat-icon>
                             </mat-form-field>
                         </div>
+                        
                     </div>
                 </mat-card-content>
-                <mat-card-actions align="end">
+                <mat-card-actions align="end" class="gap-1">
                     <button mat-button color="primary">Action</button>
                     <button mat-raised-button color="primary">Action</button>
                 </mat-card-actions>
