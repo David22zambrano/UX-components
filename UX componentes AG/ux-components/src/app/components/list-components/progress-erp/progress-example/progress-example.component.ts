@@ -5,13 +5,14 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './progress-example.component.html',
   styleUrl: './progress-example.component.scss'
 })
-export class ProgressExampleComponent  {
+export class ProgressExampleComponent {
+  @Input() showLogo: boolean = false;
   @Input() loadingText: string | any;
   @Input() progressIndicator: string | any;
   @Input() value: number = 0;
-  @Input() variant: "determinate" | "indeterminate" = "determinate" ;
+  @Input() variant: "determinate" | "indeterminate" | undefined;
 
-  progress: number = 0;
+  progressValue: number = 0;
 
   ngOnInit() {
     this.fillProgress();
@@ -19,8 +20,8 @@ export class ProgressExampleComponent  {
 
   fillProgress() {
     const interval = setInterval(() => {
-      this.progress += 1;
-      if (this.progress >= 100) {
+      this.progressValue += 1;
+      if (this.progressValue >= 100) {
         clearInterval(interval);
       }
     }, 50);

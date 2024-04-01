@@ -2,22 +2,34 @@
     <div class="column align-items-center justify-content-start ">
         <p class="full-width mat-caption color-text-secondary pb-3">mat-raised-button | Size: Large | Medium | Small</p>
         <div class="full-width column align-items-center justify-content-between">
+            <mat-tab-group class="full-width">
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <div class="row align-items-center justify-content-center">
+                            <mat-icon size="medium">star</mat-icon>
+                            Tab
+                        </div>
+                    </ng-template>
+                </mat-tab>
 
-            <mat-tab-group [(selectedIndex)]="activeTabIndex" class="full-width">
-                <mat-tab class="row align-items-center justify-content-center" label="Step title">
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <div class="row align-items-center justify-content-center">
+                            <mat-icon size="medium">star</mat-icon>
+                            Tab
+                        </div>
+                    </ng-template>
                 </mat-tab>
-                <mat-tab class="row align-items-center justify-content-center" label="Step title">
-                </mat-tab>
-                <mat-tab class="row align-items-center justify-content-center" label="Step title">
+
+                <mat-tab>
+                    <ng-template mat-tab-label>
+                        <div class="row align-items-center justify-content-center">
+                            <mat-icon size="medium">star</mat-icon>
+                            Tab
+                        </div>
+                    </ng-template>
                 </mat-tab>
             </mat-tab-group>
-            <div class="column align-items-center justify-content-center gap-2">
-                <p class="color-text-primary mat-body1">Select campaing settings...</p>
-                <div class="row gap-2">
-                    <button mat-button (click)="goBack()"> Atrás </button>
-                    <button mat-raised-button color="primary" (click)="goForward()">Siguiente</button>
-                </div>
-            </div>
 
         </div>
     </div>
