@@ -1,1 +1,65 @@
-<p>page-header works!</p>
+<div class="column gap-3">
+  <div class="column align-items-center justify-content-start ">
+    <p class="full-width mat-caption color-text-secondary pb-3">Page header</p>
+    <div class="full-width row align-items-center justify-content-between">
+      <div>
+        <app-page-header [fixed]="true">
+          <ng-template #titleSection>
+            <div class="row gap-1 align-items-center">
+              <button mat-icon-button color="primary">
+                <mat-icon>arrow_back</mat-icon>
+              </button>
+              <div class="column">
+                <span class="mat-h4 color-text-primary">Title</span>
+                <span class="mat-caption color-text-secondary">Subtitle</span>
+              </div>
+            </div>
+          </ng-template>
+
+          <ng-template #actionsSection>
+            <button mat-stroked-button color="primary">button</button>
+            <button mat-stroked-button color="primary">button</button>
+            <button mat-flat-button color="primary">button</button>
+            <button mat-icon-button>
+              <mat-icon>more_horiz</mat-icon>
+            </button>
+          </ng-template>
+
+          <ng-template #linksSection>
+            <nav>
+              <ul>
+                <li class="mat-caption">
+                  <a class="color-text-primary" href="#">Link 1</a>
+                </li>
+                <li class="mat-caption">
+                  <a class="color-text-primary" href="#">Link 2</a>
+                </li>
+                <li class="mat-caption">
+                  <a class="color-text-primary" href="#">Link 3</a>
+                </li>
+                <li class="mat-caption">
+                  <a class="color-text-primary" href="#">Link 4</a>
+                </li>
+                <li class="mat-caption">
+                  <a class="color-text-primary" href="#">Link 5</a>
+                </li>
+                <li class="mat-caption">
+                  <a class="color-text-primary" href="#">Link 6</a>
+                </li>
+              </ul>
+            </nav>
+          </ng-template>
+
+          <ng-template #footerSection>
+            <mat-tab-group>
+              <mat-tab label="Tab" />
+              <mat-tab label="Tab" />
+              <mat-tab label="Tab" />
+            </mat-tab-group>
+          </ng-template>
+        </app-page-header>
+      </div>
+
+    </div>
+  </div>
+</div>

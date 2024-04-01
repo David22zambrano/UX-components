@@ -25,7 +25,7 @@ import { StepperComponent } from './stepper/stepper.component';
 import { PaginatorComponent } from './paginator/paginator.component';
 import { EmptyStateExample } from './empty-state/empty-state.component';
 import { ToastNotificationComponent } from './toast-notification/toast-notification.component';
-import { PageHeaderComponent } from './page-header/page-header.component';
+import { PageHeaderExample } from './page-header/page-header.component';
 import { CardComponent } from './card/card.component';
 import { TabComponent } from './tab/tab.component';
 import { DialogComponent, DialogContent } from './dialog/dialog.component';
@@ -38,6 +38,8 @@ import { ProgressExampleComponent } from './progress-erp/progress-example/progre
 import { AvatarComponent } from './avatar/avatar.component';
 import { AvatarExampleComponent } from './avatar/avatar-example/avatar-example.component';
 import { IconComponent } from './icon/icon.component';
+import { FooterActionExample } from './footer-action/footer-action.component';
+import { ModalComponent } from './modal/modal.component';
 
 const components = [
   AutocompleteComponent,
@@ -65,7 +67,7 @@ const components = [
   PaginatorComponent,
   EmptyStateExample,
   ToastNotificationComponent,
-  PageHeaderComponent,
+  PageHeaderExample,
   CardComponent,
   TabComponent,
   MenuComponent,
@@ -76,7 +78,10 @@ const components = [
   AvatarExampleComponent,
   AvatarComponent,
   DialogComponent,
-  DialogContent
+  DialogContent,
+  FooterActionExample,
+  ToastNotificationComponent,
+  ModalComponent
 ];
 
 @NgModule({

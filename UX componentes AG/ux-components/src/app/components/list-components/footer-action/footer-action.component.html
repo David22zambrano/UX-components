@@ -1,0 +1,21 @@
+<div class="column gap-3">
+    <div class="column align-items-center justify-content-start ">
+        <p class="full-width mat-caption color-text-secondary pb-3">Footer Action</p>
+        <div class="full-width row align-items-center justify-content-center">
+            <button mat-raised-button color="primary" click="toggleFooter()">Toggle footer</button>
+            <app-footer-actions class="z-index" >
+                <ng-template #leftSection>
+                    <button mat-button color="primary" size="small">Guardar</button>
+                </ng-template>
+                <ng-template #rightSection>
+                    <span class="mat-body-2 color-text-secondary">Cambiaste <b>X</b> campo(s) de informacion</span>
+                    <button mat-button color="primary">cancelar</button>
+                    <button mat-flat-button color="primary">
+                        Guardar
+                        <mat-icon iconPositionEnd>send</mat-icon>
+                    </button>
+                </ng-template>
+            </app-footer-actions>
+        </div>
+    </div>
+</div>

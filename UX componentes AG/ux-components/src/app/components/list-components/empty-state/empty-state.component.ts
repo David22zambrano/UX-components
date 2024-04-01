@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './empty-state.component.html',
   styleUrl: './empty-state.component.scss'
 })
-export class EmptyStateExample {
-
-}
+export class EmptyStateExample { }

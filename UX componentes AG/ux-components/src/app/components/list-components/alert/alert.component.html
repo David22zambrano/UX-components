@@ -3,7 +3,10 @@
         <p class="full-width mat-caption color-text-secondary pb-3">
             mat-icon | Size: Large | Medium | Small | Inherit </p>
         <div class="col-12 row align-items-center justify-content-between">
-            <app-alert  />
+            @for(alert of alertStandard; track alert){
+            <app-alerts-info [title]="'Title'" [type]="'info'" [content]="'Content'"
+                [mode]="'standard'"></app-alerts-info>
+            }
         </div>
     </div>
 </div>
