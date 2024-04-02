@@ -13,6 +13,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 import { ModelComponentsComponent } from './components/model-component/model-components.component';
 import { ListComponentsModule } from './components/list-components/list-components.module';
 import { RatingExampleComponent } from './components/list-components/rating-example/rating-example.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const componentesGenerales = [
   MenuPrincipalComponent,
@@ -37,9 +38,15 @@ const componenteSincoAngular = [
     MaterialModule,
     AngularModule,
     ListComponentsModule,
-    componenteSincoAngular
+    componenteSincoAngular,
   ],
-  exports: [MaterialModule, ListComponentsModule, AngularModule, ...componentesGenerales, ...componenteSincoAngular],
+  exports: [
+    MaterialModule,
+    ListComponentsModule,
+    AngularModule,
+
+    ...componentesGenerales,
+    ...componenteSincoAngular],
   providers: [],
   bootstrap: [AppComponent]
 })

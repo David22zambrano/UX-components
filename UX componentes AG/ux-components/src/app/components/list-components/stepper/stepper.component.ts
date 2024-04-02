@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
-import {FormBuilder, Validators, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms'; // Removed FormsModule import
 
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
-  styleUrl: './stepper.component.scss'
+  styleUrls: ['./stepper.component.scss'] // Corrected styleUrl to styleUrls
 })
 export class StepperComponent {
-  firstFormGroup = this._formBuilder.group({
+  firstFormGroup = this.formBuilder.group({
     firstCtrl: ['', Validators.required],
   });
-  secondFormGroup = this._formBuilder.group({
+  secondFormGroup = this.formBuilder.group({
     secondCtrl: ['', Validators.required],
   });
   isLinear = false;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) {}
 }

@@ -3,7 +3,17 @@
     <div class="col-12 row align-items-center justify-content-between">
         <div class="col">
             <div>
-                
+                <mat-form-field appearance="outline">
+                    <mat-label>Message</mat-label>
+                    <input matInput value="snackbar example!" #message>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Action</mat-label>
+                    <input matInput value="Close" #action>
+                </mat-form-field>
+
+                <button mat-stroked-button color="primary" (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
             </div>
         </div>
     </div>
