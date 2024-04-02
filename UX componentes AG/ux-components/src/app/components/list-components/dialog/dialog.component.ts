@@ -21,7 +21,5 @@ export class DialogComponent {
 @Component({
   selector: 'dialog-content-example-dialog',
   templateUrl: 'dialog-content.html',
-  // standalone: true,
-  // imports: [MatDialogModule, MatButtonModule],
 })
 export class DialogContent {}

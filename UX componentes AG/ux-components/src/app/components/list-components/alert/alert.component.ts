@@ -16,12 +16,29 @@ interface alertModel {
 })
 
 export class AlertComponent {
-  alertStandard: alertModel[] = [
-    ...Array(3).fill({
-      title: "Title",
-      type: "info",
-      content: "Alert content",
-      mode: "standard"
-    }),
+  alertError: alertModel[] = [
+    
+    { title: "Title", type: "error", content: "Alert content", mode: "filled" },
+    { title: "Title", type: "error", content: "Alert content", mode: "outlined" },
+    { title: "Title", type: "error", content: "Alert content", mode: "standard" },
   ];
+
+  alertWarning: alertModel[] = [
+    { title: "Title", type: "warning", content: "Alert content", mode: "filled" },
+    { title: "Title", type: "warning", content: "Alert content", mode: "outlined" },
+    { title: "Title", type: "warning", content: "Alert content", mode: "standard" },
+  ];
+
+  alertInfo: alertModel[] = [
+    { title: "Title", type: "info", content: "Alert content", mode: "filled" },
+    { title: "Title", type: "info", content: "Alert content", mode: "outlined" },
+    { title: "Title", type: "info", content: "Alert content", mode: "standard" },
+  ];
+
+  alertSuccess: alertModel[] = [
+    { title: "Title", type: "success", content: "Alert content", mode: "filled" },
+    { title: "Title", type: "success", content: "Alert content", mode: "outlined" },
+    { title: "Title", type: "success", content: "Alert content", mode: "standard" },
+  ];
+
 }
