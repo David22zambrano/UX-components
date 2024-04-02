@@ -2,14 +2,14 @@
     <div class="column align-items-center justify-content-start ">
         <p class="full-width mat-caption color-text-secondary pb-3">mat-badge | Size: Large | Medium | Small</p>
         <div class="col-12 row align-items-center justify-content-between">
-            <span  *ngFor="let badge of colores" matBadge="1" class="col" size="small"
+            <span  *ngFor="let badge of colores" matBadge="1" aria-hidden="false" class="col" size="small"
                 [colorComponent]="badge.color"></span>
         </div>
     </div>
     <div class="column align-items-center justify-content-start ">
         <p class="full-width mat-caption color-text-secondary pb-3">mat-badge without text | Size: Large | Medium | Small</p>
         <div class="col-12 row align-items-center justify-content-between">
-            <span  *ngFor="let badge of colores" matBadge="&#8288;"  class="col" size="small" [matBadgeColor]="badge.color"
+            <span  *ngFor="let badge of colores" matBadge="&#8288;" aria-hidden="false"  class="col" size="small" [matBadgeColor]="badge.color"
                 [colorComponent]="badge.color"></span>
         </div>
     </div>
