@@ -6,16 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrl: './footer-action.component.scss'
 })
 export class FooterActionExample {
-  @Input() state: boolean = false;
+  mostrarFooter: boolean = false;
 
   toggleFooter() {
-    return this.state == !this.state;
-  }
-  
-  get handleFooterActions() {
-    return this.state
-    ? 'footer-animation__show'
-    : 'footer-animation__hidden';
+    this.mostrarFooter = !this.mostrarFooter;
   }
 
 }
