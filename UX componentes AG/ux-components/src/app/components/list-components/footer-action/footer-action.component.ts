@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './footer-action.component.scss'
 })
 export class FooterActionExample {
-  @Input() state: boolean = true;
+  @Input() state: boolean = false;
 
   toggleFooter() {
     return this.state == !this.state;

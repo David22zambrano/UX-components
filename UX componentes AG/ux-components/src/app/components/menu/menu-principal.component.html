@@ -1,37 +1,15 @@
+
+
 <mat-sidenav-container class="menu-container">
     <mat-sidenav mode="side" opened>
         <mat-nav-list class="menu-container__list-items">
-
-            <a mat-list-item routerLink="/" routerLinkActive="active">COMPONENTES</a>
-            <a mat-list-item routerLink="/autocomplete" routerLinkActive="active">Autocomplete</a>
-            <a mat-list-item routerLink="/button" routerLinkActive="active">Button</a>
-            <a mat-list-item routerLink="/icon" routerLinkActive="active">Icon Button</a>
-            <a mat-list-item routerLink="/fab" routerLinkActive="active">Floating Action Button</a>
-            <a mat-list-item routerLink="/buttonGroup" routerLinkActive="active">Button group</a>
-            <a mat-list-item routerLink="/checkbox" routerLinkActive="active">Checkbox</a>
-            <a mat-list-item routerLink="/radio" routerLinkActive="active">Radio - Radio Group</a>
-            <a mat-list-item routerLink="/rating" routerLinkActive="active">Rating</a>
-            <a mat-list-item routerLink="/select" routerLinkActive="active">Select</a>
-            <a mat-list-item routerLink="/slider" routerLinkActive="active">Slider</a>
-            <a mat-list-item routerLink="/swtichFormControl" routerLinkActive="active">SwitchFormControl</a>
-            <a mat-list-item routerLink="/swtich" routerLinkActive="active">Switch</a>
-            <a mat-list-item routerLink="/badge" routerLinkActive="active">Badge</a>
-            <a mat-list-item routerLink="/textfield" routerLinkActive="active">Text Field</a>
-            <a mat-list-item routerLink="/toggleButton" routerLinkActive="active">Toggle Button</a>
-            <a mat-list-item routerLink="/avatar" routerLinkActive="active">Avatar</a>
-            <a mat-list-item routerLink="/chip" routerLinkActive="active">Chip</a>
-            <a mat-list-item routerLink="/icon" routerLinkActive="active">Icon</a>
-            <a mat-list-item routerLink="/list" routerLinkActive="active">List </a>
-            <a mat-list-item routerLink="/tooltip" routerLinkActive="active">Tooltip </a>
-            <a mat-list-item routerLink="/alert" routerLinkActive="active">Alert </a>
-            <a mat-list-item routerLink="/progress" routerLinkActive="active">Progress </a>
-            <a mat-list-item routerLink="/table" routerLinkActive="active">Table </a>
-            <a mat-list-item routerLink="/accordion" routerLinkActive="active">Accodrion </a>
-
+            <a mat-list-item *ngFor="let item of menuItems" [routerLink]="item.route" (click)="showComponent = item.route">{{ item.name }}</a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <router-outlet />
-        <app-main-page />
+        <router-outlet></router-outlet>
+        <app-main-page *ngIf="showComponent === '/'"></app-main-page>
     </mat-sidenav-content>
 </mat-sidenav-container>
+
+

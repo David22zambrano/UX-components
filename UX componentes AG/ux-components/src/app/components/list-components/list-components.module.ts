@@ -39,7 +39,7 @@ import { AvatarComponent } from './avatar/avatar.component';
 import { AvatarExampleComponent } from './avatar/avatar-example/avatar-example.component';
 import { IconComponent } from './icon/icon.component';
 import { FooterActionExample } from './footer-action/footer-action.component';
-import { ModalComponent } from './modal/modal.component';
+import { FooterActionTest } from './footer-test/footer-actions.component';
 
 const components = [
   AutocompleteComponent,
@@ -79,9 +79,9 @@ const components = [
   AvatarComponent,
   DialogComponent,
   DialogContent,
-  FooterActionExample,
   ToastNotificationComponent,
-  ModalComponent
+  FooterActionExample,
+  FooterActionTest
 ];
 
 @NgModule({
