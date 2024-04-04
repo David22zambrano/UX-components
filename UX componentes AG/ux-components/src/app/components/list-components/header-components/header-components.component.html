@@ -1,0 +1,17 @@
+<div class="title-components column justify-content-center align-items-center">
+
+    <div class="title-components__header row justify-content-between align-items-center p-2">
+        <h6 class="mat-h6">
+            {{title}}
+        </h6>
+        <button mat-stroked-button color="primary">
+            <a href="https://material.angular.io/" target="_blank" class="button-enlace">Docs</a>
+        </button>
+
+    </div>
+
+    <div class="model-component__content p-8 ">
+        <ng-container *ngTemplateOutlet="component" />
+    </div>
+
+</div>

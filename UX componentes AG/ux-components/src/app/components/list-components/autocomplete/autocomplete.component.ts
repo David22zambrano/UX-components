@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
+
 @Component({
   selector: 'app-autocomplete',
   templateUrl: './autocomplete.component.html',
-  styleUrl: './autocomplete.component.scss'
+  styleUrl: './autocomplete.component.scss',
 })
 export class AutocompleteComponent {
   filteredOptions: string[];

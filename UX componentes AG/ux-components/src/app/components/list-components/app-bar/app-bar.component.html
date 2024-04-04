@@ -1,19 +1,23 @@
-<div class="column gap-3">
-    <div class="column align-items-center justify-content-start ">
-        <p class="full-width mat-caption color-text-secondary pb-3">
-            Accordion | Expanded | Disabled</p>
-        <div class="col-12 row align-items-center justify-content-between">
-            <mat-toolbar color="primary">
-                <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-                    <mat-icon>menu</mat-icon>
-                </button>
-                <span>My App</span>
-                <span class="example-spacer"></span>
-                <button mat-button size="medium" class=""
-                    aria-label="Example icon-button with heart icon">
-                    Login
-                </button>
-            </mat-toolbar>
+<app-header-components title="App bar">
+    <ng-template #component>
+        <div class="column gap-3">
+            <div class="column align-items-center justify-content-start ">
+                <p class="full-width mat-caption color-text-secondary pb-3">
+                    Accordion | Expanded | Disabled</p>
+                <div class="col-12 row align-items-center justify-content-between">
+                    <mat-toolbar color="primary">
+                        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                        <span>My App</span>
+                        <span class="example-spacer"></span>
+                        <button mat-button size="medium" class="" aria-label="Example icon-button with heart icon">
+                            Login
+                        </button>
+                    </mat-toolbar>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+
+    </ng-template>
+</app-header-components>

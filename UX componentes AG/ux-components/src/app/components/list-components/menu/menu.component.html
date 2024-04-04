@@ -1,24 +1,29 @@
-<div class="column gap-3">
-    <div class="column align-items-center justify-content-start ">
-        <p class="full-width mat-caption color-text-secondary pb-3">
-            Accordion | Expanded | Disabled</p>
-        <div class="col-12 row align-items-center justify-content-between">
-            <mat-toolbar color="primary">
-                <button mat-icon-button class="example-icon" size="medium"
-                    aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu">
-                    <mat-icon size="medium" class="color-white">menu</mat-icon>
-                </button>
-                <h6>News</h6>
-                <span class="example-spacer"></span>
-                <button mat-button size="medium" class="" aria-label="Example icon-button with heart icon">
-                    Login
-                </button>
-            </mat-toolbar>
-            <mat-menu #menu="matMenu" class="small">
-                <button mat-menu-item>Perfil</button>
-                <button mat-menu-item>Ajustes</button>
-                <button mat-menu-item>Cerrar sesión</button>
-              </mat-menu>
+<app-header-components title="Menu">
+    <ng-template #component>
+        <div class="column gap-3">
+            <div class="column align-items-center justify-content-start ">
+                <p class="full-width mat-caption color-text-secondary pb-3">
+                    Accordion | Expanded | Disabled</p>
+                <div class="col-12 row align-items-center justify-content-between">
+                    <mat-toolbar color="primary">
+                        <button mat-icon-button class="example-icon" size="medium"
+                            aria-label="Example icon-button with menu icon" [matMenuTriggerFor]="menu">
+                            <mat-icon size="medium" class="color-white">menu</mat-icon>
+                        </button>
+                        <h6>News</h6>
+                        <span class="example-spacer"></span>
+                        <button mat-button size="medium" class="" aria-label="Example icon-button with heart icon">
+                            Login
+                        </button>
+                    </mat-toolbar>
+                    <mat-menu #menu="matMenu" class="small">
+                        <button mat-menu-item>Perfil</button>
+                        <button mat-menu-item>Ajustes</button>
+                        <button mat-menu-item>Cerrar sesión</button>
+                    </mat-menu>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+
+    </ng-template>
+</app-header-components>

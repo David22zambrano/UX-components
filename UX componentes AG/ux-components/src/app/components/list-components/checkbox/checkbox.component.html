@@ -1,10 +1,15 @@
-<div class="column gap-3">
-    <div class="column align-items-center justify-content-start ">
-        <p class="full-width mat-caption color-text-secondary pb-3">mat-checkbox | Checked | Size: Medium | Small
-        </p>
-        <div class="full-width row align-items-center justify-content-between">
-            <mat-checkbox [checked]="checkbox.checked" *ngFor="let checkbox of checkboxs" [color]="checkbox.color" 
-                [class]="checkbox.size" [disabled]="checkbox.disabled"></mat-checkbox>
+<app-header-components title="Checkbox">
+    <ng-template #component>
+        <div class="column gap-3">
+            <div class="column align-items-center justify-content-start ">
+                <p class="full-width mat-caption color-text-secondary pb-3">mat-checkbox | Checked | Size: Medium |
+                    Small
+                </p>
+                <div class="full-width row align-items-center justify-content-between">
+                    <mat-checkbox [checked]="checkbox.checked" *ngFor="let checkbox of checkboxs"
+                        [color]="checkbox.color" [class]="checkbox.size" [disabled]="checkbox.disabled"></mat-checkbox>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </ng-template>
+</app-header-components>
