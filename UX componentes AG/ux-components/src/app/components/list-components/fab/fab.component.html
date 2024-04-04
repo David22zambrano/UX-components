@@ -1,28 +1,33 @@
-<div class="column gap-3">
-    <!-- FAB BUTTON EXTENDED  -->
-    <div class="column align-items-center justify-content-start ">
-        <p class="full-width mat-caption color-text-secondary pb-3">mat-fab | Extended | Size: Large | Medium | Small
-        </p>
-        <div class="full-width row align-items-center justify-content-between">
-            @for( fab of fabButtons; track fab ){
-            <button mat-fab extended [color]="fab.color" [class]="fab.size" [disabled]="fab.disabled">
-                <mat-icon [class]="fab.size">add</mat-icon>
-                Fab
-            </button>
-            }
+<app-header-components title="Floating Action Button">
+    <ng-template #component>
+        <div class="column gap-3">
+            <!-- FAB BUTTON EXTENDED  -->
+            <div class="column align-items-center justify-content-start ">
+                <p class="full-width mat-caption color-text-secondary pb-3">mat-fab | Extended | Size: Large | Medium |
+                    Small
+                </p>
+                <div class="full-width row align-items-center justify-content-between">
+                    @for( fab of fabButtons; track fab ){
+                    <button mat-fab extended [color]="fab.color" [class]="fab.size" [disabled]="fab.disabled">
+                        <mat-icon [class]="fab.size">add</mat-icon>
+                        Fab
+                    </button>
+                    }
+                </div>
+            </div>
+            <!-- FAB BUTTON ROUND  -->
+            <div class="column align-items-center justify-content-start ">
+                <p class="full-width mat-caption color-text-secondary pb-3">mat-fab | Round | Size: Large | Medium |
+                    Small
+                </p>
+                <div class="full-width row align-items-center justify-content-between">
+                    @for( fab of fabButtons; track fab ){
+                    <button mat-fab [color]="fab.color" [class]="fab.size" [disabled]="fab.disabled">
+                        <mat-icon [class]="fab.size">add</mat-icon>
+                    </button>
+                    }
+                </div>
+            </div>
         </div>
-    </div>
-    <!-- FAB BUTTON ROUND  -->
-    <div class="column align-items-center justify-content-start ">
-        <p class="full-width mat-caption color-text-secondary pb-3">mat-fab | Round | Size: Large | Medium | Small
-        </p>
-        <div class="full-width row align-items-center justify-content-between">
-            @for( fab of fabButtons; track fab ){
-            <button mat-fab [color]="fab.color" [class]="fab.size"
-                [disabled]="fab.disabled">
-                <mat-icon [class]="fab.size">add</mat-icon>
-            </button>
-            }
-        </div>
-    </div>
-</div>
+    </ng-template>
+</app-header-components>

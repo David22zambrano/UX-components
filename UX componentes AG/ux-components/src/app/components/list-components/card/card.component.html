@@ -1,51 +1,57 @@
-<div class="column gap-3">
-    <div class="column align-items-center justify-content-start ">
-        <p class="full-width mat-caption color-text-secondary pb-3">mat-raised-button | Size: Large | Medium | Small</p>
-        <div class="col-12 row align-items-center justify-content-between">
-            <mat-card class="full-width">
-                <mat-card-header>
-                    <mat-card-title>
-                        <h6 class="color-text-primary">Payment Details</h6>
-                    </mat-card-title>
-                    <mat-card-subtitle class="mat-body1 color-text-secondary">Pay for MasterCard</mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content>
-                    <div class="column align-items-center justify-content-center gap-2">
+<app-header-components title="Card">
+    <ng-template #component>
+        <div class="column gap-3">
+            <div class="column align-items-center justify-content-start ">
+                <p class="full-width mat-caption color-text-secondary pb-3">mat-raised-button | Size: Large | Medium |
+                    Small</p>
+                <div class="col-12 row align-items-center justify-content-between">
+                    <mat-card class="full-width">
+                        <mat-card-header>
+                            <mat-card-title>
+                                <h6 class="color-text-primary">Payment Details</h6>
+                            </mat-card-title>
+                            <mat-card-subtitle class="mat-body1 color-text-secondary">Pay for
+                                MasterCard</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div class="column align-items-center justify-content-center gap-2">
 
-                        <h6 class="mat-body1 color-text-primary">Details</h6>
-                        <mat-form-field appearance="outline" size="medium" class="full-width">
-                            <mat-icon matPrefix>credit_card</mat-icon>
-                            <mat-label>Card number</mat-label>
-                            <input matInput placeholder="value">
-                            <mat-icon matSuffix>remove_red_eye</mat-icon>
-                        </mat-form-field>
-                        <mat-form-field appearance="outline" size="medium" class="full-width">
-                            <mat-label>Cardholder name</mat-label>
-                            <input matInput placeholder="John Doe">
-                            <mat-icon matSuffix>remove_red_eye</mat-icon>
-                        </mat-form-field>
+                                <h6 class="mat-body1 color-text-primary">Details</h6>
+                                <mat-form-field appearance="outline" size="medium" class="full-width">
+                                    <mat-icon matPrefix>credit_card</mat-icon>
+                                    <mat-label>Card number</mat-label>
+                                    <input matInput placeholder="value">
+                                    <mat-icon matSuffix>remove_red_eye</mat-icon>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline" size="medium" class="full-width">
+                                    <mat-label>Cardholder name</mat-label>
+                                    <input matInput placeholder="John Doe">
+                                    <mat-icon matSuffix>remove_red_eye</mat-icon>
+                                </mat-form-field>
 
-                        <div class="col-12 px-0">
-                            <mat-form-field appearance="outline" class="col-6 pl-0">
-                                <mat-label>Expiration date</mat-label>
-                                <input matInput placeholder="value">
-                                <mat-icon matSuffix>remove_red_eye</mat-icon>
-                            </mat-form-field>
-                            <mat-form-field appearance="outline" class="col-6 pr-0">
-                                <mat-icon matPrefix>credit_card</mat-icon>
-                                <mat-label>CVV / CVC2</mat-label>
-                                <input matInput placeholder=" ">
-                                <mat-icon matSuffix>remove_red_eye</mat-icon>
-                            </mat-form-field>
-                        </div>
-                        
-                    </div>
-                </mat-card-content>
-                <mat-card-actions align="end" class="gap-1">
-                    <button mat-button color="primary">Action</button>
-                    <button mat-raised-button color="primary">Action</button>
-                </mat-card-actions>
-            </mat-card>
+                                <div class="col-12 px-0">
+                                    <mat-form-field appearance="outline" class="col-6 pl-0">
+                                        <mat-label>Expiration date</mat-label>
+                                        <input matInput placeholder="value">
+                                        <mat-icon matSuffix>remove_red_eye</mat-icon>
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" class="col-6 pr-0">
+                                        <mat-icon matPrefix>credit_card</mat-icon>
+                                        <mat-label>CVV / CVC2</mat-label>
+                                        <input matInput placeholder=" ">
+                                        <mat-icon matSuffix>remove_red_eye</mat-icon>
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+                        </mat-card-content>
+                        <mat-card-actions align="end" class="gap-1">
+                            <button mat-button color="primary">Action</button>
+                            <button mat-raised-button color="primary">Action</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </ng-template>
+</app-header-components>

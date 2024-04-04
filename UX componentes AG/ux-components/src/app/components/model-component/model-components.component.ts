@@ -5,7 +5,7 @@ import { Component, Input, ContentChild, TemplateRef } from '@angular/core';
   templateUrl: './model-components.component.html',
   styleUrl: './model-components.component.scss',
 })
-export class ModelComponentsComponent {
+export class ModelComponents {
   @Input() title!: string;
 
   @ContentChild('component', { static: true })

@@ -1,20 +1,23 @@
-<div class="column align-items-center justify-content-start">
-    <p class="full-width color-text-secondary pb-3 mat-caption">Progress ERP</p>
-    <div class="col-12 row align-items-center justify-content-between">
-        <div class="col">
-            <div>
-                <mat-form-field appearance="outline">
-                    <mat-label>Message</mat-label>
-                    <input matInput value="snackbar example!" #message>
-                </mat-form-field>
+<app-header-components title="Snackbar">
+    <ng-template #component>
+        <div class="column align-items-center justify-content-start">
+            <p class="full-width color-text-secondary pb-3 mat-caption">Snackbar</p>
+            <div class="col-12 row align-items-center justify-content-between">
+                <div class="col row align-items-center gap-1">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Message</mat-label>
+                        <input matInput value="snackbar example!" #message>
+                    </mat-form-field>
 
-                <mat-form-field appearance="outline">
-                    <mat-label>Action</mat-label>
-                    <input matInput value="Close" #action>
-                </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Action</mat-label>
+                        <input matInput value="Close" #action>
+                    </mat-form-field>
 
-                <button mat-stroked-button color="primary" (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
+                    <button mat-stroked-button color="primary" (click)="openSnackBar(message.value, action.value)">Show
+                        snack-bar</button>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </ng-template>
+</app-header-components>

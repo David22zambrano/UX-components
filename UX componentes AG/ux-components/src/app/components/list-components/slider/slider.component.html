@@ -1,25 +1,29 @@
-<div class="column gap-3">
-    <div class="column align-items-center justify-content-start ">
-        <p class="full-width mat-caption color-text-secondary pb-3"> Slider | Size: Medium | Small
-        </p>
-        <div class="full-width px-0 col-12 row align-items-center justify-content-between">
+<app-header-components title="Slider">
+    <ng-template #component>
+        <div class="column gap-3">
+            <div class="column align-items-center justify-content-start ">
+                <p class="full-width mat-caption color-text-secondary pb-3"> Slider | Size: Medium | Small
+                </p>
+                <div class="full-width px-0 col-12 row align-items-center justify-content-between">
 
-            <div class="column col  align-items-center justify-content-center">
-                <mat-slider color="warn" class="full-width" min="100" max="800">
-                    <input value="300" matSliderStartThumb>
-                    <input value="400" matSliderEndThumb>
-                </mat-slider>
-                <div class="full-width row col align-items-center justify-content-between">
-                    <mat-label>0</mat-label>
-                    <mat-label>100</mat-label>
+                    <div class="column col  align-items-center justify-content-center">
+                        <mat-slider color="warn" class="full-width" min="100" max="800">
+                            <input value="300" matSliderStartThumb>
+                            <input value="400" matSliderEndThumb>
+                        </mat-slider>
+                        <div class="full-width row col align-items-center justify-content-between">
+                            <mat-label>0</mat-label>
+                            <mat-label>100</mat-label>
+                        </div>
+                    </div>
+
+                    <div class="column col align-items-center justify-content-center">
+                        <mat-slider color="accent" class="full-width">
+                            <input matSliderThumb>
+                        </mat-slider>
+                    </div>
                 </div>
             </div>
-
-            <div class="column col align-items-center justify-content-center">
-                <mat-slider color="accent" class="full-width">
-                    <input matSliderThumb >
-                </mat-slider>
-            </div>
-
         </div>
-    </div>
+    </ng-template>
+</app-header-components>

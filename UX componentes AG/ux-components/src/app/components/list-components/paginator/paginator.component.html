@@ -1,10 +1,15 @@
-<div class="column gap-3">
-    <div class="column align-items-center justify-content-start ">
-        <p class="full-width mat-caption color-text-secondary pb-3">
-            Accordion | Expanded | Disabled</p>
-        <div class="col-12 row align-items-center justify-content-between">
-            <mat-paginator class="full-width" [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
-            </mat-paginator>
+<app-header-components title="Paginator">
+    <ng-template #component>
+        <div class="column gap-3">
+            <div class="column align-items-center justify-content-start ">
+                <p class="full-width mat-caption color-text-secondary pb-3">
+                    Accordion | Expanded | Disabled</p>
+                <div class="col-12 row align-items-center justify-content-between">
+                    <mat-paginator class="full-width" [length]="100" [pageSize]="10"
+                        [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
+                    </mat-paginator>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </ng-template>
+</app-header-components>

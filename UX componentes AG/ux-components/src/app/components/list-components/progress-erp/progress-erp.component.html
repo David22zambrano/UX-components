@@ -1,11 +1,16 @@
-<div class="column align-items-center justify-content-start">
-    <p class="full-width color-text-secondary pb-3 mat-caption">Progress ERP</p>
-    <div class="full-width column align-items-center justify-content-center">
+<app-header-components title="Progress ERP">
+    <ng-template #component>
+        <div class="column align-items-center justify-content-start">
+            <p class="full-width color-text-secondary pb-3 mat-caption">Progress ERP</p>
+            <div class="full-width column align-items-center justify-content-center">
 
-        <app-progress [showLogo]="false"  loadingText="Procesando" progressIndicator="40 de 100 completos"
-            variant="determinate" [value]="60"></app-progress>
-    </div>
-</div>
+                <app-progress-example [showLogo]="false" loadingText="Procesando"
+                    progressIndicator="40 de 100 completos" variant="determinate" [value]="60"></app-progress-example>
+            </div>
+        </div>
+    </ng-template>
+</app-header-components>
+
 <!-- [showLogo]="false" 
     loadingText="Procesando" 
     progressIndicator="40 de 100 completos" 

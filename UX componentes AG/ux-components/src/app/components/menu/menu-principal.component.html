@@ -1,15 +1,14 @@
-
-
-<mat-sidenav-container class="menu-container">
+ <mat-sidenav-container class="menu-container">
     <mat-sidenav mode="side" opened>
         <mat-nav-list class="menu-container__list-items">
-            <a mat-list-item *ngFor="let item of menuItems" [routerLink]="item.route" (click)="showComponent = item.route">{{ item.name }}</a>
+            <a mat-list-item *ngFor="let item of menuItems" [routerLink]="item.route" routerLinkActive="active" (click)="showComponent = item.route">{{ item.name }}</a>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <router-outlet></router-outlet>
-        <app-main-page *ngIf="showComponent === '/'"></app-main-page>
+        <router-outlet>
+            <app-header-page />
+            <app-main-page *ngIf="showComponent == '/'"></app-main-page>
+        </router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
-
 

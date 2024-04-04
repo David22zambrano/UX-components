@@ -1,9 +1,13 @@
-<div class="column align-items-center justify-content-start">
-    <p class="full-width mat-caption  color-text-secondary pb-3">mat-icon-button | Size: Medium | Small</p>
-    <div class="full-width row align-items-center justify-content-between">
-        <button mat-icon-button *ngFor="let button of iconButtons" [color]="button.color" [class]="button.size"
-            [disabled]="button.disabled">
-            <mat-icon>star</mat-icon>
-        </button>
-    </div>
-</div>
+<app-header-components title="Icon Button">
+    <ng-template #component>
+        <div class="column align-items-center justify-content-start">
+            <p class="full-width mat-caption  color-text-secondary pb-3">mat-icon-button | Size: Medium | Small</p>
+            <div class="full-width row align-items-center justify-content-between">
+                <button mat-icon-button *ngFor="let button of iconButtons" [color]="button.color" [class]="button.size"
+                    [disabled]="button.disabled">
+                    <mat-icon>star</mat-icon>
+                </button>
+            </div>
+        </div>
+    </ng-template>
+</app-header-components>

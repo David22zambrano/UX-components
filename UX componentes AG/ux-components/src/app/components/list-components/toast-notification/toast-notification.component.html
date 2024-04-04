@@ -1,11 +1,15 @@
-<div class="column gap-3">
-    <div class="column align-items-center justify-content-start ">
-        <p class="full-width mat-caption color-text-secondary pb-3">
-            mat-icon | Size: Large | Medium | Small | Inherit </p>
-        <div class="col-12 row align-items-center justify-content-between">
-            <app-alerts-info class="full-width" [title]="'Title'" [type]="'error'" [content]="'Content'"
-                [mode]="'standard'" ></app-alerts-info>
-            
+<app-header-components title="Toast Notification">
+    <ng-template #component>
+        <div class="column gap-3">
+            <div class="column align-items-center justify-content-start ">
+                <p class="full-width mat-caption color-text-secondary pb-3">
+                    mat-icon | Size: Large | Medium | Small | Inherit </p>
+                <div class="col-12 row align-items-center justify-content-between">
+                    <app-alerts-info class="full-width" [title]="'Title'" [type]="'error'" [content]="'Content'"
+                        [mode]="'standard'"></app-alerts-info>
+
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    </ng-template>
+</app-header-components>

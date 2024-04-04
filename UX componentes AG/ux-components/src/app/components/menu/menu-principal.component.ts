@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-principal.component.scss']
 })
 export class MenuPrincipalComponent {
-  showComponent: any = false; 
+  showComponent: string = '/';
     menuItems = [
       { name: 'COMPONENTES', route: '/' },
       { name: 'Autocomplete', route: '/autocomplete' },
