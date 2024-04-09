@@ -12,13 +12,10 @@ import { HeaderPageComponent } from './components/header-page/header-page.compon
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { ListComponentsModule } from './components/list-components/list-components.module';
 import { RatingExampleComponent } from './components/list-components/rating-example/rating-example.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ModelComponents } from './components/model-component/model-components.component';
 
 const componentesGenerales = [
   MenuPrincipalComponent,
   MainPageComponent,
-  ModelComponents,
 ];
 const componenteSincoAngular = [
   RatingExampleComponent
