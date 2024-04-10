@@ -29,6 +29,7 @@ export class MenuPrincipalComponent {
       { name: 'Icon', route: '/icon' },
       { name: 'List', route: '/list' },
       { name: 'Tooltip', route: '/tooltip' },
+      { name: 'Empty-State', route: '/EmptyState' },
       { name: 'Alert', route: '/alert' },
       { name: 'Progress', route: '/progress' },
       { name: 'Table', route: '/table' },

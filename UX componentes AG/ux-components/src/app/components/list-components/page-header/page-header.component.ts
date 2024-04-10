@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './page-header.component.scss'
 })
 export class PageHeaderExample {
+  mostrarPage: boolean = false;
+
+  togglePage() {
+    this.mostrarPage = !this.mostrarPage;
+  }
 
 }

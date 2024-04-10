@@ -1,11 +1,21 @@
 $pallete-primary-color: #1e62a1;
 $with-content: 873px;
 
-.title-components {
+.model-component {
     width: 100%;
+    height: 100%;
+    background-color: #FBFBFB;
+    padding: 36px 106px;
+
+    &__header {
+        width: inherit;
+    }
+}
+
+.title-components {
+    width: inherit;
     height: auto;
     padding-top: 56px;
-
 
     &__header {
         width: $with-content;
@@ -27,6 +37,7 @@ $with-content: 873px;
         align-items: center;
         gap: 36px;
     }
+
     .button-enlace {
         color: #1e62a1 !important;
     }
