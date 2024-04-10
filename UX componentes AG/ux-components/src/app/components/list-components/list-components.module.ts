@@ -39,9 +39,10 @@ import { AvatarComponent } from './avatar/avatar.component';
 import { AvatarExampleComponent } from './avatar/avatar-example/avatar-example.component';
 import { IconComponent } from './icon/icon.component';
 import { FooterActionExample } from './footer-action/footer-action.component';
-import { FooterActionTest } from './footer-action/footer-test/footer-actions.component';
-import { HeaderPageComponent } from '../header-page/header-page.component';
 import { HeaderComponents } from './header-components/header-components.component';
+
+import { PageTestComponent } from './page-header/page-test/page-test.component';
+import { FooterActionTest } from './footer-action/footer-test/footer-actions.component';
 
 const components = [
   AutocompleteComponent,
@@ -83,8 +84,10 @@ const components = [
   DialogContent,
   ToastNotificationComponent,
   FooterActionExample,
-  FooterActionTest,
   HeaderComponents,
+
+  PageTestComponent,
+  FooterActionTest
 ];
 
 @NgModule({

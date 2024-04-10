@@ -31,7 +31,7 @@
             ],
             "styles": [
              "src/styles.scss",
-             "src/styles/theme.scss"
+              "node_modules/@sinco/angular/src/lib/styles/theme.scss"
             ],
             "scripts": []
           },

@@ -4,10 +4,12 @@
             <div class="column align-items-center justify-content-start">
                 <p class="full-width mat-caption color-text-secondary pb-3">Footer Action</p>
                 <div class="full-width row align-items-center justify-content-center">
-                    <button mat-raised-button color="primary" (click)="toggleFooter()">Toggle footer</button>
-                    <app-footer-test *ngIf="mostrarFooter">
+                    <button mat-stroked-button color="primary" (click)="toggleFooter()">Toggle footer</button>
+                    <app-footer-actions *ngIf="mostrarFooter">
                         <ng-template #leftSection>
-                            <button mat-button color="primary" size="small">Guardar</button>
+                            <button mat-icon-button color="primary" size="medium">
+                                <mat-icon size="medium" class="color-action-active">chevron_left</mat-icon>
+                            </button>
                         </ng-template>
                         <ng-template #rightSection>
                             <span class="mat-body-2 color-text-secondary">Cambiaste <b>X</b> campo(s) de
@@ -18,7 +20,7 @@
                                 <mat-icon iconPositionEnd>send</mat-icon>
                             </button>
                         </ng-template>
-                    </app-footer-test>
+                    </app-footer-actions>
                 </div>
             </div>
         </div>
