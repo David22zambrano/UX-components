@@ -1,4 +1,4 @@
- <mat-sidenav-container class="menu-container">
+ <mat-sidenav-container class="menu-container" [ngClass]="{'bitakora-theme' : isBitakoraTheme}" >
     <mat-sidenav mode="side" opened>
         <mat-nav-list class="menu-container__list-items">
             <a mat-list-item *ngFor="let item of menuItems" [routerLink]="item.route" routerLinkActive="active" (click)="showComponent = item.route">{{ item.name }}</a>
@@ -7,6 +7,9 @@
     <mat-sidenav-content>
         <router-outlet>
             <app-header-page />
+            <div class="row align-items-center justify-content-center">
+                <mat-slide-toggle color="success"  hideIcon [(ngModel)]="isBitakoraTheme" >Bitakora theme</mat-slide-toggle>
+            </div>
             <app-main-page *ngIf="showComponent == '/'"></app-main-page>
         </router-outlet>
     </mat-sidenav-content>

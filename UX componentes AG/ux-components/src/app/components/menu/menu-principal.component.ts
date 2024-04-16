@@ -6,34 +6,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu-principal.component.scss']
 })
 export class MenuPrincipalComponent {
+  isBitakoraTheme: boolean = false;
+
   showComponent: string = '/';
-    menuItems = [
-      { name: 'COMPONENTES', route: '/' },
-      { name: 'Autocomplete', route: '/autocomplete' },
-      { name: 'Button', route: '/button' },
-      { name: 'Icon Button', route: '/icon' },
-      { name: 'Floating Action Button', route: '/fab' },
-      { name: 'Button group', route: '/buttonGroup' },
-      { name: 'Checkbox', route: '/checkbox' },
-      { name: 'Radio - Radio Group', route: '/radio' },
-      { name: 'Rating', route: '/rating' },
-      { name: 'Select', route: '/select' },
-      { name: 'Slider', route: '/slider' },
-      { name: 'SwitchFormControl', route: '/switchFormControl' },
-      { name: 'Switch', route: '/switch' },
-      { name: 'Badge', route: '/badge' },
-      { name: 'Text Field', route: '/textfield' },
-      { name: 'Toggle Button', route: '/toggleButton' },
-      { name: 'Avatar', route: '/avatar' },
-      { name: 'Chip', route: '/chip' },
-      { name: 'Icon', route: '/icon' },
-      { name: 'List', route: '/list' },
-      { name: 'Tooltip', route: '/tooltip' },
-      { name: 'Empty-State', route: '/EmptyState' },
-      { name: 'Alert', route: '/alert' },
-      { name: 'Progress', route: '/progress' },
-      { name: 'Table', route: '/table' },
-      { name: 'Accordion', route: '/accordion' }
+  menuItems = [
+    { name: 'COMPONENTES', route: '/' },
+    { name: 'Autocomplete', route: '/autocomplete' },
+    { name: 'Button', route: '/button' },
+    { name: 'Icon Button', route: '/icon' },
+    { name: 'Floating Action Button', route: '/fab' },
+    { name: 'Button group', route: '/buttonGroup' },
+    { name: 'Checkbox', route: '/checkbox' },
+    { name: 'Radio - Radio Group', route: '/radio' },
+    { name: 'Rating', route: '/rating' },
+    { name: 'Select', route: '/select' },
+    { name: 'Slider', route: '/slider' },
+    { name: 'SwitchFormControl', route: '/switchFormControl' },
+    { name: 'Switch', route: '/switch' },
+    { name: 'Badge', route: '/badge' },
+    { name: 'Text Field', route: '/textfield' },
+    { name: 'Toggle Button', route: '/toggleButton' },
+    { name: 'Avatar', route: '/avatar' },
+    { name: 'Chip', route: '/chip' },
+    { name: 'Icon', route: '/icon' },
+    { name: 'List', route: '/list' },
+    { name: 'Tooltip', route: '/tooltip' },
+    { name: 'Empty-State', route: '/EmptyState' },
+    { name: 'Alert', route: '/alert' },
+    { name: 'Progress', route: '/progress' },
+    { name: 'Table', route: '/table' },
+    { name: 'Accordion', route: '/accordion' }
   ];
 }
 

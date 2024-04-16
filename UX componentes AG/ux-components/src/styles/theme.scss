@@ -1,5 +1,4 @@
-@use '@material/textfield' as ERPtextfield
-  with($minimum-height-for-filled-label: 32px, $minimum-height: 32px);
+@use '@material/textfield' as ERPtextfield with ($minimum-height-for-filled-label: 32px, $minimum-height: 32px);
 @use './variant-colors.scss' as button-variants;
 @use '@angular/material' as mat;
 @use 'sass:string';
@@ -8,6 +7,7 @@
 @import './settings-components-erp.scss';
 @import './settings';
 @import './typography';
+@import './palletes.scss';
 @import './colors.scss';
 @import './mixins.scss';
 @import './orientacion';
@@ -15,6 +15,7 @@
 @import './size.scss';
 @import './variant-colors.scss';
 @import './_main';
+
 $primary-color: mat.define-palette($primary);
 $accent-color: mat.define-palette($accent);
 $warn-color: mat.define-palette($warn);
@@ -24,21 +25,39 @@ $info-color: mat.define-palette($info);
 $dark-primary-color: mat.define-palette($dark-primary);
 $dark-accent-color: mat.define-palette($dark-accent);
 
-$light-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $primary-color,
-      accent: $accent-color,
-      warn: $warn-color,
-      success: $success-color,
-      warning: $warning-color,
-      caution: $warning-color,
-      info: $info-color,
-    ),
-    typography: $typography-global-config,
-    density: 0,
-  )
-);
+$bitakora-primary: mat.define-palette($bitakora-primary);
+$bitakora-accent: mat.define-palette($bitakora-accent);
+$bitakora-warn: mat.define-palette($bitakora-warn);
+$bitakora-success: mat.define-palette($bitakora-success);
+$bitakora-warning: mat.define-palette($bitakora-caution);
+$bitakora-caution: mat.define-palette($bitakora-caution);
+$bitakora-dark-primary: mat.define-palette($bitakora-dark-primary);
+$bitakora-dark-accent: mat.define-palette($bitakora-dark-accent);
+
+@mixin theme($theme, $palette, $density: 0) {
+  $theme: mat.define-light-theme((color: (primary: $palette,
+          accent: $palette,
+          caution: $palette,
+          warning: $palette,
+          success: $palette ),
+
+      typography: $typography-config,
+      density: $density,
+    ));
+}
+
+$light-theme: mat.define-light-theme((color: (primary: $primary-color,
+        accent: $accent-color,
+        warn: $warn-color,
+        success: $success-color,
+        warning: $warning-color,
+        caution: $warning-color,
+        info: $info-color,
+      ),
+      typography: $typography-global-config,
+      density: 0,
+    ));
+
 $light-theme-variants: (
   success: $success-color,
   warning: $warning-color,
@@ -46,32 +65,49 @@ $light-theme-variants: (
   info: $info-color,
 );
 
-$dark-theme: mat.define-dark-theme(
-  (
-    color: (
-      primary: $dark-primary-color,
-      accent: $dark-accent-color,
-      warn: $warn-color,
-      success: $success-color,
-      warning: $warning-color,
-      caution: $warning-color,
-      info: $info-color,
-    ),
-    typography: $typography-global-config,
-    density: 0,
-  )
+$bitakora-light-theme: mat.define-light-theme((color: (primary: $bitakora-primary,
+        accent: $bitakora-accent,
+        warn: $bitakora-warn,
+        success: $bitakora-success,
+        caution: $bitakora-caution,
+        warning: $bitakora-caution,
+      ),
+      density: 0,
+      typography: $typography-global-config,
+    ));
+$bitakora-light-theme-variants: (
+  success: $bitakora-success,
+  caution: $bitakora-caution,
+  warning: $bitakora-caution,
 );
+
+
+
+$dark-theme: mat.define-dark-theme((color: (primary: $dark-primary-color,
+        accent: $dark-accent-color,
+        warn: $warn-color,
+        success: $success-color,
+        warning: $warning-color,
+        caution: $warning-color,
+        info: $info-color,
+      ),
+      typography: $typography-global-config,
+      density: 0,
+    ));
+
 $dark-theme-variants: (
   success: $success-color,
   warning: $warning-color,
   info: $info-color,
 );
+
 $propiedades-alerta: (
-  'info' $accent-color 'info',
-  'error' $warn-color 'error',
-  'success' $success-color 'check_circle',
-  'warning' $warning-color 'warning'
+  'info'$accent-color 'info',
+  'error'$warn-color 'error',
+  'success'$success-color 'check_circle',
+  'warning'$warning-color 'warning'
 );
+
 @include mat.core-theme($light-theme);
 @include mat.all-component-themes($light-theme);
 @include alert($propiedades-alerta, $text-primary);
@@ -79,15 +115,32 @@ $propiedades-alerta: (
 @include button-variants.color($light-theme, $light-theme-variants);
 @include button-variants.add-variants-color($sinco-angular-colors);
 @include button-variants.create-variants-color($sinco-angular-colors);
-
 [class*='mat-'],
 [class^='mat-'] {
   $fakeId: string.unique-id();
-
+  
   &:not(##{$fakeId}) {
     @include color-class($color-class);
     @include border-colors-class($sinco-angular-colors);
     @include mat-icon-sizes($size-mat-icon-erp);
     @include spacing-class();
   }
+}
+// .erp-theme{
+//   @include mat.core-theme($light-theme);
+// @include mat.all-component-themes($light-theme);
+// @include alert($propiedades-alerta, $text-primary);
+
+// @include button-variants.color($light-theme, $light-theme-variants);
+// @include button-variants.add-variants-color($sinco-angular-colors);
+// @include button-variants.create-variants-color($sinco-angular-colors);
+// }
+
+.bitakora-theme {
+  @include mat.core-theme($bitakora-light-theme);
+  @include mat.all-component-themes($bitakora-light-theme);
+
+  @include button-variants.color($bitakora-light-theme, $bitakora-light-theme-variants);
+  @include button-variants.add-variants-color($sinco-angular-colors);
+  @include button-variants.create-variants-color($sinco-angular-colors);
 }

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCommonModule, MatOptionModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
@@ -76,21 +76,21 @@ const material = [
   MatCommonModule,
   MatToolbarModule,
   MatTreeModule,
-  MatOptionModule
+  MatOptionModule,
+  FormsModule,
+  ReactiveFormsModule
 ]
 
 @NgModule({
   declarations: [],
   exports: [...material],
   imports: [
-    FormsModule,
-    ReactiveFormsModule,
     CommonModule, BrowserAnimationsModule, ...material
   ],
   providers: [
     {
       provide: STEPPER_GLOBAL_OPTIONS,
-      useValue: {showError: true},
+      useValue: { showError: true },
     },
   ],
 })
