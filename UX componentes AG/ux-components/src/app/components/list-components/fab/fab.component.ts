@@ -11,6 +11,6 @@ export class FabComponent {
     { color: 'disabled', size: "large", disabled: true },
     { color: 'primary', size: "large", disabled: false },
     { color: 'info', size: "medium", disabled: false },
-    { color: 'disabled', size: 'medium', disabled: true }
+    { color: 'disabled', size: 'small', disabled: true }
   ];
 }

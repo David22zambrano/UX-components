@@ -12,11 +12,13 @@
 
 :not(.medium, .large) {
 
+  // menu
   &.mat-mdc-menu-item.mdc-list-item,
   &.mat-mdc-option {
     min-height: 2.8rem;
   }
 
+  // CHIP  
   &.mat-mdc-chip,
   &.mat-md-chip-option {
     border-radius: 4px !important;
@@ -38,14 +40,8 @@
   height: 48px !important;
 }
 
-//PROGRES SPINER
-.mat-mdc-progress-spinner {
-  @include width-height(4rem !important);
-}
-
 //BUTTON TOGGLE
 .mat-button-toggle-group {
-  // @include mat.button-toggle-density(-4);
   --mat-standard-button-toggle-height: 40px;
 }
 
@@ -85,7 +81,7 @@
     --mdc-slider-active-track-height: 0.4rem;
   }
 
-  .mat-mdc-slider-visual-thumb > .mat-ripple {
+  .mat-mdc-slider-visual-thumb>.mat-ripple {
     @include width-height(32px !important);
     border-radius: 50%;
     transform: translate(8px, 8.5px) !important;
@@ -95,17 +91,17 @@
 // DATA TABLE
 .mat-mdc-table {
   &.mat-mdc-table .mdc-data-table__header-row {
-    height: 28px;
+    height: 36px;
   }
 
   &.mat-mdc-table .mdc-data-table__row {
-    height: 28px;
+    height: 32px;
   }
 }
 
 // // RADIO BUTTON
 :not(.medium).mat-mdc-radio-button .mdc-form-field .mdc-radio {
-  --mdc-radio-state-layer-size: 24px !important;
+  --mdc-radio-state-layer-size: 22px;
 
   .mdc-radio__background {
     @include icon-size(14px, 12px);
@@ -121,7 +117,7 @@
 
   .mat-mdc-radio-touch-target,
   .mat-mdc-radio-group {
-    @include width-height(24px);
+    @include width-height(22px);
   }
 }
 
@@ -144,14 +140,25 @@
     height: 48px !important;
   }
 
-  // RADIO BUTTON
-  &.mat-mdc-radio-button .mdc-form-field .mdc-radio {
-    --mdc-radio-state-layer-size: 42px !important;
-    @include padding(42px, 20px);
+  // // RADIO BUTTON
+  &:not(.small, .large).mat-mdc-radio-button .mdc-form-field .mdc-radio {
+    --mdc-radio-state-layer-size: 28px;
+
+    .mdc-radio__background {
+      @include icon-size(20px, 16px);
+
+      .mdc-radio__outer-circle {
+        margin: 0px;
+      }
+    }
+
+    .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__inner-circle {
+      transform: scale(0.4);
+    }
 
     .mat-mdc-radio-touch-target,
     .mat-mdc-radio-group {
-      @include width-height(42px);
+      @include width-height(28px);
     }
   }
 
@@ -179,10 +186,11 @@
     &:not(.mat-form-field-appearance-fill) {
       --mat-form-field-container-height: 48px !important;
       $positionY: function.get-outlined-label-position-y($formfield-outlined-medium-size);
-      
+
       .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mdc-notched-outline--upgraded .mdc-floating-label--float-above {
         transform: #{translateY(-#{$positionY}) scale(var(--mat-mdc-form-field-floating-label-scale, 0.75))
       }
+
       !important;
     }
 
@@ -198,6 +206,15 @@
 
   &:not(.mat-form-field-appearance-outline) {
     @include mat.form-field-density(-2);
+    --mat-form-field-filled-with-label-container-padding-top: 24px;
+
+    :not(:has(mat-select)).mdc-text-field--filled .mdc-floating-label--float-above {
+      transform: translateY(-126%) scale(0.75);
+    }
+
+    :not(:has(mat-select)).mat-mdc-form-field-icon-suffix > .mat-icon {
+      padding: 10px 12px 0;
+    }
   }
 
   &.standard:not(.mat-form-field-appearance-outline) {
@@ -207,7 +224,6 @@
 
 //BUTTON TOGGLE
 &.mat-button-toggle-group {
-  // @include mat.button-toggle-density(-4);
   --mat-standard-button-toggle-height: 48px;
 }
 
@@ -236,7 +252,7 @@
 // DATA TABLE
 &.mat-mdc-table {
   &.mat-mdc-table .mdc-data-table__header-row {
-    height: 56px;
+    height: 48px;
   }
 
   &.mat-mdc-table .mdc-data-table__row {
@@ -247,6 +263,34 @@
 
 //////////////// LARGE ////////////////
 .large {
+
+  // RADIO BUTTON
+  &:not(.small, .medium).mat-mdc-radio-button .mdc-form-field .mdc-radio {
+    --mdc-radio-state-layer-size: 42px;
+
+    .mdc-radio__background {
+      @include icon-size(24px, 20px);
+
+      .mdc-radio__inner-circle {
+        border-width: 12px;
+        margin: -2px;
+      }
+
+      .mdc-radio__outer-circle {
+        margin: -2px;
+      }
+    }
+
+    .mdc-radio__native-control:checked+.mdc-radio__background .mdc-radio__inner-circle {
+      transform: scale(0.5);
+    }
+
+    .mat-mdc-radio-touch-target,
+    .mat-mdc-radio-group {
+      @include width-height(42px);
+    }
+  }
+
   &.mat-mdc-chip .mat-icon {
     @include icon-size(1.714285714285714rem, 1.714285714285714rem);
   }
@@ -254,7 +298,8 @@
   // BUTTON TOGGLE
   &.mat-button-toggle-group {
     --mat-standard-button-toggle-height: 56px;
-    & > .mat-icon {
+
+    &>.mat-icon {
       @include icon-size(24px, 18px);
     }
   }
@@ -262,6 +307,7 @@
   .mat-button-toggle>.mat-icon {
     @include icon-size(1.285714285714286rem, 1.285714285714286rem);
   }
+
 }
 
 .cdk-overlay-pane {

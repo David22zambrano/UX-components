@@ -9,8 +9,8 @@ import { ModelComponent } from '../../model/model';
 
 export class RadioComponent {
   radios: ModelComponent[] = [
-    { color: 'primary', checked: true, size: 'medium', value: "1" },
-    { color: 'accent', checked: true, size: 'medium', value: "1" },
+    { color: 'primary', checked: true, size: 'large', value: "1" },
+    { color: 'accent', checked: true, size: 'large', value: "1" },
     { color: 'warn', checked: true, size: 'medium', value: "1" },
     { color: 'warning', checked: true, size: 'medium', value: "1" },
     { color: 'info', checked: true, size: 'small', value: "1" },

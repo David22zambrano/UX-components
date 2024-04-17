@@ -246,6 +246,9 @@ $size: map-get($values, size);
         margin-left: 0px;
       }
     }
+    .mat-mdc-button-touch-target{
+      height: auto;
+    }
   }
 }
 }
@@ -272,7 +275,12 @@ $size: map-get($values, size);
           }
         }
       }
+      .mat-mdc-button-touch-target{
+        height: auto;
+        width: auto;
+      }
     }
+
   }
 }
 }

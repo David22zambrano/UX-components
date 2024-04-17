@@ -7,9 +7,18 @@
                     Small
                 </p>
                 <div class="full-width row align-items-center justify-content-between">
-                    <mat-radio-button *ngFor="let radio of radios" [value]="radio.value" checked [class]="radio.size"
-                        [colorComponent]="radio.color" [color]="radio.color" [disabled]="radio.disabled">
+                    <!-- <mat-radio-button value="1" checked="true" size="small" color="primary">
                     </mat-radio-button>
+                    <mat-radio-button value="2" checked="true" size="medium" color="accent">
+                    </mat-radio-button>
+                    <mat-radio-button value="3" checked="true" size="large" colorComponent="success">
+                    </mat-radio-button> -->
+
+                    @for(radio of radios; track radio){
+                    <mat-radio-button [value]="radio.value" checked [class]="radio.size" [colorComponent]="radio.color"
+                        [color]="radio.color" [disabled]="radio.disabled">
+                    </mat-radio-button>
+                    }
                 </div>
             </div>
 

@@ -30,8 +30,8 @@
               "src/assets"
             ],
             "styles": [
-             "src/styles.scss",
-              "node_modules/@sinco/angular/src/lib/styles/theme.scss"
+              "src/styles.scss",
+              "src/styles/theme.scss"
             ],
             "scripts": []
           },

@@ -5,9 +5,11 @@
                 <p class="full-width mat-caption color-text-secondary pb-3">
                     mat-list-item/Simple | mat list </p>
                 <div class="full-width  row align-items-center justify-content-center gap-4">
-                    <mat-icon *ngFor="let tooltip of Tooltips" matBadge="&#8288;" aria-hidden="false"
+                    @for( tooltip of Tooltips; track tooltip){
+                    <mat-icon matBadge="&#8288;" aria-hidden="false"
                         [matTooltip]="tooltip.color" matTooltipPosition="above" aria-label="false"
                         class="color-action-active" [colorComponent]="tooltip.color">mail_outline</mat-icon>
+                    }
                 </div>
             </div>
         </div>

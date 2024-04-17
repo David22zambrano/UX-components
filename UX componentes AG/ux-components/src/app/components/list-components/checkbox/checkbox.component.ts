@@ -8,8 +8,8 @@ import { ModelComponent } from '../../model/model';
 })
 export class CheckboxComponent {
   checkboxs: ModelComponent[] = [
-    { color: 'primary', checked: true, size: 'medium', disabled: false },
-    { color: 'accent', checked: true, size: 'medium', disabled: false },
+    { color: 'primary', checked: true, size: 'large', disabled: false },
+    { color: 'accent', checked: true, size: 'large', disabled: false },
     { color: 'warn', checked: true, size: 'medium', disabled: false },
     { color: 'warning', checked: true, size: 'medium', disabled: false },
     { color: 'info', checked: true, size: 'small', disabled: false },
