@@ -42,7 +42,6 @@ import { FooterActionExample } from './footer-action/footer-action.component';
 import { HeaderComponents } from './header-components/header-components.component';
 
 import { PageTestComponent } from './page-header/page-test/page-test.component';
-import { FooterActionTest } from './footer-action/footer-test/footer-actions.component';
 
 const components = [
   AutocompleteComponent,
@@ -87,7 +86,6 @@ const components = [
   HeaderComponents,
 
   PageTestComponent,
-  FooterActionTest
 ];
 
 @NgModule({

@@ -5,8 +5,10 @@
                 <p class="full-width mat-caption color-text-secondary pb-3">
                     mat-icon | Size: Large | Medium | Small | Inherit </p>
                 <div class="col-12 row align-items-center justify-content-between">
-                    <mat-icon aria-hidden="false" *ngFor="let icon of icons" [class]="icon.size"
+                    @for(icon of icons; track icon){
+                    <mat-icon aria-hidden="false" [class]="icon.size"
                         class="col color-action-active">star</mat-icon>
+                    }
                 </div>
             </div>
         </div>
