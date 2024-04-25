@@ -15,6 +15,7 @@
 @import './size.scss';
 @import './variant-colors.scss';
 @import './_main';
+
 $primary-color: mat.define-palette($primary);
 $accent-color: mat.define-palette($accent);
 $warn-color: mat.define-palette($warn);
@@ -89,5 +90,6 @@ $propiedades-alerta: (
     @include border-colors-class($sinco-angular-colors);
     @include mat-icon-sizes($size-mat-icon-erp);
     @include spacing-class();
+    @include order-class();
   }
 }

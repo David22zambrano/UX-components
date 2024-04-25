@@ -45,7 +45,7 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
 }
 }
 
-@mixin border-colors-class($color-variants) {
+@mixin border-colors-class($color-class) {
   $border-properties: (
     border,
     border-right,
@@ -57,25 +57,21 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
   );
 
 @each $property in $border-properties {
-  @for $index from 1 through length($color-variants) {
-    $palette: nth($color-variants, $index);
-    $color-name: nth($palette, 1);
-    $range-colors: nth($palette, 2);
+  @each $color-item in $color-class {
+    $color-name: nth($color-item, 1);
+    $color-value: nth($color-item, 2);
 
-    @each $range, $color in $range-colors {
-      $notIsContrastRange: $range !=contrast;
-      $isMainColor: $range ==500;
+    @if type-of($color-value)==map {
+      $main-color: map-get($color-value, 500);
 
       .#{$property}-#{$color-name} {
-        @if ($notIsContrastRange) {
-          &-#{$range} {
-            #{$property}: 1px solid $color;
-          }
-        }
+        #{$property}: 1px solid $main-color;
+      }
+    }
 
-        @if ($notIsContrastRange and $isMainColor) {
-          #{$property}: 1px solid map-get($color-variants, $color-name, 500);
-        }
+    @else {
+      .#{$property}-#{$color-name} {
+        #{$property}: 1px solid $color-value;
       }
     }
   }
@@ -150,7 +146,7 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
   @each $type, $color, $icon in $propiedades-alerta {
     .mat-alert {
       border-radius: 4px;
-      padding: 6px 12px;
+      padding: 6px 16px;
       color: $text-color;
 
       &.#{$type} {
@@ -194,9 +190,7 @@ $checkbox-mark-padding: $checkbox-mark-border-width * 2;
 }
 
 @mixin chip() {
-
-  .mat-mdc-standard-chip,
-  &.mat-mdc-standard-chip.stroked {
+  .mat-mdc-standard-chip {
     &.mat-mdc-chip-selected {
       .mdc-evolution-chip__graphic {
         width: 0;
@@ -246,7 +240,8 @@ $size: map-get($values, size);
         margin-left: 0px;
       }
     }
-    .mat-mdc-button-touch-target{
+
+    .mat-mdc-button-touch-target {
       height: auto;
     }
   }
@@ -275,12 +270,7 @@ $size: map-get($values, size);
           }
         }
       }
-      .mat-mdc-button-touch-target{
-        height: auto;
-        width: auto;
-      }
     }
-
   }
 }
 }
@@ -418,6 +408,29 @@ $size: map-get($value, vector);
 }
 }
 
+@mixin table-sizes($table-sizes) {
+  $default-size: medium;
+
+  @each $size, $dimensions in $table-sizes {
+    $size-selector: if($size ==$default-size, '', '.#{$size}');
+
+    .mat-mdc-table#{$size-selector} {
+      .mdc-data-table__header-row {
+        height: map-get($dimensions, thead-row);
+      }
+
+      .mdc-data-table__row {
+        height: map-get($dimensions, tbody-row);
+      }
+
+      th,
+      td {
+        padding-block: map-get($dimensions, cell-padding);
+      }
+    }
+  }
+}
+
 @mixin table-responsive($handleTableCells, $border-color) {
   @media screen and (max-width: tokens.$breakpoint-laptop) {
     .mat-mdc-table {
@@ -515,4 +528,48 @@ $size: map-get($value, vector);
     }
   }
 }
+}
+
+@mixin order-class() {
+  @for $order-value from 1 through 12 {
+    .order-#{$order-value} {
+      order: $order-value;
+    }
+
+    @media only screen and (min-width: tokens.$breakpoint-desktop) {
+      .order-xxl-#{$order-value} {
+        order: $order-value;
+      }
+    }
+
+    @media only screen and (min-width: tokens.$breakpoint-laptop-frame) and (max-width: tokens.$breakpoint-desktop) {
+      .order-xl-#{$order-value} {
+        order: $order-value;
+      }
+    }
+
+    @media only screen and (min-width: tokens.$breakpoint-laptop) and (max-width: tokens.$breakpoint-laptop-frame) {
+      .order-l-#{$order-value} {
+        order: $order-value;
+      }
+    }
+
+    @media only screen and (min-width: tokens.$breakpoint-tablet) and (max-width: tokens.$breakpoint-laptop) {
+      .order-m-#{$order-value} {
+        order: $order-value;
+      }
+    }
+
+    @media only screen and (max-width: tokens.$breakpoint-tablet) {
+      .order-s-#{$order-value} {
+        order: $order-value;
+      }
+    }
+
+    @media only screen and (max-width: tokens.$breakpoint-mobile) {
+      .order-xs-#{$order-value} {
+        order: $order-value;
+      }
+    }
+  }
 }

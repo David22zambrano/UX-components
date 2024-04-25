@@ -45,7 +45,6 @@ $_ripple-opacity: 0.1;
       &.stroked {
         border: 1px solid mat.get-color-from-palette($variant-palette, $hue);
         background-color: transparent;
-
         .mat-mdc-chip-action-label {
           color: mat.get-color-from-palette($variant-palette, $hue);
         }
@@ -58,6 +57,18 @@ $_ripple-opacity: 0.1;
       &.mat-button-disabled {
         $palette: if($property =='color', $foreground, $background);
         #{$property}: mat.get-color-from-palette($palette, disabled-button);
+      }
+    }
+  }
+}
+
+@mixin chip-styles($color-class-name, $color-value) {
+  .mat-mdc-standard-chip {
+    &.mat-mdc-chip-selected,
+    &.mat-mdc-chip-highlighted {
+      &.mat-#{$color-class-name}:not(.stroked, :disabled) {
+        --mdc-chip-elevated-container-color: #{$color-value};
+        --mdc-chip-label-text-color: #{$text-primary};
       }
     }
   }
@@ -80,7 +91,8 @@ $_ripple-opacity: 0.1;
   .mat-mdc-unelevated-button.mat-mdc-button-base,
   .mat-mdc-fab,
   .mat-mdc-mini-fab,
-  .mat-badge.mat-badge {
+  .mat-badge.mat-badge,
+  .mat-mdc-standard-chip.mat-mdc-chip-selected {
     @include _theme-property($config, 'color', default-contrast, $variants);
     @include _theme-property($config, 'background-color', default, $variants);
     @include _ripple-color($config,
@@ -89,6 +101,7 @@ $_ripple-opacity: 0.1;
       $variants );
   }
 }
+
 
 @mixin button-toggle-styles($estadoInicial, $estadoFocusWithin, $bgColor) {
   .mat-button-toggle-group.#{$bgColor} {
@@ -116,7 +129,7 @@ $_ripple-opacity: 0.1;
         background-color: $estadoFocusWithin;
       }
 
-      &>.mat-icon {
+      & > .mat-icon {
         svg {
           color: $estadoInicial;
         }
@@ -249,9 +262,9 @@ $_ripple-opacity: 0.1;
 
       &.mat-mdc-button {
         --mat-text-button-ripple-color:#{$hover-color};
-        &:active {
-          background-color: var(--mat-outlined-button-state-layer-color);
-        }
+        // &:active {
+        //   background-color: var(--mat-outlined-button-state-layer-color);
+        // }
         &:hover,
         &:focus {
           background-color: #{$hover-color};
@@ -262,12 +275,12 @@ $_ripple-opacity: 0.1;
         --mat-outlined-button-ripple-color: #{$hover-color};
         --mat-outlined-button-state-layer-color: #{$ripple-color};
         --mat-mdc-button-persistent-ripple-color: #{$ripple-color};
-        &.mat-mdc-button-persistent-ripple::before {
-          --mdc-outlined-button-outline-color: #{$hover-color};
-        }
+        // &.mat-mdc-button-persistent-ripple::before {
+        //   --mdc-outlined-button-outline-color: #{$hover-color};
+        // }
         &:hover,
         &:focus {
-          background-color: rgba(var($hover-color), 0.8);
+          background-color: rgba(var($hover-color), 0.12);
         }
       }
       
@@ -278,6 +291,7 @@ $_ripple-opacity: 0.1;
 @mixin add-variants-color($only-new-color-palettes) {
   @each $bgColor, $color in map-remove($only-new-color-palettes, 'primary', 'accent', 'warn') {
     $estadoInicial: map-get($color, 500);
+    $ripple-color: rgba(map-get($color, 500), 0.8);
     $hover-color: rgba(map-get($color, 500), 0.12);
     $slide-toggle-range-colors: (
       'track-color':map-get($color, 300),
@@ -308,6 +322,7 @@ $_ripple-opacity: 0.1;
 @include icon-buton-styles($estadoInicial, $hover-color, $bgColor);
 @include slider-styles($slider-state-color, $bgColor);
 @include slide-toggle-styles($slide-toggle-range-colors, $bgColor);
+@include buttons-ripple-color($ripple-color, $hover-color, $bgColor);
 }
 }
 
@@ -331,7 +346,7 @@ $_ripple-opacity: 0.1;
         --mdc-chip-label-text-color: #{$text-primary};
       }
     }
-
+    
     &.mdc-evolution-chip--disabled {
       &.stroked {
         --mdc-chip-elevated-disabled-container-color: transparent;
@@ -343,17 +358,21 @@ $_ripple-opacity: 0.1;
 
 @mixin create-variants-color($all-color-palettes) {
   @each $bgColor, $color in $all-color-palettes {
-    $estadoInicial: map-get($color, 500);
-    $chip-background-color: map-get($color, 100);
-    $ripple-color: rgba(map-get($color, 500), 0.4);
     $hover-color: rgba(map-get($color, 500), 0.12);
+    $ripple-color: rgba(map-get($color, 500), 0.8);
+    $estadoInicial: map-get($color, 500);
     $estadoFocusWithin: rgba(map-get($color, 500), 0.12);
-
+    $chip-background-color: map-get($color, 100);
+    
     @include button-toggle-styles($estadoInicial, $estadoFocusWithin, $bgColor);
     @include chip-styles($bgColor, $chip-background-color);
     @include radio-button-styles($estadoInicial, $bgColor);
     @include checkbox-styles($estadoInicial, $bgColor);
     @include badge-styles($estadoInicial, $bgColor );
-    @include buttons-ripple-color($ripple-color, $hover-color, $bgColor);
   }
 }
+
+
+
+
+

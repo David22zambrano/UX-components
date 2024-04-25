@@ -52,11 +52,13 @@
                 <p class="full-width mat-caption color-text-secondary pb-3">mat-stroked-button | Icon | Size: Large |
                     Medium | Smal</p>
                 <div class="full-width row  align-items-center justify-content-between gap-3">
-                    <button mat-button *ngFor="let button of buttonsModel" [color]="button.color" [class]="button.size"
-                        [disabled]="button.disabled">
+
+                    @for(button of buttonsModel; track button){
+                    <button mat-button [color]="button.color" [class]="button.size" [disabled]="button.disabled">
                         {{ button.label }}
                         <mat-icon iconPositionEnd [class]="button.size">arrow_forward</mat-icon>
                     </button>
+                    }
                 </div>
             </div>
 
@@ -64,11 +66,13 @@
                 <p class="full-width mat-caption color-text-secondary pb-3">mat-stroked-button | Icon | Size: Large |
                     Medium | Smal</p>
                 <div class="full-width row  align-items-center justify-content-between gap-3">
-                    <button mat-button *ngFor="let button of buttonsModel" [color]="button.color" [class]="button.size"
-                        [disabled]="button.disabled">
+                    @for(button of buttonsModel; track button){
+
+                    <button mat-button [color]="button.color" [class]="button.size" [disabled]="button.disabled">
                         {{ button.label }}
                         <mat-icon iconPositionEnd [class]="button.size">arrow_forward</mat-icon>
                     </button>
+                    }
                 </div>
             </div>
         </div>

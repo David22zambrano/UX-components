@@ -3,7 +3,7 @@
 @use 'sass:meta';
 
 $clase: 'mat-elevation-z';
-$color-elevation: #18274B;
+$color-elevation: #18274b;
 $umbral-Redesing: (
   0: 0px 0px 0px 0px rgba($color-elevation, 0),
   1: 0px 1px 3px rgba($color-elevation, 0.12),
@@ -94,12 +94,6 @@ $ambient-Redesing: (
     #{map.get($ambient-Redesing, $nivel)} !important;
 }
 
-@for $nivel from 0 through 24 {
-  .#{$clase}#{$nivel} {
-    @include elevation($nivel);
-  }
-}
-
 .mat-mdc-autocomplete-panel.mdc-menu-surface {
   @include elevation(1);
 }
@@ -144,8 +138,8 @@ $ambient-Redesing: (
   @include elevation(24);
 }
 
-.mat-expansion-panel:has([class*='mat-elevation-z0']) {
-  @include elevation(4);
+.mat-accordion .mat-expansion-panel {
+  @include elevation(1);
 }
 
 .mat-menu-panel,
@@ -164,5 +158,11 @@ $ambient-Redesing: (
 .mat-drawer {
   .mat-drawer-side {
     @include elevation(16);
+  }
+}
+
+@for $nivel from 0 through 24 {
+  .#{$clase}#{$nivel} {
+    @include elevation($nivel);
   }
 }
