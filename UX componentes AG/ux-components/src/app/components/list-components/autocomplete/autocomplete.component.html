@@ -10,7 +10,7 @@
                     <form class="autocomplete-container">
                         <mat-form-field class="autocomplete" size="small" appearance="outline">
                             <mat-label>Value</mat-label>
-                            <input type="text" placeholder="Value" aria-label="Number" matInput formControl="myControl"
+                            <input type="text" placeholder="Value" aria-label="Number" matInput formControlName="myControl"
                                 [matAutocomplete]="auto">
                             <mat-autocomplete #auto="matAutocomplete">
                                 @for (option of options; track option) {
@@ -26,7 +26,7 @@
                     <form class="autocomplete-container">
                         <mat-form-field class="autocomplete" size="medium" appearance="outline">
                             <mat-label>Value</mat-label>
-                            <input type="text" placeholder="Value" aria-label="Number" matInput formControl="myControl"
+                            <input type="text" placeholder="Value" aria-label="Number" matInput formControlName="myControl"
                                 [matAutocomplete]="auto">
                             <mat-autocomplete #auto="matAutocomplete">
                                 @for (option of options; track option) {

@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
-import { AngularModule, FooterActionsComponent } from '@sinco/angular';
+import { AngularModule } from '@sinco/angular';
 
 import { MenuPrincipalComponent } from './components/menu/menu-principal.component';
 import { HeaderPageComponent } from './components/header-page/header-page.component';
@@ -43,7 +43,6 @@ const componenteSincoAngular = [
     HeaderPageComponent,
     ListComponentsModule,
     AngularModule,
-
     ...componentesGenerales,
     ...componenteSincoAngular],
   providers: [],
