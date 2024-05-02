@@ -12,6 +12,7 @@ import { HeaderPageComponent } from './components/header-page/header-page.compon
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { ListComponentsModule } from './components/list-components/list-components.module';
 import { RatingExampleComponent } from './components/list-components/rating-example/rating-example.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const componentesGenerales = [
   MenuPrincipalComponent,
@@ -36,13 +37,14 @@ const componenteSincoAngular = [
     AngularModule,
     ListComponentsModule,
     componenteSincoAngular,
-  
+
   ],
   exports: [
     MaterialModule,
     HeaderPageComponent,
     ListComponentsModule,
     AngularModule,
+    FormsModule, ReactiveFormsModule,
     ...componentesGenerales,
     ...componenteSincoAngular],
   providers: [],
