@@ -2,10 +2,10 @@
 @import './variables';
 @import './tokens';
 
-.cdk-overlay-backdrop {
-  background-color: $backgroundOverlay !important;
-  backdrop-filter: blur(2px) !important;
-}
+// .cdk-overlay-backdrop {
+//   background-color: $backgroundOverlay !important;
+//   backdrop-filter: blur(2px) !important;
+// }
 
 .mat-mdc-chip.cdk-focused .mat-mdc-chip-focus-overlay {
   opacity: 0.01 !important;
