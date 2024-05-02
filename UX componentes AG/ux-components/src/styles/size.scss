@@ -12,13 +12,11 @@
 
 :not(.medium, .large) {
 
-  // menu
   &.mat-mdc-menu-item.mdc-list-item,
   &.mat-mdc-option {
     min-height: 2.8rem;
   }
 
-  // CHIP  
   &.mat-mdc-chip,
   &.mat-md-chip-option {
     border-radius: 4px !important;
@@ -58,6 +56,7 @@
 }
 
 // Común para SUFFIX y PREFIX
+
 .mat-mdc-form-field-icon-suffix>.mat-icon,
 .mat-mdc-form-field-icon-prefix>.mat-icon {
   @include padding(24px, 16px);
@@ -81,7 +80,7 @@
     --mdc-slider-active-track-height: 0.4rem;
   }
 
-  .mat-mdc-slider-visual-thumb>.mat-ripple {
+  .mat-mdc-slider-visual-thumb .mat-ripple {
     @include width-height(32px !important);
     border-radius: 50%;
     transform: translate(8px, 8.5px) !important;
@@ -91,15 +90,15 @@
 // DATA TABLE
 .mat-mdc-table {
   &.mat-mdc-table .mdc-data-table__header-row {
-    height: 36px;
+    height: 32px;
   }
 
   &.mat-mdc-table .mdc-data-table__row {
-    height: 32px;
+    height: 52px;
   }
 }
 
-// // RADIO BUTTON
+// RADIO BUTTON
 :not(.medium).mat-mdc-radio-button .mdc-form-field .mdc-radio {
   --mdc-radio-state-layer-size: 22px;
 
@@ -140,7 +139,7 @@
     height: 48px !important;
   }
 
-  // // RADIO BUTTON
+  // RADIO BUTTON
   &:not(.small, .large).mat-mdc-radio-button .mdc-form-field .mdc-radio {
     --mdc-radio-state-layer-size: 28px;
 
@@ -206,14 +205,21 @@
 
   &:not(.mat-form-field-appearance-outline) {
     @include mat.form-field-density(-2);
-    --mat-form-field-filled-with-label-container-padding-top: 24px;
+    --mat-form-field-filled-with-label-container-padding-top: 20px;
 
-    :not(:has(mat-select)).mdc-text-field--filled .mdc-floating-label--float-above {
-      transform: translateY(-126%) scale(0.75);
-    }
+    :not(:has(mat-select, .standard)) {
 
-    :not(:has(mat-select)).mat-mdc-form-field-icon-suffix > .mat-icon {
-      padding: 10px 12px 0;
+      &.mdc-text-field .mdc-floating-label {
+        transform: translateY(-20%);
+      }
+
+      &.mdc-text-field--filled .mdc-floating-label--float-above {
+        transform: translateY(-126%) scale(0.75);
+      }
+
+      &.mat-mdc-form-field-icon-suffix>.mat-icon {
+        padding: 10px 12px 0;
+      }
     }
   }
 
@@ -291,16 +297,21 @@
     }
   }
 
+  //CHIP
   &.mat-mdc-chip .mat-icon {
     @include icon-size(1.714285714285714rem, 1.714285714285714rem);
   }
 
   // BUTTON TOGGLE
   &.mat-button-toggle-group {
-    --mat-standard-button-toggle-height: 56px;
+    .mat-button-toggle {
+      &-label-content {
+        line-height: calc(24px + 26px);
+      }
 
-    &>.mat-icon {
-      @include icon-size(24px, 18px);
+      .mat-icon {
+        @include icon-size(2.4rem !important, 2.2rem !important);
+      }
     }
   }
 
@@ -358,3 +369,4 @@
 @include pseudo-checkbox-sizes($checkbox-sizes);
 @include mat-slide-toggle-sizes($slide-toggle-sizes);
 @include date-picker-toggle-sizes($icon-button-erp-sizes, 'default', 'small');
+@include table-sizes($table-sizes);

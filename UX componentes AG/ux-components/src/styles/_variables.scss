@@ -47,7 +47,7 @@ $mat-fab-button-sizes: (
   large: (
     fab: (
       container-size: 56px,
-      icon: 20px,
+      icon: 29px,
     ),
     extended-fab: (
       container-size: 48px,
@@ -69,6 +69,19 @@ $checkbox-sizes: (
   large: (
     ripple: 42px,
     vector: 18px,
+  ),
+);
+
+$table-sizes: (
+  medium: (
+    thead-row: 56px,
+    tbody-row: 49px,
+    cell-padding: 8px,
+  ),
+  small: (
+    thead-row: 36px,
+    tbody-row: 29px,
+    cell-padding: 6px,
   ),
 );
 
@@ -108,6 +121,3 @@ $slide-toggle-sizes: (
 
 //MAT-ICONS-SIZES
 $size-mat-icon-erp: 'small' 16px 11px, 'medium' 20px 14px, 'large' 35px 24px;
-
-//FORM FIELD MEDIUM
-$formfield-outlined-default-size: 40px;

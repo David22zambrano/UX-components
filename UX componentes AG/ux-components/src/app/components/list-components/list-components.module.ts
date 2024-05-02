@@ -40,7 +40,7 @@ import { AvatarExampleComponent } from './avatar/avatar-example/avatar-example.c
 import { IconComponent } from './icon/icon.component';
 import { FooterActionExample } from './footer-action/footer-action.component';
 import { HeaderComponents } from './header-components/header-components.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageTestComponent } from './page-header/page-test/page-test.component';
 
 const components = [
@@ -95,6 +95,8 @@ const components = [
     [AngularModule,
       CommonModule,
       MaterialModule,
+      FormsModule,
+      ReactiveFormsModule,
         ]
 })
 export class ListComponentsModule { }

@@ -1,6 +1,6 @@
 @use '@angular/material' as mat;
 @use 'sass:map';
-@use "sass:string";
+@use 'sass:string';
 @include mat.core();
 
 $fakeId: string.unique-id();
@@ -8,7 +8,7 @@ $fakeId: string.unique-id();
 $primary: (
   50: #e4ecf4,
   100: #bcd0e3,
-  200: #90B1D0,
+  200: #8fb1d0,
   300: #6291bd,
   400: #407aaf,
   500: #1e62a1,
@@ -20,7 +20,8 @@ $primary: (
   A200: #72a3ff,
   A400: #3f82ff,
   A700: #2571ff,
-  contrast: (50: #ffffff,
+  contrast: (
+    50: #ffffff,
     100: #ffffff,
     200: #ffffff,
     300: #ffffff,
@@ -51,7 +52,8 @@ $accent: (
   A200: #afeeff,
   A400: #7ce3ff,
   A700: #63ddff,
-  contrast: (50: #000000,
+  contrast: (
+    50: #000000,
     100: #000000,
     200: #000000,
     300: #000000,
@@ -82,7 +84,8 @@ $warn: (
   A200: #ffb9b9,
   A400: #ff8686,
   A700: #ff6d6d,
-  contrast: (50: #ffffff,
+  contrast: (
+    50: #ffffff,
     100: #ffffff,
     200: #ffffff,
     300: #ffffff,
@@ -113,7 +116,8 @@ $success: (
   A200: #d2ffab,
   A400: #b6ff78,
   A700: #a9ff5e,
-  contrast: (50: #ffffff,
+  contrast: (
+    50: #ffffff,
     100: #ffffff,
     200: #ffffff,
     300: #ffffff,
@@ -144,7 +148,8 @@ $warning: (
   A200: #fff1eb,
   A400: #ffccb8,
   A700: #ffba9f,
-  contrast: (50: #ffffff,
+  contrast: (
+    50: #ffffff,
     100: #ffffff,
     200: #ffffff,
     300: #ffffff,
@@ -175,7 +180,8 @@ $info: (
   A200: #a1dcff,
   A400: #6ecaff,
   A700: #54c1ff,
-  contrast: (50: #ffffff,
+  contrast: (
+    50: #ffffff,
     100: #ffffff,
     200: #ffffff,
     300: #ffffff,
@@ -206,7 +212,8 @@ $dark-primary: (
   A200: #bae7ff,
   A400: #87d6ff,
   A700: #6ecdff,
-  contrast: (50: #ffffff,
+  contrast: (
+    50: #ffffff,
     100: #ffffff,
     200: #ffffff,
     300: #ffffff,
@@ -237,7 +244,8 @@ $dark-accent: (
   A200: #c3ecff,
   A400: #90dcff,
   A700: #77d4ff,
-  contrast: (50: #ffffff,
+  contrast: (
+    50: #ffffff,
     100: #ffffff,
     200: #ffffff,
     300: #ffffff,
@@ -255,16 +263,16 @@ $dark-accent: (
 );
 
 $grey: (
-  50:#c4c4c4,
-  100:#B9BDC1,
-  200:#DCDEE0,
-  300:#CED1D4,
-  400:#C4C7CA,
-  500:#B9BDC1,
-  600:#B2B7BB,
-  700:#AAAEB3,
-  800:#A2A6AB,
-  900:#93989E
+  50: #c4c4c4,
+  100: #b9bdc1,
+  200: #dcdee0,
+  300: #ced1d4,
+  400: #c4c7ca,
+  500: #b9bdc1,
+  600: #b2b7bb,
+  700: #aaaeb3,
+  800: #a2a6ab,
+  900: #93989e,
 );
 
 $text-primary: rgba(16, 24, 64, 0.87);
@@ -285,32 +293,32 @@ $light: #ffffff;
 $dark: #000000;
 
 $color-class: (
-  'action-active'$action-active,
+  'action-active' $action-active,
   'action-hover'$action-hover,
   'action-focus'$action-focus,
   'action-selected'$action-selected,
   'action-disabled'$action-disabled,
-  'action-disabledBackground'$action-disabledBackground,
-  'light-default'$light-background-default,
-  'dark-default'$dark-background-default,
-  'white'$light,
-  'black'$dark,
-  'text-primary'$text-primary,
-  'text-secondary'$text-secondary,
-  'text-disabled'$text-disabled,
-  'dark-text-primary'$dark-text-primary,
-  'dark-text-secondary'$dark-text-secondary,
-  'dark-text-disabled'$dark-text-disabled,
-  'primary'$primary,
-  'accent'$accent,
-  'warn'$warn,
-  'warning'$warning,
-  'caution'$warning,
-  'success'$success,
-  'info'$info,
-  'grey'$grey,
-  'dark-primary'$dark-primary,
-  'dark-accent'$dark-accent,
+  'action-disabledBackground' $action-disabledBackground,
+  'light-default' $light-background-default,
+  'dark-default' $dark-background-default,
+  'white' $light,
+  'black' $dark,
+  'text-primary' $text-primary,
+  'text-secondary' $text-secondary,
+  'text-disabled' $text-disabled,
+  'dark-text-primary' $dark-text-primary,
+  'dark-text-secondary' $dark-text-secondary,
+  'dark-text-disabled' $dark-text-disabled,
+  'primary' $primary,
+  'accent' $accent,
+  'warn' $warn,
+  'warning' $warning,
+  'caution' $warning,
+  'success' $success,
+  'info' $info,
+  'grey' $grey,
+  'dark-primary' $dark-primary,
+  'dark-accent' $dark-accent
 );
 
 $sinco-angular-colors: (
@@ -320,9 +328,8 @@ $sinco-angular-colors: (
   'success': $success,
   'info': $info,
   'warning': $warning,
-  'grey': $grey
+  'grey': $grey,
 );
-
 
 :not(##{$fakeId}) {
   //DEFAULT SLIDE-TOGGLE-COLORS
@@ -340,27 +347,26 @@ $sinco-angular-colors: (
   .mat-mdc-unelevated-button,
   .mat-mdc-button {
     &:not(:disabled, .mat-primary, .mat-accent, .mat-warn) {
-      --mdc-protected-button-container-color:#{map-get($grey,300)};
-      --mdc-filled-button-container-color:#{map-get($grey,300)};
-      --mdc-protected-button-label-text-color:#{$text-primary};
-      --mdc-filled-button-label-text-color:#{$text-primary};
-      --mdc-text-button-label-text-color:#{$text-primary};
+      --mdc-protected-button-container-color: #{map-get($grey, 300)};
+      --mdc-filled-button-container-color: #{map-get($grey, 300)};
+      --mdc-protected-button-label-text-color: #{$text-primary};
+      --mdc-filled-button-label-text-color: #{$text-primary};
+      --mdc-text-button-label-text-color: #{$text-primary};
     }
   }
 
   .mat-accent {
     &:not(:disabled) {
-      --mat-fab-foreground-color:#{$light};
-      --mdc-protected-button-label-text-color:#{$light};
-      --mdc-filled-button-label-text-color:#{$light};
+      --mat-fab-foreground-color: #{$light};
+      --mdc-protected-button-label-text-color: #{$light};
+      --mdc-filled-button-label-text-color: #{$light};
     }
   }
 
   .mdc-fab.mat-mdc-fab.mat-accent:not([color]) {
-    --mdc-fab-container-color:#{map-get($grey,300)};
-    --mat-fab-foreground-color:#{$text-primary};
+    --mdc-fab-container-color: #{map-get($grey, 300)};
+    --mat-fab-foreground-color: #{$text-primary};
   }
-
 }
 
 body {
@@ -374,7 +380,7 @@ a {
 
 .mat-accordion {
   .mat-expansion-panel {
-    .mat-expansion-panel-header[aria-disabled=true] {
+    .mat-expansion-panel-header[aria-disabled='true'] {
       background-color: $action-disabledBackground;
       color: $text-disabled;
     }
@@ -387,7 +393,6 @@ a {
 }
 
 .mat-mdc-form-field {
-
   .mat-icon,
   svg {
     color: $action-active;

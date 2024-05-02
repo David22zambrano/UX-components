@@ -1,7 +1,6 @@
 @use '@angular/material' as mat;
 @use 'sass:map';
 
-
 html {
   font-size: 0.625rem;
 }
@@ -41,12 +40,6 @@ $overline: mat.define-typography-level($font-weight: 400,
     $font-family: 'Roboto, sans-serif ',
   );
 
-$body-3: mat.define-typography-level($font-weight: 300,
-    $font-size: 1.2rem,
-    $line-height: 1.4,
-    $letter-spacing: 0.083em,
-    $font-family: 'Roboto, sans-serif ',
-  );
 
 $typography-global-config: map.merge(mat.define-typography-config($font-family: 'Roboto',
       $headline-5: mat.define-typography-level($font-weight: 300,
@@ -98,8 +91,7 @@ $typography-global-config: map.merge(mat.define-typography-config($font-family: 
         $font-family: 'Roboto, sans-serif ',
       ),
     ),
-    ('body-3': $body-3,
-      'h3': $h3,
+    ('h3': $h3,
       'h4': $h4,
       'h5': $h5,
       'h6': $h6,
@@ -150,23 +142,18 @@ $typography-global-config: map.merge(mat.define-typography-config($font-family: 
   }
 }
 
-.mat-typography .mat-body-3 {
-  @include mat.typography-level($typography-global-config, 'body-3');
-}
-
 .mat-mdc-tooltip {
   --mdc-plain-tooltip-supporting-text-size: 11px;
 }
 
 .mat-mdc-form-field {
-
   .mdc-text-field--outlined .mdc-floating-label,
   .mdc-text-field--filled .mdc-floating-label {
     --mdc-outlined-text-field-label-text-size: 13px;
     --mdc-filled-text-field-label-text-size: 13px;
   }
-
   .mat-mdc-select {
     --mat-select-trigger-text-size: 13px
   }
 }
+

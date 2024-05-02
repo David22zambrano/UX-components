@@ -1,14 +1,14 @@
 <app-header-components title="Tooltip">
     <ng-template #component>
         <div class="column gap-3">
-            <div class="column align-items-center justify-content-start ">
-                <p class="full-width mat-caption color-text-secondary pb-3">
+            <div class="column align-items-center justify-content-start button ">
+                <p class="full-width mat-caption color-text-secondary pb-3 button-container-img">
                     mat-list-item/Simple | mat list </p>
                 <div class="full-width  row align-items-center justify-content-center gap-4">
                     @for( tooltip of Tooltips; track tooltip){
-                    <mat-icon matBadge="&#8288;" aria-hidden="false"
-                        [matTooltip]="tooltip.color" matTooltipPosition="above" aria-label="false"
-                        class="color-action-active" [colorComponent]="tooltip.color">mail_outline</mat-icon>
+                    <mat-icon matBadge="&#8288;" aria-hidden="false" matBadgeSize="small" [matTooltip]="tooltip.color"
+                        aria-label="false" class="color-action-active"
+                        [colorComponent]="tooltip.color">mail_outline</mat-icon>
                     }
                 </div>
             </div>

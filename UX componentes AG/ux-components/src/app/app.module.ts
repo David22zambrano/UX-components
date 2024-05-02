@@ -5,13 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
-import { AngularModule, FooterActionsComponent } from '@sinco/angular';
+import { AngularModule } from '@sinco/angular';
 
 import { MenuPrincipalComponent } from './components/menu/menu-principal.component';
 import { HeaderPageComponent } from './components/header-page/header-page.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { ListComponentsModule } from './components/list-components/list-components.module';
 import { RatingExampleComponent } from './components/list-components/rating-example/rating-example.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const componentesGenerales = [
   MenuPrincipalComponent,
@@ -36,14 +37,14 @@ const componenteSincoAngular = [
     AngularModule,
     ListComponentsModule,
     componenteSincoAngular,
-  
+
   ],
   exports: [
     MaterialModule,
     HeaderPageComponent,
     ListComponentsModule,
     AngularModule,
-
+    FormsModule, ReactiveFormsModule,
     ...componentesGenerales,
     ...componenteSincoAngular],
   providers: [],
