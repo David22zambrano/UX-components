@@ -4,26 +4,26 @@
             <div class="column align-items-center justify-content-start ">
                 <p class="full-width mat-caption color-text-secondary pb-3">
                     mat-icon | Size: Large | Medium | Small | Inherit </p>
-                <div class=" row align-items-center justify-content-between gap-2">
-                    <div class="row col-12">
+                <div class=" column full-width align-items-center justify-content-between gap-2">
+                    <div class="row full-width">
                         @for(alert of alertError; track alert){
                         <app-alerts-info class="col" [title]="'Title'" [type]="alert.type" [content]="'Content'"
                             [mode]="alert.mode"></app-alerts-info>
                         }
                     </div>
-                    <div class="row col-12">
+                    <div class="row full-width">
                         @for(alert of alertWarning; track alert){
                         <app-alerts-info class="col" [title]="'Title'" [type]="alert.type" [content]="'Content'"
                             [mode]="alert.mode"></app-alerts-info>
                         }
                     </div>
-                    <div class="row col-12">
+                    <div class="row full-width">
                         @for(alert of alertInfo; track alert){
                         <app-alerts-info class="col" [title]="'Title'" [type]="alert.type" [content]="'Content'"
                             [mode]="alert.mode"></app-alerts-info>
                         }
                     </div>
-                    <div class="row col-12">
+                    <div class="row full-width">
                         @for(alert of alertSuccess; track alert){
                         <app-alerts-info class="col" [title]="'Title'" [type]="alert.type" [content]="'Content'"
                             [mode]="alert.mode"></app-alerts-info>
