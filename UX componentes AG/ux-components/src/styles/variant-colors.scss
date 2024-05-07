@@ -45,6 +45,7 @@ $_ripple-opacity: 0.1;
       &.stroked {
         border: 1px solid mat.get-color-from-palette($variant-palette, $hue);
         background-color: transparent;
+
         .mat-mdc-chip-action-label {
           color: mat.get-color-from-palette($variant-palette, $hue);
         }
@@ -64,6 +65,7 @@ $_ripple-opacity: 0.1;
 
 @mixin chip-styles($color-class-name, $color-value) {
   .mat-mdc-standard-chip {
+
     &.mat-mdc-chip-selected,
     &.mat-mdc-chip-highlighted {
       &.mat-#{$color-class-name}:not(.stroked, :disabled) {
@@ -129,7 +131,7 @@ $_ripple-opacity: 0.1;
         background-color: $estadoFocusWithin;
       }
 
-      & > .mat-icon {
+      &>.mat-icon {
         svg {
           color: $estadoInicial;
         }
@@ -171,6 +173,9 @@ $_ripple-opacity: 0.1;
     --mdc-radio-selected-pressed-icon-color: #{$estadoInicial};
     --mat-radio-checked-ripple-color: #{$estadoInicial};
     --mdc-radio-selected-icon-color: #{$estadoInicial};
+    --mdc-radio-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+    --mdc-radio-unselected-icon-color: rgba(0, 0, 0, 0.54);
+    --mdc-radio-unselected-hover-icon-color: #000;
   }
 }
 
@@ -262,6 +267,7 @@ $_ripple-opacity: 0.1;
 
       &.mat-mdc-button {
         --mat-text-button-ripple-color:#{$hover-color};
+
         // &:active {
         //   background-color: var(--mat-outlined-button-state-layer-color);
         // }
@@ -275,6 +281,7 @@ $_ripple-opacity: 0.1;
         --mat-outlined-button-ripple-color: #{$hover-color};
         --mat-outlined-button-state-layer-color: #{$ripple-color};
         --mat-mdc-button-persistent-ripple-color: #{$ripple-color};
+
         // &.mat-mdc-button-persistent-ripple::before {
         //   --mdc-outlined-button-outline-color: #{$hover-color};
         // }
@@ -283,7 +290,37 @@ $_ripple-opacity: 0.1;
           background-color: rgba(var($hover-color), 0.12);
         }
       }
-      
+
+    }
+  }
+}
+
+@mixin chip-styles($color-class-name, $color-value) {
+  .mat-mdc-standard-chip {
+    &.mat-mdc-chip-selected {
+      &.stroked {
+        --mdc-chip-elevated-disabled-container-color: transparent;
+        --mdc-chip-disabled-label-text-color: var(--mdc-chip-elevated-container-color);
+        border: 1px solid var(--mdc-chip-elevated-container-color);
+        --mdc-chip-with-trailing-icon-disabled-trailing-icon-color: var(--mdc-chip-elevated-container-color);
+        --mdc-chip-label-text-color: #{$text-primary};
+      }
+    }
+
+    &.mat-mdc-chip-highlighted {
+
+      &.mat-#{$color-class-name}:not(.stroked, :disabled) {
+        --mdc-chip-focus-state-layer-color: #{$color-value};
+        --mdc-chip-elevated-container-color: #{$color-value};
+        --mdc-chip-label-text-color: #{$text-primary};
+      }
+    }
+
+    &.mdc-evolution-chip--disabled {
+      &.stroked {
+        --mdc-chip-elevated-disabled-container-color: transparent;
+        border: 1px solid var(--mdc-chip-elevated-container-color);
+      }
     }
   }
 }
@@ -293,6 +330,8 @@ $_ripple-opacity: 0.1;
     $estadoInicial: map-get($color, 500);
     $ripple-color: rgba(map-get($color, 500), 0.8);
     $hover-color: rgba(map-get($color, 500), 0.12);
+    $pallete-color-100: map-get($color, 100);
+
     $slide-toggle-range-colors: (
       'track-color':map-get($color, 300),
       'focus-track-color':map-get($color, 300),
@@ -323,56 +362,23 @@ $_ripple-opacity: 0.1;
 @include slider-styles($slider-state-color, $bgColor);
 @include slide-toggle-styles($slide-toggle-range-colors, $bgColor);
 @include buttons-ripple-color($ripple-color, $hover-color, $bgColor);
+@include chip-styles($bgColor, $pallete-color-100);
 }
 }
 
-@mixin chip-styles($color-class-name, $color-value) {
-  .mat-mdc-standard-chip {
-    &.mat-mdc-chip-selected {
-      &.stroked {
-        --mdc-chip-elevated-disabled-container-color: transparent;
-        --mdc-chip-disabled-label-text-color: var(--mdc-chip-elevated-container-color);
-        border: 1px solid var(--mdc-chip-elevated-container-color);
-        --mdc-chip-with-trailing-icon-disabled-trailing-icon-color: var(--mdc-chip-elevated-container-color);
-        --mdc-chip-label-text-color: #{$text-primary};
-      }
-    }
 
-    &.mat-mdc-chip-highlighted {
-
-      &.mat-#{$color-class-name}:not(.stroked, :disabled) {
-        --mdc-chip-focus-state-layer-color: #{$color-value};
-        --mdc-chip-elevated-container-color: #{$color-value};
-        --mdc-chip-label-text-color: #{$text-primary};
-      }
-    }
-    
-    &.mdc-evolution-chip--disabled {
-      &.stroked {
-        --mdc-chip-elevated-disabled-container-color: transparent;
-        border: 1px solid var(--mdc-chip-elevated-container-color);
-      }
-    }
-  }
-}
 
 @mixin create-variants-color($all-color-palettes) {
   @each $bgColor, $color in $all-color-palettes {
+    $estadoInicial: map-get($color, 500);
     $hover-color: rgba(map-get($color, 500), 0.12);
     $ripple-color: rgba(map-get($color, 500), 0.8);
-    $estadoInicial: map-get($color, 500);
-    $estadoFocusWithin: rgba(map-get($color, 500), 0.12);
-    $chip-background-color: map-get($color, 100);
-    
-    @include button-toggle-styles($estadoInicial, $estadoFocusWithin, $bgColor);
-    @include chip-styles($bgColor, $chip-background-color);
+    $pallete-color-100: map-get($color, 100);
+
+    @include button-toggle-styles($estadoInicial, $ripple-color, $bgColor);
+    @include chip-styles($bgColor, $pallete-color-100);
     @include radio-button-styles($estadoInicial, $bgColor);
     @include checkbox-styles($estadoInicial, $bgColor);
     @include badge-styles($estadoInicial, $bgColor );
   }
 }
-
-
-
-
-

@@ -6,8 +6,10 @@
                     Small
                 </p>
                 <div class="full-width row align-items-center justify-content-between">
-                    <mat-checkbox [checked]="checkbox.checked" *ngFor="let checkbox of checkboxs"
-                        [color]="checkbox.color" [class]="checkbox.size" [disabled]="checkbox.disabled"></mat-checkbox>
+                    @for(checkbox of checkboxs;track checkbox ){
+                    <mat-checkbox [color]="checkbox.color" [class]="checkbox.size"
+                        [disabled]="checkbox.disabled"></mat-checkbox>
+                    }
                 </div>
             </div>
         </div>

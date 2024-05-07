@@ -7,15 +7,9 @@
                     Small
                 </p>
                 <div class="full-width row align-items-center justify-content-between">
-                    <!-- <mat-radio-button value="1" checked="true" size="small" color="primary">
-                    </mat-radio-button>
-                    <mat-radio-button value="2" checked="true" size="medium" color="accent">
-                    </mat-radio-button>
-                    <mat-radio-button value="3" checked="true" size="large" colorComponent="success">
-                    </mat-radio-button> -->
 
                     @for(radio of radios; track radio){
-                    <mat-radio-button [value]="radio.value" checked [class]="radio.size" [colorComponent]="radio.color"
+                    <mat-radio-button [value]="radio.value" [class]="radio.size" [colorComponent]="radio.color"
                         [color]="radio.color" [disabled]="radio.disabled">
                     </mat-radio-button>
                     }
@@ -32,10 +26,12 @@
                         <form class="column justify-content-center">
                             <mat-label>Group label</mat-label>
                             <mat-radio-group color="primary" class="column" [value]="defaultRadioChecked">
-                                <mat-radio-button class="medium" *ngFor="let radio of radioGroup"
-                                    [checked]="radio.checked" value="1" [disabled]="radio.disabled">
+                                @for(radio of radioGroup; track radio){
+                                <mat-radio-button class="medium" [checked]="radio.checked" value="1"
+                                    [disabled]="radio.disabled">
                                     {{radio.label}}
                                 </mat-radio-button>
+                                }
                             </mat-radio-group>
                             <mat-hint>Information label</mat-hint>
                         </form>
