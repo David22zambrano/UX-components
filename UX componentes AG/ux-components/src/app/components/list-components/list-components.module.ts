@@ -41,7 +41,6 @@ import { IconComponent } from './icon/icon.component';
 import { FooterActionExample } from './footer-action/footer-action.component';
 import { HeaderComponents } from './header-components/header-components.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PageTestComponent } from './page-header/page-test/page-test.component';
 
 const components = [
   AutocompleteComponent,
@@ -83,9 +82,7 @@ const components = [
   DialogContent,
   ToastNotificationComponent,
   FooterActionExample,
-  HeaderComponents,
-
-  PageTestComponent,
+  HeaderComponents
 ];
 
 @NgModule({
@@ -97,6 +94,6 @@ const components = [
       MaterialModule,
       FormsModule,
       ReactiveFormsModule,
-        ]
+    ]
 })
 export class ListComponentsModule { }
