@@ -1,24 +1,26 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-stepper',
   templateUrl: './stepper.component.html',
   styleUrls: ['./stepper.component.scss']
 })
-export class StepperComponent {
-  firstFormGroup!: FormGroup;
-  secondFormGroup!: FormGroup;
-  isLinear = false;
+export class StepperComponent implements OnInit {
+  // firstFormGroup!: FormGroup;
+  // secondFormGroup!: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor() { }
+  // firstFormGroup: FormGroup = new FormGroup({
+  //   firstCrtl: new FormControl()
+  // });
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
+    // this.firstFormGroup = this.formBuilder.group({
+    //   firstCtrl: ['-', Validators.required]
+    // });
+    // this.secondFormGroup = this.formBuilder.group({
+    //   secondCtrl: [' ', Validators.required]
+    // });
   }
 }

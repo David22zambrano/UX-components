@@ -5,10 +5,11 @@
                 <p class="full-width mat-caption color-text-secondary pb-3">mat-slide-toggle | Size: Large | Medium |
                     Small</p>
                 <div class="full-width row align-items-center justify-content-between">
-
-                    <ng-container *ngFor="let switch of switchColor">
-                        <mat-slide-toggle [color]="switch.color" checked="true" hideIcon="true" />
+                    @for(switch of switchColor; track switch){
+                    <ng-container>
+                        <mat-slide-toggle [color]="switch.color" checked="true" hideIcon="true"></mat-slide-toggle>
                     </ng-container>
+                    }
                 </div>
             </div>
         </div>

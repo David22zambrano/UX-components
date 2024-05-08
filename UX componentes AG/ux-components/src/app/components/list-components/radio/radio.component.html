@@ -40,10 +40,12 @@
                         <form class="column justify-content-start">
                             <mat-label class="mat-body1">Group error</mat-label>
                             <mat-radio-group colorComponent="warning" class="column" [value]="defaultRadioChecked">
-                                <mat-radio-button class="medium" *ngFor="let radio of radioGroup"
-                                    [checked]="radio.checked" value="1" [disabled]="radio.disabled">
+                                @for( radio of radioGroup; track radio){
+                                <mat-radio-button class="medium" [checked]="radio.checked" value="1"
+                                    [disabled]="radio.disabled">
                                     {{radio.label}}
                                 </mat-radio-button>
+                                }
                             </mat-radio-group>
                             <mat-error>*Error display hint</mat-error>
                         </form>
