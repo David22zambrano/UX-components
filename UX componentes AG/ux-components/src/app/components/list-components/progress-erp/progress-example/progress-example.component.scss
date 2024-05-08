@@ -1,19 +1,21 @@
 @import 'node_modules/@sinco/angular/src/lib/styles/colors.scss';
 
 $loading-size: 178px;
+/* HTML: <div class="loader"></div> */
 
 .progress {
     width: 221px;
     height: auto;
 
     .container-gif {
-        height: 70px;
         width: 100%;
+        height: 70px;    
         background-position: center;
-        background-image: url("/assets/spinner.svg");
+        background-repeat: no-repeat;
         background-size: 150%;
+        background-image: url("/assets/Spinner-SincoERP 2.gif");
     }
-
+    
     &-bar {
         width: 100%;
         height: 10px;

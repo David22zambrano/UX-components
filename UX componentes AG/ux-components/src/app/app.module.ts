@@ -32,8 +32,6 @@ const componentesGenerales = [
     AngularModule,
     ListComponentsModule
   ],
-  // FormsModule,
-  // ReactiveFormsModule,
   exports: [
     ListComponentsModule,
     AngularModule,
