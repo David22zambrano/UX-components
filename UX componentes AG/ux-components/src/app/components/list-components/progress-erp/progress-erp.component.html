@@ -4,14 +4,14 @@
             <p class="full-width color-text-secondary pb-3 mat-caption">Progress ERP</p>
             <div class="full-width column align-items-center justify-content-center">
 
-                <app-progress-example [showLogo]="false" loadingText="Procesando"
-                    progressIndicator="40 de 100 completos" variant="indeterminate" ></app-progress-example>
+                <app-progress [hideLogo]="false" loadingText="Procesando"
+                    progressIndicator="40 de 100 completos" variant="indeterminate" ></app-progress>
             </div>
         </div>
     </ng-template>
 </app-header-components>
 
-<!-- [showLogo]="false" 
+<!-- [showLogo]="false"  // valor en true oculta el logo
     loadingText="Procesando" 
     progressIndicator="40 de 100 completos" 
     variant="determinate"

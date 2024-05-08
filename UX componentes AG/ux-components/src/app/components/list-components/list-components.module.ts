@@ -33,13 +33,11 @@ import { AngularModule } from '@sinco/angular';
 import { ChipExample } from './chip/chip.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { ProgressERP } from './progress-erp/progress-erp.component';
-import { ProgressExampleComponent } from './progress-erp/progress-example/progress-example.component';
 import { AvatarComponent } from './avatar/avatar.component';
 import { AvatarExampleComponent } from './avatar/avatar-example/avatar-example.component';
 import { IconComponent } from './icon/icon.component';
 import { FooterActionExample } from './footer-action/footer-action.component';
 import { HeaderComponents } from './header-components/header-components.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const components = [
   AutocompleteComponent,
@@ -74,7 +72,6 @@ const components = [
   SnackbarComponent,
   IconComponent,
   ProgressERP,
-  ProgressExampleComponent,
   AvatarExampleComponent,
   AvatarComponent,
   DialogComponent,
