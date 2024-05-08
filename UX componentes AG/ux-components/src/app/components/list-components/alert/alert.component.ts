@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ModeAlert, TypeAlerts } from '@sinco/angular';
 
-
 interface alertModel {
   title: string;
   type: TypeAlerts;

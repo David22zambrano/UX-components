@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
 import { ButtonComponent } from './button/button.component';
-import { MaterialModule } from 'src/app/material.module';
 import { IconButtonComponent } from './icon-button/icon-button.component';
 import { FabComponent } from './fab/fab.component';
 import { ButtonGroupComponent } from './button-group/button-group.component';
@@ -89,11 +88,9 @@ const components = [
   declarations: [...components],
   exports: [...components],
   imports:
-    [AngularModule,
-      CommonModule,
-      MaterialModule,
-      FormsModule,
-      ReactiveFormsModule,
+    [
+      AngularModule,
+      CommonModule
     ]
 })
 export class ListComponentsModule { }

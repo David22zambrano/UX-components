@@ -1,4 +1,4 @@
-@import 'src/styles/colors.scss';
+@import 'node_modules/@sinco/angular/src/lib/styles/colors.scss';
 
 $loading-size: 178px;
 
@@ -10,7 +10,7 @@ $loading-size: 178px;
         height: 70px;
         width: 100%;
         background-position: center;
-        background-image: url("/assets/Spinner-SincoERP 2.gif");
+        background-image: url("/assets/spinner.svg");
         background-size: 150%;
     }
 
