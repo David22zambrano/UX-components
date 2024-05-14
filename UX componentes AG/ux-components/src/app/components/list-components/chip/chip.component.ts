@@ -1,16 +1,6 @@
-// export interface ModelComponent {
-//   label?: string,
-//   disabled?: boolean,
-//   size?: string,
-//   color?: PalleteTheme | CustomThemePalette | any,
-//   value?: string | number,
-//   checked?: boolean,
-//   selected?: boolean;
-// }
+
 import { Component } from '@angular/core';
 import { ModelComponent } from '../../model/model';
-
-
 
 @Component({
   selector: 'app-chip-example',
