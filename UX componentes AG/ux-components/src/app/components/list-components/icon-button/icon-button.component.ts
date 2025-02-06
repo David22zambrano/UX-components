@@ -4,7 +4,8 @@ import { ModelComponent } from '../../model/model';
 @Component({
   selector: 'app-icon-button',
   templateUrl: './icon-button.component.html',
-  styleUrl: './icon-button.component.scss'
+  styleUrl: './icon-button.component.scss',
+  standalone:false
 })
 export class IconButtonComponent {
   iconButtons: ModelComponent[] = [

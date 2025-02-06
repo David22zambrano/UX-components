@@ -4,7 +4,8 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-select',
   templateUrl: './select.component.html',
-  styleUrl: './select.component.scss'
+  styleUrl: './select.component.scss',
+  standalone:false
 })
 export class SelectComponent {
 

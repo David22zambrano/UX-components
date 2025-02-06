@@ -3,7 +3,8 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-avatar-example',
   templateUrl: './avatar-example.component.html',
-  styleUrl: './avatar-example.component.scss'
+  styleUrl: './avatar-example.component.scss',
+  standalone:false
 })
 export class AvatarExampleComponent {
   @Input() sizeAvatar: 'size-24' | 'size-20' | 'size-16' = 'size-24';

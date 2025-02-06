@@ -4,7 +4,8 @@ import { ToastNotificationProperties, ToastNotificationService } from '@sinco/an
 @Component({
   selector: 'app-toast-example',
   templateUrl: './toast-notification.component.html',
-  styleUrl: './toast-notification.component.scss'
+  styleUrl: './toast-notification.component.scss',
+  standalone:false
 })
 export class ToastNotificationComponent implements OnInit {
 

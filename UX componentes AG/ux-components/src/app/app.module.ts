@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -10,9 +10,8 @@ import { MenuPrincipalComponent } from './components/menu/menu-principal.compone
 import { HeaderPageComponent } from './components/header-page/header-page.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { ListComponentsModule } from './components/list-components/list-components.module';
-// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
+
 
 const componentesGenerales = [
   MenuPrincipalComponent,
@@ -26,18 +25,14 @@ const componentesGenerales = [
     ...componentesGenerales
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,  
     AppRoutingModule,
-    HttpClientModule,
-    AngularModule,
-    ListComponentsModule
-  ],
-  exports: [
+    HttpClientModule,  
+    AngularModule,  
     ListComponentsModule,
-    AngularModule,
-    CommonModule,
-    BrowserAnimationsModule,
-    ...componentesGenerales],
-  bootstrap: [AppComponent]
+    BrowserAnimationsModule  
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA], 
+  bootstrap: [AppComponent] 
 })
 export class AppModule { }

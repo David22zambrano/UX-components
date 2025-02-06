@@ -26,6 +26,7 @@ import { AccordionComponent } from './components/list-components/accordion/accor
 import { ListComponent } from './components/list-components/list/list.component';
 import { ChipExample } from './components/list-components/chip/chip.component';
 import { EmptyStateExample } from './components/list-components/empty-state/empty-state.component';
+import { DialogComponent } from './components/list-components/dialog/dialog.component';
 
 const routes: Routes = [
   {path: " ", component: MainPageComponent  },
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path: "fab", component:  FabComponent },
   {path: "buttonGropu", component: ButtonGroupComponent  },
   {path: "checkbox", component: CheckboxComponent  },
+  {path: "dialog", component: DialogComponent  },
   {path: "radio", component: RadioComponent  },
   {path: "select", component:  SelectComponent },
   {path: "slider", component: SliderComponent },

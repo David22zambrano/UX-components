@@ -8,7 +8,8 @@ export interface Section {
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrl: './list.component.scss'
+  styleUrl: './list.component.scss',
+  standalone:false
 })
 
 export class ListComponent {

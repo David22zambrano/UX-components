@@ -11,7 +11,8 @@ interface alertModel {
 @Component({
   selector: 'app-alert',
   templateUrl: './alert.component.html',
-  styleUrl: './alert.component.scss'
+  styleUrl: './alert.component.scss',
+  standalone:false
 })
 
 export class AlertComponent {

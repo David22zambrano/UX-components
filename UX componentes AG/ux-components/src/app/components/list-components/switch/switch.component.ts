@@ -4,7 +4,8 @@ import { ModelComponent } from '../../model/model';
 @Component({
   selector: 'app-switch',
   templateUrl: './switch.component.html',
-  styleUrl: './switch.component.scss'
+  styleUrl: './switch.component.scss',
+  standalone:false
 })
 export class SwitchComponent {
   switchColor: ModelComponent[] = [

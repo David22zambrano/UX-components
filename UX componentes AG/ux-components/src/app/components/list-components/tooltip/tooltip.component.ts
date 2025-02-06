@@ -4,7 +4,8 @@ import { ModelComponent } from '../../model/model';
 @Component({
   selector: 'app-tooltip',
   templateUrl: './tooltip.component.html',
-  styleUrl: './tooltip.component.scss'
+  styleUrls: ['./tooltip.component.scss'],
+  standalone:false
 })
 export class TooltipComponent {
   Tooltips: ModelComponent[] = [

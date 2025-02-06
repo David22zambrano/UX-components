@@ -4,7 +4,8 @@ import { ModelComponent } from '../../model/model';
 @Component({
   selector: 'app-icon',
   templateUrl: './icon.component.html',
-  styleUrl: './icon.component.scss'
+  styleUrl: './icon.component.scss',
+  standalone:false
 })
 export class IconComponent {
   icons: ModelComponent[] = [

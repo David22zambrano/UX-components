@@ -3,7 +3,8 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-toggle-button',
   templateUrl: './toggle-button.component.html',
-  styleUrl: './toggle-button.component.scss'
+  styleUrl: './toggle-button.component.scss',
+  standalone:false
 })
 export class ToggleButtonComponent {
   @ViewChild('justifiedText') justifiedTextElement!: ElementRef;

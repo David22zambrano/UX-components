@@ -20,7 +20,8 @@ const ELEMENT_DATA: TableData[] = [
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  styleUrls: ['./table.component.scss'],
+  standalone:false
 })
 export class TableComponent {
   displayedColumns: string[] = ['select', 'columnA', 'columnB', 'columnC', 'columnD'];

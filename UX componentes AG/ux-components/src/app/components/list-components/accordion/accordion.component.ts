@@ -4,7 +4,9 @@ import { ModelComponent } from '../../model/model';
 @Component({
   selector: 'app-accordion',
   templateUrl: './accordion.component.html',
-  styleUrl: './accordion.component.scss'
+  styleUrls: ['./accordion.component.scss'],
+  standalone:false
+
 })
 export class AccordionComponent {
   panelOpenState = false;

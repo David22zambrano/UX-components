@@ -4,7 +4,8 @@ import { ModelComponent } from '../../model/model';
 @Component({
   selector: 'app-checkbox',
   templateUrl: './checkbox.component.html',
-  styleUrl: './checkbox.component.scss'
+  styleUrl: './checkbox.component.scss',
+  standalone:false
 })
 export class CheckboxComponent {
   checkboxs: ModelComponent[] = [

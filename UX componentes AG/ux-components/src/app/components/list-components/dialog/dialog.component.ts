@@ -5,7 +5,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 @Component({
   selector: 'app-dialog',
   templateUrl: './dialog.component.html',
-  styleUrl: './dialog.component.scss'
+  styleUrl: './dialog.component.scss',
+  standalone:false
 })
 export class DialogComponent {
   constructor(public dialog: MatDialog) {}
@@ -21,5 +22,6 @@ export class DialogComponent {
 @Component({
   selector: 'dialog-content-example-dialog',
   templateUrl: 'dialog-content.html',
+  standalone:false
 })
 export class DialogContent {}

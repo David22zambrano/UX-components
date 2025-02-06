@@ -6,7 +6,8 @@ import { ModelComponent } from '../../model/model';
 @Component({
   selector: 'app-autocomplete',
   templateUrl: './autocomplete.component.html',
-  styleUrl: './autocomplete.component.scss',
+  styleUrls: ['./autocomplete.component.scss'],
+  standalone:false
 })
 export class AutocompleteComponent {
   filteredOptions: string[];

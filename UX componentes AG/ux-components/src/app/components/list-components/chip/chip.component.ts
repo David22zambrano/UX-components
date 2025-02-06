@@ -5,7 +5,8 @@ import { ModelComponent } from '../../model/model';
 @Component({
   selector: 'app-chip-example',
   templateUrl: './chip.component.html',
-  styleUrl: './chip.component.scss'
+  styleUrl: './chip.component.scss',
+  standalone:false
 })
 export class ChipExample {
   Chips: ModelComponent[] = [

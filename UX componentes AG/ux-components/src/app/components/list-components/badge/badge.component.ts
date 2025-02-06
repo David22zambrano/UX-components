@@ -4,7 +4,8 @@ import { ModelComponent } from '../../model/model';
 @Component({
   selector: 'app-badge',
   templateUrl: './badge.component.html',
-  styleUrl: './badge.component.scss'
+  styleUrl: './badge.component.scss',
+  standalone:false
 })
 export class BadgeComponent {
   

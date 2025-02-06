@@ -4,7 +4,8 @@ import { ModelComponent } from '../../model/model';
 @Component({
   selector: 'app-fab',
   templateUrl: './fab.component.html',
-  styleUrl: './fab.component.scss'
+  styleUrl: './fab.component.scss',
+  standalone:false
 })
 export class FabComponent {
   fabButtons: ModelComponent[] = [

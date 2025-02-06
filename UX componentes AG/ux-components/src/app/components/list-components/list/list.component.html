@@ -5,36 +5,50 @@
                 <p class="full-width mat-caption color-text-secondary pb-3">
                     mat-list-item/Simple | mat list </p>
                 <div class="col-12 row align-items-center justify-content-center">
-
-                    <mat-list class="col-4">
-                        <mat-list-item>
-                            <div matListItemTitle class="mat-body1 color-text-primary">List item</div>
-                            <span class="mat-body1 color-text-secondary">Secondary</span>
-                            <div matListItemMeta>
-                                <mat-icon matListItemIcon class="color-action-active">star</mat-icon>
-                            </div>
-                        </mat-list-item>
-                    </mat-list>
-
-                    <mat-list class="bg-white col-6">
-                        <mat-list-item>
-                            <div matListItemTitle>List item</div>
-                            <mat-icon matListItemIcon matPreffix class="color-action-active">star</mat-icon>
-                            <mat-divider></mat-divider>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <mat-icon matListItemIcon class="color-action-active">star</mat-icon>
-                            <mat-divider></mat-divider>
-                            <div matListItemTitle>List item</div>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <div matListItemTitle>List item</div>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <div matListItemTitle>List item</div>
-                        </mat-list-item>
-                    </mat-list>
-
+                    <div class="column gap-2" style="width: 50%;">
+                        <div class="column gap-1">
+                            <p>small</p>
+                            <mat-list class="col-4" size="small">
+                                <mat-list-item >
+                                    <div matListItemTitle class="mat-body1 color-text-primary">List item </div>
+                                    <mat-icon matListItemIcon class="color-action-active">star</mat-icon>
+                                </mat-list-item>
+                            </mat-list>
+                        </div>
+                        <div class="column">
+                            <p>Medium</p>
+                            <mat-list class="col-4" size="medium">
+                                <mat-list-item >
+                                    <div matListItemTitle class="mat-body1 color-text-primary">List item</div>
+                                    <mat-icon matListItemIcon class="color-action-active">star</mat-icon>
+                                </mat-list-item>
+                            </mat-list>
+                        </div>
+                    </div>
+                    <div class="column gap-2" style="width: 50%;">
+                        <div class="column gap-1">
+                            <mat-list class="col-4" size="small">
+                                <mat-list-item >
+                                    <div matListItemTitle class="mat-body1 color-text-primary">List item</div>
+                                    <span class="mat-body1 color-text-secondary">Secondary</span>
+                                    <div matListItemMeta>
+                                        <mat-icon matListItemIcon class="color-action-active">star</mat-icon>
+                                    </div>
+                                </mat-list-item>
+                            </mat-list>
+                        </div>
+                        <div class="column gap-1">
+                            <mat-list class="col-4" size="medium">
+                                <mat-list-item >
+                                    <div matListItemTitle class="mat-body1 color-text-primary">List item</div>
+                                    <span class="mat-body1 color-text-secondary">Secondary</span>
+                                    <div matListItemMeta>
+                                        <mat-icon matListItemIcon class="color-action-active">star</mat-icon>
+                                    </div>
+                                </mat-list-item>
+                            </mat-list>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
