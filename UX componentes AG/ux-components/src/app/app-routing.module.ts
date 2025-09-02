@@ -27,6 +27,9 @@ import { ListComponent } from './components/list-components/list/list.component'
 import { ChipExample } from './components/list-components/chip/chip.component';
 import { EmptyStateExample } from './components/list-components/empty-state/empty-state.component';
 import { DialogComponent } from './components/list-components/dialog/dialog.component';
+import { PageHeaderExample } from './components/list-components/page-header/page-header.component';
+import { SincoModalComponent } from './components/list-components/modal/modal.component';
+import { SincoAdjuntarComponent } from './components/list-components/sinco-adjuntar/sinco-adjuntar.component';
 
 const routes: Routes = [
   {path: " ", component: MainPageComponent  },
@@ -34,6 +37,7 @@ const routes: Routes = [
   {path: "button", component:  ButtonComponent },
   {path: "icon", component: IconComponent  },
   {path: "fab", component:  FabComponent },
+  {path: "pageHeader", component:  PageHeaderExample },
   {path: "buttonGropu", component: ButtonGroupComponent  },
   {path: "checkbox", component: CheckboxComponent  },
   {path: "dialog", component: DialogComponent  },
@@ -55,6 +59,8 @@ const routes: Routes = [
   {path: "progress", component: ProgressComponent },
   {path: "table", component: TableComponent },
   {path: "accordion", component:  AccordionComponent },
+  {path: "modal", component:  SincoModalComponent },
+  {path: "sincoAdjuntar", component:  SincoAdjuntarComponent },
 ];
 
 @NgModule({

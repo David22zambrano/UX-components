@@ -1,27 +1,26 @@
-import { Component } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { SincoModalComponent, type } from '../modal/modal.component';
 
 @Component({
   selector: 'app-dialog',
+  standalone:false,
   templateUrl: './dialog.component.html',
-  styleUrl: './dialog.component.scss',
-  standalone:false
+  styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
   constructor(public dialog: MatDialog) {}
 
   openDialog() {
-    const dialogRef = this.dialog.open(DialogContent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+    this.dialog.open(SincoModalComponent, {
+      width: '400px',
+      disableClose: false,
+      data: {
+        type: 'warn',
+        title: 'Alerta',
+        content: 'Este es un mensaje de advertencia',
+        actions: 'Aceptar',
+      }
     });
   }
 }
-@Component({
-  selector: 'dialog-content-example-dialog',
-  templateUrl: 'dialog-content.html',
-  standalone:false
-})
-export class DialogContent {}

@@ -27,7 +27,7 @@ import { ToastNotificationComponent } from './toast-notification/toast-notificat
 import { PageHeaderExample } from './page-header/page-header.component';
 import { CardComponent } from './card/card.component';
 import { TabComponent } from './tab/tab.component';
-import { DialogComponent, DialogContent } from './dialog/dialog.component';
+import { DialogComponent } from './dialog/dialog.component';
 import { MenuComponent } from './menu/menu.component';
 import { AngularModule } from '@sinco/angular';
 import { ChipExample } from './chip/chip.component';
@@ -38,6 +38,8 @@ import { AvatarExampleComponent } from './avatar/avatar-example/avatar-example.c
 import { IconComponent } from './icon/icon.component';
 import { FooterActionExample } from './footer-action/footer-action.component';
 import { HeaderComponents } from './header-components/header-components.component';
+import {  SincoModalComponent } from './modal/modal.component';
+import { SincoAdjuntarComponent } from './sinco-adjuntar/sinco-adjuntar.component';
 
 
 
@@ -78,10 +80,12 @@ import { HeaderComponents } from './header-components/header-components.componen
     AvatarExampleComponent,
     AvatarComponent,
     DialogComponent,
-    DialogContent,
     ToastNotificationComponent,
     FooterActionExample,
-    HeaderComponents],
+    HeaderComponents,
+    SincoModalComponent,
+    SincoAdjuntarComponent
+  ],
   exports: [],
   imports:
     [

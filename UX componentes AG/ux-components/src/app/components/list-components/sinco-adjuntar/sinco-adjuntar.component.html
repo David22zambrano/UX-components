@@ -1,0 +1,35 @@
+<app-header-components title="Dialog">
+    <ng-template #component>
+        <div class="justify-content-center align-items-center row" >
+            <div style="border-radius: 4px;padding-block: 24px;padding-inline: 16px;gap: 4px;border-style: dashed; border-color:#0000001F;border-width: 1px;" [ngStyle]="estilosDinamicos"
+            class="justify-content-center align-items-center d-flex">
+            <div class="align-items-center justify-content-center d-flex" style="gap: 8px;" [ngStyle]="{'flex-direction' : compact ? 'row': 'column'}">
+                <div class="row justify-content-center align-items-center" style="border-radius: 50%;background-color: #E4ECF4; height: 36px;width: 36px;">
+                    <mat-icon color="primary" class="mat-icon-outlined">cloud_upload</mat-icon>
+                </div>
+                <div class="column justify-content-center" style="gap:4px">
+                    <p class="mat-body-2" *ngIf="selectedFile; else defaultText">
+                        <a href="#" (click)="openFile($event)" style="color: #2063A0;">{{ selectedFile.name }}</a>
+                    </p>
+                    <ng-template #defaultText>
+                        <p class="mat-body-2">Arrastrar o adjuntar archivos</p>
+                    </ng-template>
+                
+                    <div class="row" style="gap: 4px;">
+                        <p class="mat-caption" style="color: #10184099;">DOCX, XML, PNG, JPG</p>
+                        <p class="mat-caption" style="color: #10184099;">•</p>
+                        <p class="mat-caption" style="color: #10184099;" *ngIf="selectedFile">{{ selectedFile.size }}</p>
+                        <p class="mat-caption" style="color: #10184099;" *ngIf="!selectedFile">Máx. 00MB</p>
+                    </div>
+                </div>
+            </div>
+
+                <button mat-button (click)="fileInput.click()" color="primary">
+                    <mat-icon style="font-size: 18px;height: 18px;width: 18px;">attach_file</mat-icon>
+                    Adjuntar
+                  </button>
+                  <input #fileInput type="file" (change)="onFileSelected($event)" hidden>  
+            </div>
+        </div>
+    </ng-template>
+</app-header-components>

@@ -32,10 +32,13 @@ export class MenuPrincipalComponent {
       { name: 'List', route: '/list' },
       { name: 'Tooltip', route: '/tooltip' },
       { name: 'Empty-State', route: '/EmptyState' },
+      { name: 'PageHeader', route: '/pageHeader' },
       { name: 'Alert', route: '/alert' },
       { name: 'Progress', route: '/progress' },
       { name: 'Table', route: '/table' },
-      { name: 'Accordion', route: '/accordion' }
+      { name: 'Accordion', route: '/accordion' },
+      { name: 'Modal', route: '/modal' },
+      { name: 'SincoAdjuntar', route: '/sincoAdjuntar' }
   ];
 }
 
